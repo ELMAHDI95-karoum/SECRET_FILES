@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>THE ABZU</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">THE ABZU</h1>
+
+    <img src=""  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+
+        </p>
+        
+    </div>
+
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      <p>
+        In parts of South Africa and Zimbabwe, stories are told about "ancient people" or "children of the earth" who knew the locations of gold deposits and concealed them. These tales are typically part of local folklore that explains mineral-rich areas. They are said to have inhabited the land before modern humans, and were short in stature or "spirit-like," living under mountains or in caves. They knew the secrets of the earth and its minerals, especially gold and copper, and therefore it is believed that they "hid" rich mines or guarded them with magical means. In some stories, they are said to have been able to disappear into rocks or move underground, as if they were from the "underworld." In areas such as Great Zimbabwe, Barberton, and Mapungubwe, there are very old mining sites dating back to before European settlement, which has fueled the belief that there was an ancient gold-producing civilization that predated the Zulu and Shona. Some elders recount that these sites were "guarded" by the spirits of these ancient people, and that anyone who tries to extract gold from them without their permission will suffer misfortune or illness. There is a popular saying among some Shona tribes that goes, "The gold is not ours; it is the blood of the people who lived before us." Some modern researchers (especially in schools of "deep anthropology") have linked these stories to collective memories of the ancient Bushmen (San people) who lived before the Bantu expansion southward.
+      </p>
+        <p>
+            Long before the rise of Egyptian civilization, this vanished civilization worshipped the sun, carved the first statue of the Sphinx and the falcon god Horus, and built an ancient calendar aligned with the constellation Orion (Adam's Calendar). They were also fascinated by gold. Their tools and enigmatic artifacts suggest they possessed advanced knowledge of the laws of nature and used sound and frequency as a tool, which is why we call this region the "First Silicon Valley." Archaeological discoveries link these ruins to ancient civilizations such as the Egyptians, Phoenicians, Dravidians, Maya, Romans, Greeks, and the Sumerian Anunnaki gods.
+        </p>   
+       
+        <p>
+            In his books "Slave Species of God" and "Temples of the African Gods," Michael Tellinger states that Abzu were massive mining centers and that their remains still exist in South Africa (the ancient stone circles which he calls r <a href="/Users/Elmahdi karoum/OneDrive/Desktop/html/PLACES/CITY/AFRICA/ADAM'S CALENDAR/ADAM'S CALENDAR.html">Adam's Calendar</a>).
+        </p>
+        <p>
+            When Cyril Hromnik wrote his masterpiece, Indo-Africa, in 1981, he made many enemies with his outlandish suggestions that much of South Africa’s cur- rent culture was influenced by Indians, specifically the Dravidian ethnic group from southern India. His impeccable research in this area leaves little doubt that there was a large presence of Dravidian gold miners and merchants over an extended period as far back as 2,000 years ago and possibly even earlier. They left behind an unmistakable range of influence, which is evident in many aspects of South African culture and indigenous languages. Many of the stone ruins I have explored can be linked directly to the Dravidian culture, on which Hromnik has written many papers.
+        </p>
+        <p>
+            Until the 16th century the gold producing region of Mpumalanga was known as “Komatiland.” Early Portuguese sources describe it as Terra dos Macomates, the land of the Komati people. Komati, was the professional name of a Dravidian merchant caste of South India. This name is still attached to the Komati River, Komatipoort, etc. During centuries of gold exploration they mixed with the indigenous Kung (Bushmen) creating the Quena (Otentottu), and with the Black people from the NW creating the aBantu people, and together they gave rise to the MaKomati. The pre- European form of the name was MaKomatidesa, Land of the MaKomati.
+        </p>
+        <p>
+            Regardless of the evidence suggesting that the earliest humans lived in this part of the world and developed the first art, the first society, the first mining, and the first cities on Earth—some scholars genuinely believe that South Africa was a barren land without history until the arrival of settlers from the north—both Black and White. We must remind ourselves of the first principle of archaeology: civilizations are built one on top of the other. Even in modern cities like London and Rome, archaeologists uncover older layers deep beneath the surface, revealing a hidden past. For now, we can only imagine the secrets of the lost civilizations scattered throughout South Africa beneath layers of sand. But what caused these ancient cities to be covered by such vast amounts of soil? There is one possible explanation—a global catastrophe—the Great Flood.
+        </p>
+        <p>
+            Some people associate Adam's Calendar and the Mpumalanga hills with sites for magical rituals or communication with the "underworld" (Abzu).
+        </p>
+        <p>
+          Enqi was assigned to Earth and he agreed to the assignment. He was chosen for this job because he was a brilliant scientist and engineer. Enqi built himself a beautiful kingdom in the sea called the Abzu. 7% The structures of the Abzu were built of silver and lapis lazuli, part high on a mountain, and part submerged under water. When Enqi wasn't working in the Abzu, he build dams and re-routed waters. Enqi loved water, and frequently paddled around the marshes all by himself, studying fish, insects, and the grasses along the river banks.
+        </p>
+    </div>
+    <div class="section clearfix">
+        <h3>Sumarian</h3>
+        <p>
+          One story tells of a conflict between Zeus and his brother Hades for control of the Earth. This story is similar to that of the Sumerian gods, the brothers Enlil and Enki. Enlil seized control of the upper world, while Enki, the winged serpent, took control of the underworld. This was the land below the equator, from where the gold came. It was not hell, as it is often misinterpreted. The Sumerians called this place Abzu. Enki (who was titled "Lord of the Abzu") managed the gold mining operations there for the benefit of the Anunnaki in Sumerian civilization.
+
+        </p>
+        <p>
+         In the original Sumerian texts, "Abzu" was not "hell" but a deep body of water or land located below the equator. It is said to be the source of water, life, and precious minerals – especially gold.
+
+        </p>
+        <p>
+            Sumerian tablets tell us that the inhabitants of the ancient Abzu region were extracting all kinds of metals thousands of years ago, long before traditional archaeological studies suggest. Many unusual stone tools exist that were either carved with metal tools or shaped using other forms of advanced technology, such as sound and resonance, in the manner described by Kelly in 1888. Archaeological assessments indicate that these stone tools may be up to 50,000 years old, or even much older. This presents a significant challenge to our current understanding of history, as it is generally believed that humans did not possess any metal tools 50,000 years ago.
+        </p>
+        <p>
+            Credo describes how all the Sumerian gods had spouses or wives whose 
+names often resembled those of the male gods. Enlil’s spouse was Ninlil; Enki’s 
+wife was Ninki; and the wife of the supreme Sumerian god Anu was A’ntu. 
+So now we come to realize that not only do the ancient symbols originate in 
+southern Africa, but the first link to the ancient gods—who came to rule over 
+the whole of the Near East many thousands of years later—comes from the 
+Sumerian goddess A’ntu. Herein lies the link between all the ancient civiliza- 
+tions, starting with the FIRST people in southern Africa who worshipped a 
+Sumerian goddess called A’ntu. It is astonishing to discover that ancient Zulu 
+culture and religion, including those of all other Bantu tribes, is directly linked 
+to the Sumerians. Credo concludes that Abantu is derived from the Sumerian 
+goddess A’ntu, and Aba’ntu, and simply means “the children/people of A’ntu.” 
+A’ntu, the Sumerian goddess who loved the ABZU—where the gold came from. 
+
+        </p>
+        <p>
+          Abzu was given a religious fertilising quality in Sumerian mythology. Lakes, springs, rivers, wells, and other sources of fresh water were thought to draw their water from the abzu—the primeval sea below the void space of the underworld (Kur) and the earth (Ma) above. Enki (E.A) was believed to have lived in the abzu since before human beings were created, along with his wife Damgalnuna, his mother Nammu, his advisor Isimud and a variety of subservient creatures, such as the gatekeeper Lahmu, also lived in the abzu.
+        </p>
+        <p>
+          In Eridu, Enki's temple was known as E2-abzu (house of the cosmic waters) and was located at the edge of a swamp, an abzu.Washing pools were developed for religious washing that drew from the local abzu. Later Babylonian and Assyrian temple courtyards also maintained these pools, they called apsû
+        </p>
+        <img src="abg.jpg">
+        <p>
+          Abzu (apsû) was later depicted as a deity only known from the Babylonian creation epic, the Enûma Elish, taken from the library of Assurbanipal c. 630 BCE (but which is about 500 years older). In this story, he was a primal being made of fresh water and the lover to Tiamat, a primeval deity of salt water.
+        </p>
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <p>
+        There is indeed an archaeological heritage in South Africa — such as ancient mining sites, prehistoric habitation sites, and a number of relocated/existing stone circles — but the interpretation of these structures varies among experts.
+      </p>
+        <p>
+     The Zulu and Bantu people have been worshipping A'ntu for thousands of years, and these beliefs correspond to the names of Sumerian deities."  
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/THE ABZU" target="_blank">Wikipedia –THE ABZU </a></li>
+          <li><a href="https://www.britannica.com/THE ABZU" target="_blank">Britannica –THE ABZU </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

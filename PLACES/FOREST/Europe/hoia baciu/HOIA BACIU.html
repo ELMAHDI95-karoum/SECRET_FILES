@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HOIA BACIU</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">HOIA BACIU</h1>
+
+    <img src="v.webp"  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <img src="map.jpg">
+        <p>
+     Located just west of Cluj-Napoca, Romania, the Hoia Baciu has a long standing history of paranormal sightings and unexplained phenomena, experienced by locals and visitors alike. Indeed, there have been so many reports over the past six decades, this one square mile of forest has been appropriately deemed as the “Bermuda Triangle of Europe.”
+        </p>
+        <p>
+            All this reported strange phenomena, coupled with the numerous photographic testimonies of extraterrestrial lights and mysterious spheres appearing within the forest have contributed in making the Hoia Baciu Forest one of the best-documented paranormal sites in the world. Science is not yet able to explain the source of this strange phenomena and are still waiting for answers, but speculation continues as to whether this forest is a portal to another world or to a parallel, unknown universe!
+        </p>
+        <p>
+            The Hoia-Baciu Forest is nestled not just in Transylvanian geography, but in its cultural DNA. Romania itself is drenched in dark folklore—home to the legend of Vlad the Impaler, vampiric mythologies, haunted monasteries, and haunted castles that echo with ancestral pain.
+        </p>
+        <p>
+It’s no surprise that this mysterious woodland has become a beacon for the gothic subculture, horror writers, filmmakers, and spiritualists. Shows like Ghost Adventures have filmed inside its depths, documenting experiences that defy scientific explanation. Indie horror films like The Devil Complex have used the forest as their central character—an ancient, malevolent entity more terrifying than any antagonist
+        </p>
+        <p>
+            The Hoia-Baciu Forest is more than a spooky tourist destination. It is a living relic of the unknown—a dark sanctuary for those brave enough to confront the veil between this world and the next. It dares us to question what we believe, what we see, and what exists just beyond our understanding.
+        </p>
+        
+    </div>
+    
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+             It has been called the creepiest forest in the world. And The Clearing is, allegedly, the creepiest place in the forest. It defies the investigations of soil scientists and attracts Romanian witches, sword-wielding Americans, and people who try to cleanse the forest of evil through the medium of yoga.
+        </p>
+        <img src="hb2.jpg">
+        <p>
+            Named after a shepherd who went missing in the forest with a flock of 200 sheep, Hoia Baciu came to international attention in 1968 when Emil Barnea, a military technician, photographed what he claimed was a UFO hovering over The Clearing. What differentiates this story from other UFO claims is that Barnea had nothing to gain from reporting the sighting, and everything to lose. The Communist government equated a belief in the paranormal with madness and state-sabotage, and Barnea lost his job in a country which had no support for the sacked.
+        </p>
+        <p>
+            According to legend, hundreds of Romanian peasants were murdered in the Hoia Baciu forest sometime before the birth of Christ, and locals believe the spirits of these villagers still roam the land. Others speculate that the forest is home to some invisible time rift or gateway into another realm. Whatever is to be believed, many Romanians who live near the Hoia are convinced that should they enter the forest they would never come back, and thus avoid the woods at all costs
+        </p>
+        <p>
+            Hoia Baciu Forest is famous for the many reports of UFO sightings that have been made there over the years. Some visitors have claimed to see strange lights and objects in the sky, while others have reported encountering alien beings.
+        </p>
+        <p>
+          Many personal blogs have reported that some visitors felt dizzy, nauseous, or had headaches after viewing the lights.
+        </p>
+        <p>
+          There are accounts of a "strong sense of being watched," as if unseen beings were following them.
+        </p>
+        <img src="ufo.jpg">
+        <p>
+            The forest is said to be haunted by the ghosts of people who died there, including soldiers who fought in battles that took place in the area. Visitors have reported seeing ghostly figures and hearing strange voices.
+        </p>
+        <p>
+            The two most popular explanations for the strange nature of the Hoia Baciu forest seem to be that it is either haunted or a realm with portals to other dimensions. Some people claim that the forest is haunted by the ghosts of peasants that were murdered and who now wander the forest in anger from being trapped within it. Another explanation appears to be that the forest is the location of portals to other dimensions, similar to explanations of the Bermuda Triangle.
+        </p>
+        <p>
+            Because of the forest’s strangeness, it has been the subject of several media presentations on the paranormal, including one documentary that was aired in Japan in 2015 based on excursions into the forest. Tour guides will take people on tours of the forest and some of them have even been brave enough to spend the night there. Tour guides who have stayed overnight have reported hearing strange things. In one account, they heard a sound that resembled a thumping hoof which stopped whenever they looked outside their tents. 
+        </p>
+        <p>
+          Western bands that have visited the forest (such as Destination Truth and Ghost Adventures) have recorded mysterious lights in the sky, moving in unnatural ways.
+        </p>
+        <p>
+          People wrote that they saw "fireballs" moving between the trees or over the circular, vegetated area.Some stories say that electronic devices break down the moment these lights appear.
+        </p>
+        <p>
+          Some folklore tells of spirits pulling visitors into an "other world" before suddenly bringing them back, but hours or days later, with no memory of what happened.
+        </p>
+        <p>
+          Paranormal blogs such as Paranormal Globe and Atlas Obscura have reported sightings of "white specters" moving through the trees.
+        </p>
+        <p>
+          Many locals claim to hear screams, whispers, and nighttime laughter coming from deep within the forest, especially near the "treeless circle."
+        </p>
+        <img src="gho.jpg">
+        <p>
+          In addition to the famous UFO images, Parnia noted in his notebooks that some of the photographs captured "ghostly faces" that he did not see during filming, but appeared later on film.
+        </p>
+    
+        <p>
+            A child who disappeared within the forest's grasp, only to return two decades later—unchanged. No aging. No memory. As though she had been cradled by time itself.
+        </p>
+        <p>
+          Some bands who have used EVP (Electronic Voice Phenomena) recording devices have claimed to have captured the sounds of words in unintelligible languages.
+        </p>
+        <p>
+          Contemporary Romanian writers likened the forest to a "gateway between the world of the living and the dead."
+        </p>
+        
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+            Archaeological evidence confirms human settlement in the Hoia-Baciu region dating back to 6500 BC, making it one of the oldest known Neolithic sites in Romania. Part of the Starčevo–Kőrös–Criș culture, this land once bore witness to early civilization’s rituals, burials, and enigmatic architecture. Excavations unearthed ancient homes and burial grounds in the nearby Valea Lungă area—silent testaments to lives long vanished under the soil.
+        </p>
+        <p>
+       Visitors to the forest report strange symptoms—nausea, anxiety, a feeling of being watched—and malfunctioning electronic devices. Runners who venture into the forest often see "ectoplasm."
+        </p>
+       
+        <p>
+            Trees grow in a zigzag or spiral pattern, a phenomenon that none of the scientists who have come to investigate have convincingly explained. In fact, every spiral tree grows clockwise.
+        </p>
+        <p>
+            Barnea’s photograph gained worldwide attention, and the forest became a hotspot for UFO enthusiasts. But potential sightings of flying saucers does not account for an abundance of other anomalies witnessed and captured in this bizarre forest.  Countless reports of unusual electromagnetic activity, light orbs, disembodied voices and apparitions occur every year. These peculiarities seem especially heightened in an area of the forest known as the Poiana Rotunda.
+        </p>
+         <p>
+            That didn’t give the forest its reputation. It was only after a military technician, named Emil Barnea, photographed what he claimed to be a UFO hovering over a particular patch of forest, that the place captured the interest of people from all around the world. That particular patch of forest is now called The Clearing.
+        </p>
+        <p>
+            The Clearing is not your run-of-the-mill location. Creepily, this particular patch of the forest is where nothing grows. It’s almost as if all the trees and plants just stop growing around this oval patch in the ground.
+        </p>
+        <img src="kk.jpg">
+        <p>
+The Poiana Rotuna, or “round meadow,” is a one kilometer area of the forest where trees do not grow. This near circle formation, which scientists believe has been around for two
+hundred years, is a vegetative dead zone, and home to all manner of odd (dare I say paranormal?) activity. Apart from an increase in apparition sightings and light phenomena, spikes in the electromagnetic field are often recorded within the circle.
+        </p>
+        <p>
+            Some extraterrestrial aficionados claim the Poiana Rotunda was hb1caused by a UFO that landed and the radiation from the craft has inhibited plant life from growing. While a creative theory, soil samples both within and outside of the circle have been tested, and a scientific explanation about the lack of growth has yet to be made
+        </p>
+        <p>
+            Even the Hoia Baciu Forest trees themselves hold an enigma, as these two-hundred-year-old trees seem to be young, and most of them are twisted at the trunk or unusual in shape. Most of the paranormal activity seems to be concentrated in a particular part of the forest which is free of vegetation and formed into a perfect circle.
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/hoia baciu" target="_blank">Wikipedia –hoia baciu </a></li>
+          <li><a href="https://www.britannica.com/place/hoia baciu" target="_blank">Britannica –hoia baciu </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

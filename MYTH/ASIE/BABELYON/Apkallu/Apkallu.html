@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APKALLU EAGLE</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Symbols">Symbols</a></li>
+      <li><a href="#Compare">Compare</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">APKALLU EAGLE</h1>
+
+    <img src="back.jpg" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+      <p>
+        Alabaster Bas-relief of Eagle-headed winged Apkallu holding a bucket and cone for religious rituals, from the NW Palace of Ashurnasirpal II at Nimrud, Iraq, reign of Ashurnasirpal II, 9th C. BC Pergamon Museum, Berlin, Germany.
+      </p>
+      <img src="Apkallu iconography.jpg">
+      <p>
+
+      </p>
+        <p>
+            The Origin and the Meaning of the Term Apkallu
+The term “apkallu” is thought to be Akkadian, possibly derived from the earlier Sumerian “abgal.” Sumerian was the language of ancient Sumer, spoken in southern and south-central Mesopotamia from the mid-sixth to early 3rd millennium BC (5500 – 1900 BC).
+        </p>
+        <p>
+          Dating back to the Neo-Assyrian period (9th–7th centuries BCE), this bas-relief originates from the palaces of Nineveh and Nimrud in present-day Iraq. It depicts the Apkallu — a mythological guardian spirit combining human form with the head of an eagle, symbolizing divine wisdom and protection.
+        </p>
+        <p>
+          Carved in alabaster with astonishing precision, the Apkallu holds a pine cone and a mysterious “bucket,” believed to represent purification rituals or the fertilizing essence of life. These reliefs adorned royal walls, serving as both spiritual guardians and expressions of the king’s divine authority. Archaeologists like Austen Henry Layard first uncovered them in the mid-19th century, revealing the grandeur and mystery of Assyrian artistry.
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+     <div class="section clearfix">
+        <p>
+          In the book "Protective Spirits in Mesopotamia: Ritual Texts (Cuneiform Studies)," pages 74-76, the bird-shaped "Apkalu" statues are described as "Assyrian protective statues," while the fish-shaped "Apkalu" statues are of original Babylonian origin. The issue appears to be one of origin. The book includes tables that allow for comparison of examples of each type.
+        </p>
+        <p>
+            In Neo-Assyrian art these bird-headed “genies,” as they were long described, are now known to be apkallū, “bird-apkallū,” in this case, mixed-feature exorcists and creatures of protection created by the god Ea. They traditionally served as advisors to kings. Their association with sacred trees, as they are often portrayed, remains somewhat perplexing.
+This apkallū makes the iconic gesture of exorcism and liberation of sin with the mullilu cone in his raised right hand, and the banduddu water bucket in his left hand.
+There are three known types of apkallū: the human, with wings; the avian-headed, with wings, and the fish-apkallū, with carp skin draped over their heads.
+        </p>
+        <p>
+            It is thought that the term was used to denote some form of wisdom and can be translated into English as “the wise”, “sage” or “expert.” It was used as an epithet for the gods’ Ea and Marduk but applied to other deities as well. Alternatively, the term was used to refer to priests, especially diviners.
+        </p>
+        <p>
+            The Apkallu, often conflated with the Anunnaki, were ancient Mesopotamian demi-gods of wisdom, depicted as hybrid figures—part man, part fish or bird—tasked with civilizing humanity. In Babylonian and Assyrian traditions, these sages emerged from the primordial waters of the Abzu, bringing sacred knowledge, agriculture, and architecture to early humans. The later flood myths, including the Epic of Gilgamesh, portray the Apkallu as guardians of pre-diluvian wisdom, with one, Utnapishtim, preserving forbidden knowledge after the deluge. Unlike the Anunnaki, who were divine overseers, the Apkallu functioned as intermediaries, embodying the esoteric transmission of cosmic law. Their eventual demonization in later texts suggests an ideological shift, where ancient knowledge once revered was later deemed dangerous, echoing similar motifs found in Promethean and Enochian mythologies.
+        </p>
+      
+      </div>
+      
+      
+  
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+      <p>
+        The "Priestly Guardians" theory posits that the eagle-headed apkallū originally represented an elite class of priests tasked with guarding temples and palaces. Proponents of this theory base their arguments on the consistent appearance of these figures at doors and entrances in ancient reliefs, as well as their carrying of ritual tools like the basket and cone. From this perspective, the wings and avian head do not represent a biological description of a hybrid being, but are rather symbols of supreme vigilance and guardianship. Consequently, the artistic imagery magnified the practical function (guarding) into the form of a majestic predatory bird, reflecting power and awe.
+      </p>
+      <p>
+        The avian form of the Apkallu is interpreted as representing a ritual mask or shroud, similar to the use of animal masks in global traditions to facilitate symbolic transformation during ceremonies. Proponents of this view argue that the coexistence of various Apkallu forms (human, fish, and avian) within a single system suggests that this diversity should be understood as symbolic costumes for different and specific roles. Consequently, the "eagle head" does not describe a literal biological nature or a hybrid being, but rather signifies a temporary ritual identity assumed by the practitioner during the performance of sacred duties.
+      </p>
+      <p>
+        The Apkalu, with their eagle heads, are seen as semi-divine sages sent by the god Enki (Ea) to impart wisdom to humankind, emphasizing their role in purification and fertility through the symbolism of carrying a bucket and cone. In alternate histories, they are compared to similar beings in other cultures, such as the Egyptian god Thoth (ibis-headed, a symbol of writing and wisdom) or Horus (falcon-headed, a symbol of the sky and royalty), as evidence of a shared, cross-cultural wisdom rooted in common mythological origins before the Flood.
+      </p>
+     
+      <p>
+        In Graham Hancock's book "Magicians of the Gods," the eagle-headed Apkalu are seen as remnants of a lost civilization that collapsed at the end of the Ice Age (around 12,000 years ago) due to a natural disaster. They represent "wise men" who passed on essential knowledge (agriculture, engineering, rituals) to rebuild society, with links to archaeological sites like Göbekli Tepe as evidence of earlier civilizations.
+      </p>
+      <p>
+        
+      </p>
+       <p>
+        This hybrid sage , also called griffin-demon, Nisroch, or simply genie, is a human body with the head of a bird of prey (perhaps an eagle or a vulture)
+      </p>
+      
+    </div>
+
+    
+
+
+
+    <h2 class="section-title">Compare</h2>
+    <div class="section clearfix">
+      <h3>America</h3>
+      <img src="his.webp">
+      <p>
+        The two figures (the winged creature with the head of an eagle and the protective sage) are said to be evidence of ancient sea voyages or trade between South American civilizations (such as ancient Ecuadorian civilizations such as Valdivia or La Tolita) and Mesopotamia (Sumer/Assyria). This is promoted as "proof" that civilizations were not isolated, but connected across oceans thousands of years before Columbus.
+      </p>
+      
+      
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <img src="apkallu-36-anu-dally-idd.png">
+      <p>
+        This image is a line drawing of an ancient Assyrian relief from the palace of King Ashurnasirpal II at Nimrud (ancient Kalhu, Iraq), dating to about 883-859 BC, and is known in academic studies as Apkallu 36 (number 36 in the classification of scholar Stephanie Dalley in her study of the iconography of gods and demons in the ancient Near East).
+      </p>
+      <p>
+        The Bīt Mēseri text (a ritual incantation from the 1st century BCE, though with older versions) is a primary source that lists the names of the seven pre-flood sages, such as Uanna, Uannedugga, and Enmedugga. It describes these sages as pure beings originating from the Apsu (the fresh underground waters), sent by the deity Enki/Ea for protection and purification. Furthermore, the text links these sages to apotropaic (evil-averting) rituals and explains the symbolic use of the bucket (banduddu) and the cone (mullilu) as essential tools for purification and fertility rites.
+      </p>
+      <p>
+        According to scholars such as Frans Wiggermann (in his book Mesopotamian Protective Spirits, 1992) and Anthony Green (in articles on Assyrian iconography), this type is sometimes called a "bird-apkallu" or "griffin demon," and is an Assyrian evolution, distinct from the fish-cloaked type that dates back to earlier Babylonian traditions.
+      </p>
+        
+        
+    </div>
+
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Apkallu Eagle" target="_blank">Wikipedia –Apkallu Eagle </a></li>
+          <li><a href="https://www.britannica.com/Apkallu Eagle" target="_blank">Britannica –Apkallu Eagle </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

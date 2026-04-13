@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WORMHOLE OF INISHMORE</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#Literary">Literary</a></li>
+      
+      <li><a href="#Research">Research</a></li>
+     
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">WORMHOLE OF INISHMORE</h1>
+
+    <img src="back.jpg" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+      <p>
+       Inishmore is the largest of the Aran Islands of Galway Bay in Ireland and is an area consisting of 12 square miles. It is the largest island off the Irish coast with no bridge or causeway to the mainland
+      </p>
+      <p>
+        One of the most remarkable features of Inishmore island is what is known as the “Wormhole” or Poll na bPéist, which means “Serpent’s Lair,” relating to the reptilian sea monster from Gaelic folklore. The Wormhole is a rectangular shaped pool cut straight from the limestone floor, and can only be accessed by walking along the cliffs south of the ancient site Dún Aonghasa. The sea water ebbs and flows at the bottom of the cliffs and into the pool where the Wormhole begins to fill up, overflows, and then starts to drain. The process starts over and over again, and is said to be mesmerizing. Upon close observation, the Wormhole appears to reveal cut-like marks, especially on its seaward side, indicating that it may not be of natural origin.
+      </p>
+      
+        
+    </div>
+
+  
+      
+      
+  
+    
+       
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+            Proponents like Derek Olson (Megalithic Marvels) and Roger Spurr (Mudfossil University) see it as evidence of "ancient technology" or a "gateway to other worlds," linked to Celtic civilization or Tartaria (a hidden civilization before the 19th century). They claim that the edges are "etched with energy tools" (such as lasers or ethereal devices), and that the subterranean connections to the ocean were a "drainage system" or "energy conduit."
+        </p>    
+        <p>
+            Some say it is an "energy gateway" between worlds, a "hidden entrance" used by ancient peoples for travel or spiritual rituals. Its geometric "opening" is not accidental but the result of ancient human design.
+        </p>
+        <p>
+            The Wormhole of Inis Mór holds great cultural significance for the local community. Many believe that it has spiritual properties and that it is a symbol of the island’s connection to the spirit world. The local economy benefits greatly from the tourism industry, with visitors coming from all over the world to see this natural wonder.
+        </p>
+        <p>
+            However, there are also beliefs and superstitions surrounding the Wormhole. Some believe that it is cursed and that anyone who attempts to cross it will suffer misfortune. Others believe that the Wormhole is a portal to the underworld, and that it should be left alone for fear of inviting evil spirits onto the island.
+        </p>
+        <p>
+            Celtic folklore speaks of the Péist (a sea monster) as a "dimensional being," and the hole as a gateway to the Aos Sí (Celtic spirits, which some interpret as ETs in Jacques Vallée's book "Passport to Magonia").
+        </p>
+        <img src="julie_roch-cuerrier_wormhole.webp">
+        <p>
+            Some say it is linked to Mudflood/Tartaria and is part of a network of "star fortresses" in Ireland, where it was used for "time travel" or "sacrificing rituals" to giants.
+        </p>
+        <p>
+            This isn't natural erosion, but a perfectly rectangular hole in granite—ancient giants created it as a tidal basin via an underground tunnel. They had power tools.
+        </p>
+        <p>
+      They say that rising sea levels after the Ice Age or the Flood submerged entire continents, and the seas are now "graveyards" for advanced cities with crystal energy technology. Coastal anomalies (like Yonaguni in Japan or the city beneath the Caribbean) are "erosion remains," not natural formations. Scientists are hiding them from us.
+        </p>
+        <p>
+            Some people even say that the Red Bull team that filmed the famous dive video in 2017 saw "long white creatures" inside the hole and were asked to delete the footage (of course without evidence, but the original video did indeed disappear from YouTube!).
+        </p>
+      
+    </div>
+
+    
+
+
+
+   
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+     <p>
+        The key things to watch out for when visiting here is No phone Signal It’s not advised to swim as it can be very dangerous. its a long unsteady walk from the main road.
+     </p>   
+        
+    </div>
+
+   
+      
+
+      
+
+
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/Wormhole of Inishmore" target="_blank">Wikipedia –Wormhole of Inishmore </a></li>
+          <li><a href="https://www.britannica.com/Wormhole of Inishmore" target="_blank">Britannica –Wormhole of Inishmore </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

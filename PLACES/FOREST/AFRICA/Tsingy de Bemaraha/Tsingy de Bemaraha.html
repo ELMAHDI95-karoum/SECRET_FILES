@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TSINGY DE BEMARAHA</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Describe">Describe</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">TSINGY DE BEMARAHA</h1>
+
+    <img src="tsingy-de-bemaraha-national-park-260nw-2283937371.webp" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+            Madagascar is a cosmic laboratory for some of the world's most exotic environments and wildlife, at the heart of which lies the Tsingy de Bemaraha National Park, stretching across hundreds of miles. Over eons, water carved these limestone plateaus, leaving behind the Great and Little Tsingy. In the Malagasy language, the word "Tsingy" literally means: "Where one cannot walk barefoot." Due to these razor-sharp formations and perilous conditions, this stone forest remains one of the most secluded and impenetrable places on Earth—a natural fortress guarding its secrets from human intrusion.
+        </p>
+        <p>
+            Visitors and researchers face extreme difficulty moving between, above, or atop the towering limestone pillars of the Tsingy, which can be as sharp as razor blades. These "limestone forests" remain largely unmapped because navigating them is life-threatening. Scientists struggle to bring in equipment for measurements and observations, leaving the rocks largely undated and unexplored—a natural fortress that refuses to yield to the "sovereignty of human measurement."
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+     <div class="section clearfix">
+      
+      </div>
+      
+      
+  
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+        <p>
+            Some argue that the razor-sharp formations are not entirely natural, but rather the "petrified remains of a megacity" or the ruins of an ancient civilization. They point to the "extremely sharp angles," the "planned street-like" pathways, and the striking "geometric repetition" of the structures. Their main argument is that "nature does not replicate itself with such mechanical precision," suggesting that we are looking at "technological remains" that have undergone a comprehensive cosmic petrification process.
+        </p>
+        <p>
+            Skeptics of traditional geological explanations argue that natural erosion cannot produce such a degree of "geometric sharpness and precision repetition." They highlight the presence of "extremely sharp angles" and near-straight lines, noting a striking similarity between peaks as if they were deliberately "polished or trimmed" through mechanical means. In their view, nature leans toward chaotic and random forms, whereas the Tsingy appears "far too organized," bolstering the hypothesis of technological intervention or the archaeological remains of a prehistoric civilization that utilized stone as a fundamental structural medium.
+        </p>
+        <p>
+            Bold theories suggest that the Tsingy is not a natural forest, but the "remains of a colossal city or complex" submerged by a sudden catastrophic event—such as a great flood or violent geological shift—leading to the "petrification" of its urban structures into solid limestone over time. Proponents of this view point to "regular corridors resembling streets," internal voids reminiscent of room structures, and precisely aligned pillars that suggest they were once "architectural supports" for a precursor civilization crushed by history.
+        </p>
+        <p>
+            The most prevalent theory suggests that Tsingji is the product of "ancient, sophisticated technology" that utilizes acoustic cutting or vibrational energy. This hypothesis is based on the fact that limestone is a material that can be shaped and molded with astonishing precision when subjected to specific resonant frequencies. According to this view, the sharp blades and regular grooves are merely the "tool marks" of "acoustic chisels" that programmed and restructured the material, making nature appear as if it were "mechanically sculpted" by the force of vibration.
+        </p>
+        <p>
+            Many researchers describe the Tsingy as "Earth's most alien landscape," linking its dramatic form—towering sharp pillars and deep fissures—to the intervention of advanced technology from lost civilizations or extraterrestrial beings. It is perceived as a "fortified citadel crafted by the gods" or a "giant volcanic crown," bolstering theories of "ancient astronauts" and alien visitations. This places the site alongside enigmatic locations like Nan Madol or the Eye of the Sahara, serving as physical evidence of ancient technological and genetic experiments that reshaped the very fabric of matter.
+        </p>
+        <p>
+            Theories link the Tsinghe Stones to lost civilizations such as Atlantis, and specifically to Lemuria—the hypothetical continent believed to have connected Madagascar to India. Proponents of these theories argue that the formations are "infrastructures" deliberately constructed to serve as "energy sites" or gateways for ancient supernatural visits. These theories are supported by local Malagasy legends of "ancestral spirits" and non-human beings inhabiting the stone blades, making Tsinghe a "spiritual anchor" for the vanished civilization of Lemuria.
+        </p>
+        <p>
+            Historically, local inhabitants—particularly the Sakalava tribes—believed that the Tsingy was haunted by evil spirits and supernatural entities, leading them to avoid venturing deep into its jagged core. Due to the sharp, dark-gray rocks that rise above the trees like giant claws, the area gained a reputation as a "Gateway to the Underworld" or a "Lair of Monsters." This innate fear was not merely a myth, but a "folk security protocol" designed to protect the living from entering a zone of mysterious and perilous frequencies.
+        </p>
+        <p>
+            The hidden caves within the Tsingy, especially along the banks of the Manambolo River, serve as sovereign centers for ancestor worship, a cornerstone of traditional Malagasy religion. These caverns are far more than mere geological formations; they are "sacred tombs" housing the remains of ancient ancestors known as the Vazimba. This profound connection between the "River of Life" and the "Caves of Death" renders the area a spiritual fortress where stone blades guard the silence of the departed, preventing outsiders from desecrating the frequencies of the "Sacred Forefathers."
+        </p>
+        <img src="Gräber-der-Vazimba-am-Manambolo-6-1000x525.webp">
+        <p>
+            The hidden caves within the Tsingy, especially along the banks of the Manambolo River, serve as sovereign centers for ancestor worship, a cornerstone of traditional Malagasy religion. These caverns are far more than mere geological formations; they are "sacred tombs" housing the remains of ancient ancestors known as the Vazimba. This profound connection between the "River of Life" and the "Caves of Death" renders the area a spiritual fortress where stone blades guard the silence of the departed, preventing outsiders from desecrating the frequencies of the "Sacred Forefathers."
+        </p>
+        <p>
+            The caves of the Tsingy continue to function as "spiritual operation chambers" for the Sakalava tribes, hosting burials and major funerary rites based on the belief that spirits dwell within the stone crevices. The area is revered as a "sacred sanctuary" or a partially forbidden zone (Fady); thus, no one dares enter without a local guide or the performance of specific "purification rituals." This tribal protocol ensures the stone forest remains under "metaphysical protection," allowing passage only to those whose frequency aligns with the site's solemnity and sanctity.
+        </p>
+      
+    </div>
+
+    
+
+
+
+    <h2 class="section-title">Describe</h2>
+    <div class="section clearfix">
+        <img src="vegetation-contrastee-sommet-base.jpg">
+        <p>
+            The knife-like peaks of the Tsingy reach heights ranging from 30 to 100 meters, creating a sharp thermal and climatic gradient between their bases and pointed summits. While the high elevations are dominated by extremely dry soil that supports sparse growth, the narrow valley floors retain high humidity, fostering lush and dense vegetation. This contrast transforms the Tsingy into "biological skyscrapers," where sovereignty resides at the top and moist life thrives below—a unique ecological system unlike any other.
+        </p>
+        <img src="cameleon-espece-menacee.jpg">
+        <p>
+            The elevated rocky environments of the Tsingy favor highly specialized flora and fauna adapted to the harshness of the shards. Meanwhile, at the base of these limestone massifs, dense forests serve as a shield for numerous rare and endangered species, including about ten species of lemurs (such as the Avahi cleesei), alongside unique reptiles like the tiny chameleon "Brookesia perarmata." These creatures thrive in isolated "frequential pockets" where the stone blades provide natural protection against predators and intruders, establishing the area as a "sovereign repository of primordial life."
+        </p>
+      
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        
+        
+    </div>
+
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Tsingy de Bemaraha" target="_blank">Wikipedia –Tsingy de Bemaraha </a></li>
+          <li><a href="https://www.britannica.com/Tsingy de Bemaraha" target="_blank">Britannica –Tsingy de Bemaraha </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

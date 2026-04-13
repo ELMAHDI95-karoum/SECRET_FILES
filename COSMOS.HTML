@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SECRET FACTS</title>
+  <style>
+    body {
+      background-color: #2c2c2c;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+      color: #00d990;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #00d990;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      border-radius: 8px;
+    }
+
+    .top-bar a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .top-bar a:hover {
+      color: #2c2c2c;
+    }
+
+    .search-bar {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: #1e1e1e;
+      color: white;
+      border: 1px solid #00d990;
+    }
+
+    #videos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-box {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      text-align: center;
+      width: 120px;
+    }
+
+    .video-box h3 {
+      color: #00d990;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video-box a[download] {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #00d990;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .video-box a[download]:hover {
+      background-color: #00a673;
+    }
+
+    .section, .sub-section {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section h2, .sub-section h3 {
+      color: #00d990;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    ul li a:hover {
+      color: #00d990;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SECRET FACTS</h1>
+
+  <div class="top-bar">
+    <a onclick="showSection('EARTH')">EARTH</a>
+    <a onclick="showSection('SKY')">SKY</a>
+    <a onclick="showSection('SUN')">SUN</a>
+    <a onclick="showSection('MOON')">MOON</a>
+    <a onclick="showSection('STARS')">STARS</a>
+    <a onclick="showSection('GARDEN')">GARDEN</a>
+    <a onclick="showSection('TREE')">TREE</a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="searchVideos()" placeholder="Search for videos...">
+  </div>
+
+  <!-- ✅قسم القطاعات -->
+  <div id="EARTH" class="section">
+    <h2>EARTH</h2>
+    <ul>
+      <li><a href="COSMOS/EARTH/EARTH FLAT/EARTH FLAT.html">EARTH FLAT</a></li>
+      <li><a href="COSMOS/EARTH/MAPS/MAP OF EARTH.html">MAP OF EARTH</a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a onclick="showSubSection('')"></a></li>
+      <li><a onclick="showSubSection('')"> </a></li>
+    </ul>
+  </div>
+
+  <div id="SUN" class="section">
+    <h2>SUN</h2>
+    <ul>
+      <li><a href="COSMOS/SUN/SUN/sun.html">SUN</a></li>
+      <li><a href="COSMOS/SUN/GOD OF SUN/GOD OF SUN.html">SUN WORSHIP</a></li>
+      <li><a href="COSMOS/SUN/POWER OF SUN/POWER OF SUN.html">POWER OF SUN</a></li>
+      <li><a href=""></a></li>
+      <li><a onclick="showSubSection('')"></a></li>
+      <li><a onclick="showSubSection('')"> </a></li>
+    </ul>
+  </div>
+
+  <div id="STARS" class="section">
+    <h2>STARS</h2>
+    <ul>
+      <li><a href="FACTS/STARS/Star shape/STAR SHAPE.html">STAR SHAPE</a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li> 
+      <li><a onclick="showSubSection('')"></a></li>
+    </ul>
+  </div>
+
+  <!-- ✅ فرعي: agriculture -->
+  <div id="GARDEN" class="sub-section">
+    <h3>GARDEN</h3>
+    <ul>
+      <li><a href="COSMOS/Garden/Garden Of Aden/GARDEN OF EDEN.html">GARDEN OF EDEN</a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </div>
+
+  
+  <div id="TREE" class="sub-section">
+    <h3>TREE</h3>
+    <ul>
+      <li><a href="COSMOS/TREE/BIG TREE/BIG TREE.html">GIANT TREE</a></li>
+      <li><a href="COSMOS/TREE/The Sacred Tree/The Sacred Tree.html">THE SACRED TREE</a></li>
+    </ul>
+  </div>
+
+  <!-- ✅ الفيديوهات -->
+  <div id="videos-container">
+    <!-- ضع هنا الفيديوات كما كانت سابقًا -->
+    <!-- لم يتم التعديل على الفيديوات لتوفير المساحة -->
+  </div>
+
+  <!-- ✅ السكربت -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showSubSection(id) {
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function searchVideos() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const videos = document.querySelectorAll('.video-box');
+
+      videos.forEach(video => {
+        const title = video.getAttribute('data-title');
+        video.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

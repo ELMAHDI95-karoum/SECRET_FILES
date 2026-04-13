@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SECRET PLACES</title>
+  <style>
+    body {
+      background-color: #2c2c2c;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+      color: #00d990;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #00d990;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      border-radius: 8px;
+    }
+
+    .top-bar a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .top-bar a:hover {
+      color: #2c2c2c;
+    }
+
+    .search-bar {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: #1e1e1e;
+      color: white;
+      border: 1px solid #00d990;
+    }
+
+    #videos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-box {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      text-align: center;
+      width: 120px;
+    }
+
+    .video-box h3 {
+      color: #00d990;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video-box a[download] {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #00d990;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .video-box a[download]:hover {
+      background-color: #00a673;
+    }
+
+    .section, .sub-section {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section h2, .sub-section h3 {
+      color: #00d990;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    ul li a:hover {
+      color: #00d990;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SECRET PLACES</h1>
+
+  <div class="top-bar">
+    <a onclick="showSection('continents')">CONTINENTS</a>
+    <a onclick="showSection('seas')">THE SEAS</a>
+    <a onclick="showSection('islands')">ISLANDS</a>
+    <a onclick="showSection('countries')">COUNTRIES</a>
+    <a onclick="showSection('cities')">CITIES</a>
+    <a onclick="showSection('Caves')">CAVES</a>
+    <a onclick="showSection('Mount')">MOUNT</a>
+    <a onclick="showSection('Forest')">FOREST</a>
+    <a onclick="showSection('houses')">HOUSES</a>
+    <a onclick="showSection('Gates')">GATES</a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="searchVideos()" placeholder="Search for videos...">
+  </div>
+
+  <!-- ✅ القارات + القوائم الفرعية -->
+  <div id="continents" class="section">
+    <h2>Continents</h2>
+    <ul>
+      <li><a onclick="showSubSection('AFRICA-Continents')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-continents')">🌏 Asie</a></li>
+      <li><a onclick="showSubSection('North America-continent')">🌎 North America</a></li>
+      <li><a href="PLACES/CONTINENTS/EUROPE/">🌍 Europe</a></li>
+      <li><a href="PLACES/CONTINENTS/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/CONTINENTS/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-continents')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-continents')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+  <div id="seas" class="section">
+    <h2>Seas</h2>
+    <ul>
+      <li><a onclick="showSubSection('Rivers')">RIVERS</a></li>
+    </ul>
+  </div>
+
+  <div id="islands" class="section">
+    <h2>islands</h2>
+    <ul>
+       <li><a href="PLACES/ISLAND/AFRICA/">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-islands')">🌏 Asie</a></li>
+      <li><a onclick="showSubSection('North America-islands')">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-islands')">🌍 Europe</a></li>
+      <li><a onclick="showSubSection('Oceania-islands')" >🌏 Oceania</a></li>
+      <li><a onclick="showSubSection('South America-islands')">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-islands')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-islands')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+
+  <div id="countries" class="section">
+    <h2>countries</h2>
+    <ul>
+       <li><a href="PLACES/COUNTRY/AFRICA/">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-countries')">🌏 Asie</a></li>
+      <li><a onclick="showSubSection('NORTH AMERICA-countries')">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-countries')">🌍 Europe</a></li>
+      <li><a href="PLACES/COUNTRY/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/COUNTRY/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-countries')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-countries')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+ 
+<!-- ✅ قسم المدن -->
+<div id="cities" class="section">
+  <h2>Cities</h2>
+  <ul>
+      <li><a onclick="showSubSection('AFRICA-cities')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-cities')">🌏 Asie</a></li>
+      <li><a onclick="showSubSection('NORTH AMERICA-cities')">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-cities')">🌍 Europe</a></li>
+      <li><a href="PLACES/COUNTRY/OCEANIA/">🌏 Oceania</a></li>
+      <li><a onclick="showSubSection('SOUTH AMERICA-cities')">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-cities')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-cities')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+<div id="houses" class="section">
+  <h2>Houses</h2>
+  <ul>
+    <li><a href="PLACES/COUNTRY/AFRICA/">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-houses')">🌏 Asie</a></li>
+      <li><a onclick="showSubSection('NORTH AMERICA-houses')">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-houses')">🌍 Europe</a></li>
+      <li><a href="PLACES/COUNTRY/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/COUNTRY/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-houses')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-houses')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+   <div id="Forest" class="section">
+    <h2>FOREST</h2>
+    <ul>
+      <li><a onclick="showSubSection('AFRICA-Forest')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-Forest')">🌏 Asie</a></li>
+      <li><a href="PLACES/CAVES/NORTH AMERICA/ ">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-Forest')">🌍 Europe</a></li>
+      <li><a href="PLACES/CAVES/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/CAVES/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-Forest')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-Forest')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+ <div id="Caves" class="section">
+    <h2>Caves</h2>
+    <ul>
+      <li><a onclick="showSubSection('AFRICA-Caves')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-Caves')">🌏 Asie</a></li>
+      <li><a href="PLACES/CAVES/NORTH AMERICA/ ">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-Caves')">🌍 Europe</a></li>
+      <li><a href="PLACES/CAVES/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/CAVES/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+  <div id="Mount" class="section">
+    <h2>Mount</h2>
+    <ul>
+      <li><a onclick="showSubSection('AFRICA-Mount')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-Mount')">🌏 Asie</a></li>
+      <li><a href="PLACES/CAVES/NORTH AMERICA/ ">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-Mount')">🌍 Europe</a></li>
+      <li><a href="PLACES/CAVES/OCEANIA/">🌏 Oceania</a></li>
+      <li><a href="PLACES/CAVES/SOUTH AMERICA/">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+  <div id="Gates" class="section">
+    <h2>GATES</h2>
+    <ul>
+      <li><a onclick="showSubSection('AFRICA-Gates')">🌍 Africa</a></li>
+      <li><a onclick="showSubSection('ASIE-Gates')">🌏 Asie</a></li>
+      <li><a href="">🌎 North America</a></li>
+      <li><a onclick="showSubSection('EUROPE-Gates')">🌍 Europe</a></li>
+      <li><a href="">🌏 Oceania</a></li>
+      <li><a href="">🌎 South America</a></li>
+      <li><a onclick="showSubSection('antarctica-Gates')">🧊 Antarctica</a></li>
+      <li><a onclick="showSubSection('afterAntarctica-Gates')">🌌 After Antarctica</a></li>
+    </ul>
+  </div>
+
+  <div id="antarctica-continents" class="sub-section">
+    <h3>Antarctica Secrets</h3>
+    <ul>
+      <li><a href=""> </a></li>
+      <li><a href="PLACES/CONTINENTS/antarctica/AGARTHA/Agartha.html">Agartha</a></li>
+      <li><a href="PLACES/CONTINENTS/Antarctica/HYPERBOREA/Hyperborea.html">Hyperborea</a></li>
+    </ul>
+  </div>
+
+  <div id="afterAntarctica-continents" class="sub-section">
+    <h3>After Antarctica Discoveries</h3>
+    <ul>
+      <li><a href="PLACES/CONTINENTS/after-antarctica/inner-earth.html"> Inner Earth</a></li>
+      <li><a href="PLACES/CONTINENTS/"></a></li>
+    </ul>
+  </div>
+
+ 
+  <div id="AFRICA-Continents" class="sub-section">
+    <h3>AFRICA</h3>
+    <ul>
+      <li><a href="PLACES/CONTINENTS/AFRICA/atlantis/ATLANTIS.html">ATLANTIS</a></li>
+    </ul>
+  </div>
+
+  
+
+
+  <div id="ASIE-continents" class="sub-section">
+    <h3>Asia</h3>
+    <ul>
+      <li><a href="PLACES/CONTINENTS/ASIE/LEMURIA/LEMURIA.html">LEMURIA </a></li>
+      <li><a href="PLACES/CONTINENTS/ASIE/TARTARIA/TARTARIA.html">TARTARIA</a></li>
+      <li><a href="PLACES/CONTINENTS/ASIE/KU/KU.html">KU</a></li>
+      
+    </ul>
+  </div>
+  
+  <div id="North America-continent" class="sub-section">
+    <h3>North America</h3>
+    <ul>
+      <li><a href="PLACES/CONTINENTS/NORTH AMERICA/AZTLAN/AZTLAN.HTML">AZTLAN</a></li>
+    </ul>
+  </div>
+  <div id="South America-continent" class="sub-section">
+    <h3>South America</h3>
+    <ul>
+      <li><a href="PLACES/CONTINENTS/SOUTH AMERICA/Terra Australis/Terra australis.html">TERRA AUSTRALIS</a></li>
+    </ul>
+  </div>
+
+  <div id="Rivers" class="sub-section">
+    <h3>RIVERS</h3>
+    <ul>
+      <li><a href="PLACES/THE SEAS/Rivers/Styx/styx.html">STYX</a></li>
+    </ul>
+  </div>
+
+  <div id="EUROPE-islands" class="sub-section">
+    <h3>Europe</h3>
+    <ul>
+      <li><a href="PLACES/ISLAND/EUROPE/Saint Brendan's Island/SAINT BRENDAN'S ISLAND.html">SAINT BRENDAN'S ISLAND</a></li>
+      <li><a href="PLACES/ISLAND/EUROPE/BRAZIL/brazil.html">Brasil</a></li>
+      <li><a href="PLACES/ISLAND/EUROPE/FRISLAND/FRISLAND.html">FRISLAND</a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </div>
+
+  <div id="ASIE-islands" class="sub-section">
+    <h3>asie</h3>
+    <ul>
+      <li><a href="PLACES/ISLAND/ASIA/al-wakwak/alwakwak.html">AL-WAKWAK</a></li>
+    </ul>
+  </div>
+
+  <div id="antarctica-islands" class="sub-section">
+    <h3>Antarctica</h3>
+    <ul>
+      <li><a href="PLACES/ISLAND/ANTARCTICA/THULE/thule.html">THULE</a></li>
+    </ul>
+  </div>
+
+  <div id="South America-islands" class="sub-section">
+    <h3>South islands</h3>
+    <ul>
+      <li><a href="PLACES/ISLAND/SOUTH AMERICA/SNACK ISLAND/snake island.html">SNAKE ISLAND</a></li>
+    </ul>
+  </div>
+
+  <div id="Oceania-islands" class="sub-section">
+    <h3>Oceania</h3>
+    <ul>
+      <li><a href="PLACES"></a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div id="North America-islands" class="sub-section">
+    <h3>North America</h3>
+    <ul>
+      <li><a href="PLACES/ISLAND/NORTH AMERICA/"></a></li>
+    </ul>
+  </div>
+
+  <div id="NORTH AMERICA-countries" class="sub-section">
+    <h3>north america</h3>
+    <ul>
+      <li><a href="PLACES/COUNTRY/NORTH AMERICA/was fusang/Was fusang.html">Was Fusang</a></li>
+      <li><a href="PLACES/"></a></li>
+
+    </ul>
+  </div>
+
+  <div id="ASIE-countries" class="sub-section">
+    <h3>Asie</h3>
+    <ul>
+      <li><a href="PLACES/COUNTRY/ASIA/Shambhala/Shambhala.html">Shambhala</a></li>
+    </ul>
+  </div>
+  
+<div id="ASIE-houses" class="sub-section">
+  <h3>Asie</h3>
+  <ul>
+    <li><a href="PLACES/HOUSES/ASIE/TAJ MAHAL/TAJ MAHAL.html">TAJ MAHAL(INDIA)</a></li>
+  </ul>
+</div>
+  
+
+  <div id="EUROPE-houses" class="sub-section">
+    <h3>EUROPE</h3>
+    <ul>
+      <li><a href="PLACES/HOUSES/EUROPE/The Forgotten Purpose of Cathedrals/Temples of Sound Healing/TEMPLES OF SOUND HEALING.html">TEMPLES OF SOUND HEALING</a></li>
+      <li><a href="PLACES/HOUSES/"></a></li>
+    </ul>   
+  </div>
+
+  <div id="NORTH AMERICA-houses" class="sub-section">
+    <h3>EUROPE</h3>
+    <ul>
+      <li><a href="PLACES/HOUSES/NORTH AMERICA/Room 502/Room 502.html">ROOM 502</a></li>
+    </ul>   
+  </div>
+  
+   <div id="ASIE-Caves" class="sub-section">
+    <h3>Asie</h3>
+    <ul>
+      <li><a href="PLACES/CAVES/ASIE/euphrates/euphorates.html">CAVES OF EUPHRATES RIVER</a></li>
+    </ul>
+  </div>
+
+  <div id="EUROPE-Caves" class="sub-section">
+    <h3>Europe</h3>
+    <ul>
+      <li><a href="PLACES/CAVES/EUROPE/Wormhole of Inishmore/Wormhole of Inishmore.html">Wormhole of Inishmore</a></li>
+    </ul>
+  </div>
+
+  <div id="AFRICA-Caves" class="sub-section">
+     <h3>Africa</h3>
+     <ul>
+      <li><a href="PLACES/CAVES/AFRICA/Argan Cave/Argan cave.html">ARGAN CAVE</a></li>
+     </ul>
+  </div>
+
+  <div id="EUROPE-cities" class="sub-section">
+    <h3>EUROPE</h3>
+    <ul>
+      <li><a href="PLACES/CITY/EUROPE/hesperides/hesperides.html">Hesperides</a></li>
+      <li><a href="PLACES/CITY/EUROPE/Meteora/mateora.html">Meteora</a></li>
+      <li><a href="PLACES/CITY/EUROPE/seuthopolis/Seuthopolis.html">Seuthopolis</a></li>
+    </ul>
+  </div>
+  <div id="ASIE-cities" class="sub-section">
+    <h3>ASIE</h3>
+    <ul>
+      <li><a href="PLACES/CITY/ASIE/HANGING GARDEN/HANGING GARDENS.html">HANGING GARDENS</a></li>
+      <li><a href="PLACES/CITY/ASIE/Rujm El-hiri/RUJM EL-HIRI.html">RUJM EL-HIRI</a></li>
+      <li><a href="PLACES/CITY/ASIE/Göbekli Tepe/GÖBEKLI TEPE.html">GÖBEKLI TEPE</a></li>
+      <li><a href="PLACES/CITY/ASIE/Nineveh/NINEVEH.html">NINEVEH</a></li>
+    </ul>
+  </div>
+  
+  <div id="SOUTH AMERICA-cities" class="sub-section">
+    <h3>SOUTH AMERICA</h3>
+    <ul>
+      <li><a href="PLACES/CITY/SOUTH AMERICA/PAITITI/PAITITI.html">PAITITI</a></li>
+    </ul>
+  </div>
+
+  <div id="AFRICA-cities" class="sub-section">
+    <h3>AFRICA</h3>
+    <ul>
+      <li><a href="PLACES/CITY/AFRICA/ADAM'S CALENDAR/ADAM'S CALENDAR.html">ADAM'S CALENDAR</a></li>
+      <li><a href="PLACES/CITY/AFRICA/timgad/Timgad.html">TIMGAD</a></li>
+    </ul>
+  </div>
+
+  <div id="ASIE-Mount" class="sub-section">
+    <h3>ASIE</h3>
+    <ul>
+      <li><a href="PLACES/MOUNT/asie/mount kailash/MOUNT KAILASH.html">MOUNT KAILASH</a></li>
+    </ul>
+  </div>
+
+  <div id="EUROPE-Mount" class="sub-section">
+    <h3>Europe</h3>
+    <ul>
+      <li><a href="PLACES/MOUNT/Europe/The Elephant Rock/The Elephant Rock.html">THE ELEPHANT ROCK</a></li>
+    </ul>
+  </div>
+  
+  <div id="EUROPE-Forest" class="sub-section">
+    <h3>EUROPE</h3>
+    <ul>
+      <li><a href="PLACES/FOREST/Europe/hoia baciu/HOIA BACIU.html">HOIA BACIU</a></li>
+      <li><a href="PLACES/FOREST/Europe/Krzywy Las/KRZYWY LAS.html">KRZYWY LAS</a></li>
+      <li><a href="PLACES/"></a></li>
+    </ul>
+  </div>
+
+  <div id="AFRICA-Forest" class="sub-section">
+     <h3>AFRICA</h3>
+      <ul>
+        <li><a href="PLACES/FOREST/AFRICA/Tsingy de Bemaraha/Tsingy de Bemaraha.html">TSINGY DE BEMARAHA</a></li>
+      </ul>
+  </div>
+
+  <div id="ASIE-Gates" class="sub-section">
+    <h3>ASIE</h3>
+    <ul>
+      <li><a href="PLACES/GATES/ASIE/Shanis Gate/Shanis Gate.html">SHANIS GATES</a></li>
+    </ul>
+  </div> 
+
+  <!-- ✅ الفيديوات -->
+  <div id="videos-container">
+
+    <div class="video-box" data-title="Russia">
+      <h3>Russia - Ulyanovsk</h3>
+      <video controls>
+        <source src="PLACES/10-25-2024 Russia. Ulyanovsk..mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/10-25-2024 Russia. Ulyanovsk..mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="antarctica">
+      <h3>Underground Antarctica</h3>
+      <video controls>
+        <source src="PLACES/antarctica.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/antarctica.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="agharta">
+      <h3>agharta</h3>
+      <video controls>
+        <source src="PLACES/agharta.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/agharta.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Ancient City">
+      <h3>Ancient City</h3>
+      <video controls>
+        <source src="PLACES/Ancient City of Nineveh.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Ancient City of Nineveh.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Pyramids🌊">
+      <h3>Pyramids🌊</h3>
+      <video controls>
+        <source src="PLACES/Anunnaki’s Underwater Pyramids🌊.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Anunnaki’s Underwater Pyramids🌊.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="atlantis">
+      <h3>atlantis</h3>
+      <video controls>
+        <source src="PLACES/Was Atlantis in Souss A New Theory Redraws.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Was Atlantis in Souss A New Theory Redraws.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="ancient">
+      <h3>ancient</h3>
+      <video controls>
+        <source src="PLACES/Gitch or portal colombian.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Gitch or portal colombian.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Ireland">
+      <h3>Ireland</h3>
+      <video controls>
+        <source src="PLACES/IRELAND.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/IRELAND.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Turkey">
+      <h3>turkey</h3>
+      <video controls>
+        <source src="PLACES/turkie.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/turkie.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Sahara">
+      <h3>sahara</h3>
+      <video controls>
+        <source src="PLACES/sahara.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/sahara.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="ancient civilization">
+      <h3>ancient civilization</h3>
+      <video controls>
+        <source src="PLACES/Theory of Ancient Civilizations 😱🤯.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Theory of Ancient Civilizations 😱🤯.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="The cave of the ancients">
+      <h3>the cave of the ancients</h3>
+      <video controls>
+        <source src="PLACES/This cave seemingly drops into hell.....mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/This cave seemingly drops into hell.....mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="truth of earth">
+      <h3>earth</h3>
+      <video controls>
+        <source src="PLACES/truth of earth.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/truth of earth.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="Roman">
+      <h3>Roman</h3>
+      <video controls>
+        <source src="PLACES/Unique Roman-era mosaics.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/Unique Roman-era mosaics.mp4" download>Download This Video</a>
+    </div>
+
+    <div class="video-box" data-title="majestic places">
+      <h3>majestic places</h3>
+      <video controls>
+        <source src="PLACES/🌍 The Most Majestical Place on Earth.mp4" type="video/mp4">
+      </video>
+      <a href="PLACES/🌍 The Most Majestical Place on Earth.mp4" download>Download This Video</a>
+    </div>
+
+  </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showSubSection(id) {
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function searchVideos() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const videos = document.querySelectorAll('.video-box');
+      videos.forEach(video => {
+        const title = video.getAttribute('data-title');
+        video.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
+

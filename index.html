@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SECRET FILES</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('background.JPEG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-attachment: fixed;
+  animation: moveBackground 40s linear infinite alternate;
+  overflow-x: hidden;   /* ✅ منع التمرير الأفقي فقط */
+  overflow-y: auto;     /* ✅ السماح بالتمرير العمودي */
+}
+
+@keyframes moveBackground {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== WELCOME Overlay ===== */
+.WELCOME {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #fff;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999; perspective: 1000px;
+}
+
+.WELCOME p {
+  font-size: 28px; font-weight: bold; color: #111;
+  text-align: center;
+  transform: rotateY(90deg); transform-style: preserve-3d;
+  animation: openClose 3s forwards;
+}
+
+@keyframes openClose {
+  0% { transform: rotateY(90deg); opacity: 0; }
+  20% { transform: rotateY(0deg); opacity: 1; }
+  80% { transform: rotateY(0deg); opacity: 1; }
+  100% { transform: rotateY(90deg); opacity: 0; }
+}
+
+body.show-content { overflow-y: auto; }
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  background-color: #00d990; padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 999;
+}
+
+.navbar h1.scary-title {
+  font-size: 36px; color: #ff0000; text-transform: uppercase; letter-spacing: 4px;
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 #330000, 6px 6px 5px rgba(0,0,0,0.7),
+               0 0 10px #ff0000, 0 0 20px #800000;
+  transform: rotateX(5deg) rotateY(-3deg);
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,100% { opacity: 1; } 50% { opacity: 0.6; }
+}
+
+/* ===== Search ===== */
+.search-wrapper { position: relative; }
+.search-icon {
+  font-size: 22px; color: #ff0000; cursor: pointer; transition: transform 0.2s;
+}
+.search-icon:hover { transform: scale(1.2); }
+.search-input {
+  position: absolute; right: 0; top: 100%; margin-top: 5px;
+  width: 0; padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc;
+  outline: none; font-size: 16px; transition: width 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+  opacity: 0; pointer-events: none; background-color: #fff; color: #000;
+}
+.search-wrapper.active .search-input {
+  width: 200px; padding: 8px 12px; opacity: 1; pointer-events: auto;
+}
+
+/* ===== Topbar Links ===== */
+.topbar {
+  display: flex; justify-content: center; gap: 15px; padding: 10px; background: #111; perspective: 800px;
+}
+.topbar a {
+  display: inline-block; padding: 12px 18px;
+  background: linear-gradient(145deg, #0a0a0a, #111);
+  color: #0ff; font-weight: bold; text-decoration: none; border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,255,255,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+.topbar a:hover { transform: rotateX(15deg) translateZ(10px); box-shadow:0 10px 30px rgba(0,255,255,0.7); color:#fff; }
+
+@keyframes glow { 0%,100%{box-shadow:0 5px 15px rgba(0,255,255,0.3);} 50%{box-shadow:0 5px 25px rgba(0,255,255,0.8);} }
+
+/* ===== Files Grid ===== */
+.topbar2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 25px;
+}
+
+.file-box {
+  display: flex;
+  height: 180px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #c8b78c;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  perspective: 800px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.file-box:hover {
+  transform: rotateX(6deg) translateZ(15px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.file-left {
+  flex: 0.4;
+  padding: 10px;
+  background: #b39b70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.file-left h2 {
+  font-size: 16px;
+  color: #3b2403;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.file-left a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.file-right {
+  flex: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.file-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  border-radius: 0 15px 15px 0;
+}
+
+.file-box:hover .file-right img {
+  transform: scale(1.1);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+/* ===== Main Content ===== */
+.main-content { padding:50px 20px 20px 20px; display:none; }
+
+/* ===== Bottom Bar ===== */
+.bottom_bar { position:fixed; bottom:25px; left:50%; transform:translateX(-50%) perspective(700px) rotateX(10deg); display:flex; gap:30px; background:rgba(10,10,10,0.85); padding:15px 30px; border-radius:30px; box-shadow:0 0 25px rgba(0,255,255,0.25); z-index:9999; backdrop-filter:blur(8px); animation: glowBar 3s infinite ease-in-out; }
+.bottom_bar a { background: linear-gradient(135deg, #0a0a0a, #111); color:aqua; font-size:22px; width:45px; height:45px; display:flex; justify-content:center; align-items:center; border-radius:50%; text-decoration:none; box-shadow:0 0 12px rgba(0,255,255,0.4); transition:all 0.3s ease; animation: float 3s ease-in-out infinite, glow 2.5s ease-in-out infinite alternate; }
+.bottom_bar a:hover { transform: scale(1.3); color:#032730; background:aqua; box-shadow:0 0 30px rgba(0,255,255,0.9); }
+@keyframes float {0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+@keyframes glowBar {0%,100%{box-shadow:0 0 20px rgba(0,255,255,0.3);} 50%{box-shadow:0 0 35px rgba(0,255,255,0.7);} }
+</style>
+</head>
+<body>
+
+<!-- شاشة WELCOME -->
+<div class="WELCOME">
+  <p>Secret videos and files contain important information, please browse carefully.</p>
+</div>
+
+<!-- Topbar Links -->
+<div class="topbar">
+  <a href="#about">ABOUT</a>
+  <a href="#contact">CONTACT</a>
+  <a href="#service">SERVICE</a>
+  <a href="#signin">SIGN IN</a>
+  <a href="#signup">SIGN UP</a>
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+  <h1 class="scary-title">SECRET FILES</h1>
+  <div class="search-wrapper">
+    <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+    <input type="text" id="navbarSearch" class="search-input" placeholder="Search content...">
+  </div>
+</div>
+
+<!-- Files Grid -->
+<div class="topbar2-grid">
+  <div class="file-box"><div class="file-left"><a href="PLACES.html" target="_blank"><h2>PLACES</h2></a></div><div class="file-right"><img src="placess.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="PHENOMENA.html" target="_blank"><h2>PHENOMENA</h2></a></div><div class="file-right"><img src="pheno.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="CODES.html" target="_blank"><h2>CODES</h2></a></div><div class="file-right"><img src="cod.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="HUMANITY.html" target="_blank"><h2>HUMANITY</h2></a></div><div class="file-right"><img src="west.webp" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="HISTORY.html" target="_blank"><h2>HISTORY</h2></a></div><div class="file-right"><img src="his.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="COSMOS.HTML" target="_blank"><h2>COSMOS</h2></a></div><div class="file-right"><img src="cos.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="MYTH.html" target="_blank"><h2>MYTHOLOGIE</h2></a></div><div class="file-right"><img src="my.jpg" alt="image"></div></div>
+  <div class="file-box"><div class="file-left"><a href="LEGACY.html" target="_blank"><h2>LEGACY</h2></a></div><div class="file-right"><img src="leg.jpg" alt="image"></div></div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="bottom_bar">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-youtube"></i></a>
+  <a href="#"><i class="fab fa-telegram"></i></a>
+</div>
+
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function(){
+    document.querySelector('.WELCOME').style.display = 'none';
+    document.body.classList.add('show-content');  // ✅ تفعيل التمرير بعد اختفاء شاشة الترحيب
+  }, 3000);
+});
+
+function toggleSearch() {
+  const wrapper = document.querySelector('.search-wrapper');
+  wrapper.classList.toggle('active');
+  if(wrapper.classList.contains('active')) {
+    document.getElementById('navbarSearch').focus();
+  }
+}
+
+function search() {
+  const query = document.getElementById('navbarSearch').value.trim().toLowerCase();
+  const sections = ['places', 'phenomena', 'codes', 'humanity', 'history','cosmos','legacy','mythologie'];
+  const found = sections.find(s => query.includes(s));
+  if (found) { location.href = `#${found}`; }
+  else { alert("No matching section found."); }
+}
+
+document.getElementById('navbarSearch').addEventListener('keypress', function(e){
+  if(e.key === 'Enter') search();
+});
+</script>
+
+</body>
+</html>

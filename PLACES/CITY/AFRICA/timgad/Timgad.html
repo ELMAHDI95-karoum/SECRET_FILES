@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TIMGAD</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Description">Description</a></li>
+      <li><a href="#Changes">Literary</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">TIMGAD</h1>
+
+    <img src="back.webp" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+          The city of Timgad (historically known as "Thamugadi") is one of the most important archaeological sites in North Africa, located in the Aurès Mountains of Algeria, east of the city of Batna.
+        </p>
+        <p>
+          It is commonly believed that the word “Timgad” is a distortion of the Latin word “Tamogadi” and means mother of prosperity or happiness, but this information is false, as a search in the Latin dictionary does not find any origin for it, nor any similar word or even one that contains the same root.
+        </p>
+        <p>
+          “Tamogadi” is an Amazigh word composed of two words: the first, “Tamo,” meaning a large bundle of grass, and the second, “Ghadi,” meaning there (over there), so the name becomes “the bundle of grass there,” perhaps indicating the greenness of the region and that it was full of grass when the city was built on it.
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+  
+     <div class="section clearfix">
+      
+      </div>
+      
+  <h2 class="section-title">Description</h2>
+      <div class="section clearfix">
+        <p>
+          A city that was taken as an impregnable fortress surrounded by a large wall, designed in the shape of a chessboard where the two main corridors intersect and are intersected by overlapping sub-corridors to form meeting spaces. The ground floor of residential buildings is adjacent to various public facilities, including temples, baths, the market with its shops, as well as the public square and the theater with its round amphitheaters.
+        </p>
+        <p>
+          At the entrances to this square city stand the huge stone arches in their ancient splendor of carved decorations and fixed historical inscriptions. As for the southwestern side, as an original facade, there appears the “Arch of Triumph” or what is called the “Arch of Trajan”.
+        </p>
+        <p>
+          
+        </p>
+      </div>    
+  
+    
+       
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      <p>
+        Some activists believe that focusing on "Romanism" diminishes the Amazigh role and is used to serve colonial narratives (French or Arab) that portray the Amazigh as "permanently defeated".
+      </p>
+      <p>
+        Some argue that the Roman occupation relied on stealing achievements and attributing them to Rome, and that Timgad is an example of "erasing the Amazigh identity" and replacing Amazigh symbols with Roman symbols.
+      </p>
+      <p>
+        They say that the ideal grid layout (decoumen and cardo) is not a Roman invention; rather, it is said to be an Amazigh urban system older than the presence of the Romans in the region.
+      </p>
+      <p>
+        In Facebook and Reddit posts, they display images of Berber symbols in Timgad (especially the sun, star, and motifs), and say that they have been erased or reinterpreted as “Roman.”
+      </p>
+      <p>
+        Some researchers argue that the Romans built nothing in North Africa; everything was stolen from the Berbers. Timgad, a Berber city, was attributed to Rome to justify the colonization of the region. They contend that the remains of Timgad contain evidence of a local civilization that was not originally Roman, and that the Romans simply did not have the time or resources to build a city of that size in such a remote area.
+      </p>
+      <p>
+        According to ethnologist Jacques Horecki, Timgad could mean wealthy Berber population, while some sources indicate that Timgad is originally “Thamqit,” meaning summit in Berber.
+      </p>
+      <p>
+        An Algerian researcher asserts that the archaeological sites in Tiaret (western Algeria) and areas such as Isser, Mouzaïa, and Algiers are "purely Berber, authentic," and were never occupied by either the Romans or the Phoenicians. He states, "They are neither Phoenician nor Roman... no occupation ever entered the regions containing these sites." He includes photographs of archaeological remains such as tombs and walls, and describes the city of Constantine as "purely Algerian Berber," along with similar cities in the Aurès Mountains like Ichoukane, which were built by the Berbers before the Romans.
+      </p>
+      <img src="dej.jpg">
+      <img src="ich.jpg">
+      <p>
+        Timgad was an existing Berber city; the Romans merely occupied it and placed their names on the temples and gates to make it appear Roman. It is said that the Romans did not build the city from scratch but seized it and erased the history of its original inhabitants.
+      </p>
+      <p>
+        The Berber inscriptions were broken, and the temples were restored to include Roman statues. They say that the Berber sun symbols, geometric patterns, and inscriptions of the ancient Libyan language were present and were ignored or removed.
+      </p>
+      <img src="libo.jpg">
+      
+    </div>
+
+    
+
+
+
+    
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        
+        
+    </div>
+
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Timgad" target="_blank">Wikipedia –Timgad </a></li>
+          <li><a href="https://www.britannica.com/Timgad" target="_blank">Britannica –Timgad </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

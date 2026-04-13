@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AZTLAN</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">AZTLAN</h1>
+
+    <img src="bac.avif" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+        Aztlán, is the mythical ancestral homeland of the Aztecs, the indigenous peoples of Mexico. Aztlán, directly translated from the Nahuatl language means “land of the heron,” and was said to be an idyllic place where the Aztecs lived in immortality and abundance. Many people believe that Aztlán is located in what is presently the southwestern United States.
+
+        </p>
+        <p>
+          The Aztlán Empire was an oceanic state centered on the Aztlán Archipelago, west of the Southern Dark Continent (Africa). It controlled much of the continent's southern coast and the seas of the southern New World. It was the homeland of the Azteca people and was ruled by the Ten Tlatoani, including the Tlanixtli prince Xipel Tonalzintli and his younger sister Citlalic Metztli Tonalzintli of the Tonalzintli tribe. The current Tlatoani was their father, Moctezuma Itzcoatl Tonalzintli.
+        </p>
+        <p>
+          Aztlan has different translations depending on the source. Some believe it derives from the Nahuatl words “aztatl” (heron) and “tlan” (place of). These sources interpret the name as either “Place of Whiteness” or “Place of Reeds.” Other sources suggest it simply means “the land of the Aztecs.” 
+        </p>
+        
+    </div>
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      <p>
+        According to legend, it was from Aztlan that the forebears of the Aztecs, the Mexica, embarked on a centuries-long migration. This migration eventually led them to the Valley of Mexico, where they founded the capital of the Aztec empire, Tenochtitlan.
+      </p>
+      <p>
+        According to the various Mexica versions of the stories, their homeland Aztlan was a luxurious and delightful place located on a large lake, where everyone was immortal and lived happily among abundant resources. There was a steep hill called Colhuacan in the middle of the lake, and in the hill were caves and caverns known collectively as Chicomoztoc, where the ancestors of the Aztec lived. The land was filled with vast quantities of ducks, herons, and other waterfowl; red and yellow birds sang incessantly; great and beautiful fish swam in the waters and shade trees lined the banks.
+      </p>
+      <p>
+        Aztlan was a source of fascination for the Aztecs themselves. The Spanish chroniclers and codexes report that the Mexica king Moctezuma Ilhuicamina (or Montezuma I, ruled 1440–1469) sent an expedition to search for Aztlan. Sixty elderly sorcerers and magicians were assembled by Moctezuma for the trip, and given gold, precious stones, mantles, feathers, cacao, vanilla, and cotton from the royal storehouses to be used as gifts to the ancestors. The sorcerers left Tenochtitlan and within ten days arrived at Coatepec, where they transformed themselves into birds and animals to take the final leg of the journey to Aztlan, where they re-assumed their human form.
+      </p>
+
+      <p>
+        At Aztlan, the sorcerers found a hill in the middle of a lake, where the inhabitants spoke Nahuatl. The sorcerers were taken to the hill where they met an old man who was the priest and guardian of the goddess Coatlicue. The old man took them to the sanctuary of Coatlicue, where they met an ancient woman who said she was the mother of Huitzilopochtli and had suffered greatly since he left. He had promised to return, she said, but he never had. People in Aztlan could choose their age, said Coatlicue; they were immortal.
+      </p>
+      <img src="Gemelli_Careri_Aztec_Map.jpg">
+      <p>
+The reason the people in Tenochtitlan were not immortal was that they consumed cacao and other luxury items. The old man refused the gold and precious goods brought by the returnees, saying "these things have ruined you," and gave the sorcerers waterfowl and plants native to Aztlan and maguey fiber cloaks and breechcloths to take back with them. The sorcerers transformed themselves back into animals and returned to Tenochtitlan.
+      </p>
+      <p>
+        Although Aztlan has never been physically identified, it has been described as an island. Rather than an island in the sea, it is an island upon a lake. Scholars have made many attempts to locate Aztlan, in hopes of finding the place where the Aztecs, later known as Mexica, originated.
+
+Some have argued that the search for Atlantis and the search for Aztlan are one and the same, as these are simply two different names for the same land. However, this has been disputed, and many scholars searching for Aztlan believe it to be a separate land from the lost city of Atlantis
+      </p>
+      <p>
+        The Mexica lived in Aztlan and were ruled over by a Good King and a Bad King . One day the Bad King leaped into the air and became a snake to kill the Good King. The Good King went into the air and converted himself into an Eagle, caught the Bad King, landed on a Cactus and ate him. He then flew south. This is the legend of Quetzalcoatl. Quetzals are birds worshippe Meso American Indians and the word Cuate comes from the word Coatl or snake because they believed they traveled in pairs. It is not the Feathered Serpent but actually the divine twins. Ying and yang, black and white, ...the Aztecs or Mexica as they called themselves were left without leadership. The legends goes on that a space entity impregnated a Mexica women born of nobility, the baby was so Hideous when it was born the people attack it, and he dispatched them with a light beam weapon, they named him Xichlopotztli and named their guard of war. He told the people they had to leave Aztlan and migrate south until they came upon the vision of an Eagle eating a Snake on a cactus
+      </p>
+    </div>
+    <h2 class="section-title">Location</h2>
+    <div class="section clearfix">
+      <h3>UTAH.UNITED STATE</h3>
+      <p>
+        The modern-day term describing "Aztlan" is that of the former regions in America that the Mexican Empire has controlled and have a massive Latino American diaspora. During the 1950s, Civil rights movements from all over America were demanding equality within the country, Latino Americans created their own movement, the Chicano movement. The Chicano movement wanted to create a breakaway state of America, called "Aztlan", compromising of California, Nevada, Utah, Colorado, New Mexico, Arizona and Texas. Since the Chicano movement's slow disillusion, the idea of Aztlan is not really popular
+      </p>
+      <p>
+        The Dillmans, a family of treasure hunters, have been searching for Aztec gold for decades. They believe Aztlan is somewhere in Utah. As a result of the Mexican-American War, Mexico ceded a vast territory to the U.S. in 1848. This included present-day California, Arizona, New Mexico, Texas, and parts of Colorado, Nevada, and Utah
+      </p>
+      <p>
+        According to the Dillman family, there is evidence of linguistic similarities between tribes in Utah and the Aztecs. Some linguists agree that there are at least small similarities between indigenous groups in Utah and the Aztecs. Nahuatl was spoken in some parts of the southwestern United States. In Utah, the main language was Numic. Nahuatl and Numic belong to the Uto-Aztecan language family. However, research into a linguistic connection is limited.
+      </p>
+      <p>
+     There is a town in Wisconsin named Aztlan, because they believed that it might have been the origin of the Aztecs. There were pyramids made of earth, but they were destroyed.
+      </p>
+    </div>
+    <div class="section clearfix">
+      <h3>Island of Mexico</h3>
+      <img src="Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_9755215791-700x367.jpg">
+      <p>
+        Some Mexican intellectuals suggested that the island of Mexcaltitán de Uribe could be Aztlan. A tiny island city in the Mexican state of Nayarit, it has a vibrant fishing culture but there is no physical evidence to back up this claim
+      </p>
+      <p>
+        During the 1960s, Mexican intellectuals began to seriously speculate about the possibility that Mexcaltitán de Uribe in Nayarit was the mythical city of Aztlán. One of the first to consider Aztlán being associated with the island was historian Alfredo Chavero towards the end of the 19th century. Historical investigators after his death tested his proposition and considered it valid, among them Wigberto Jiménez Moreno. This hypothesis is still debated
+      </p>
+      <img src="di urbi.avif">
+    </div>
+    <div class="section clearfix">
+      <h3>Aguascalientes. Mexico</h3>
+      <p>
+        This research suggests that the mythical Aztlán—the place of origin of the Nahua people—could have been located in the current region of Aguascalientes, Mexico. The proposal is based on an interdisciplinary approach that brings together archeology, toponymy, rock art, Mesoamerican worldview, and analysis of sacred landscape.
+      </p>
+      <p>
+        The studied area shows cultural evidence between the 6th and 12th centuries AD, within the Epiclassic to early Postclassic period, with possible older elements not yet formally dated. Aguascalientes functioned as a point of multicultural convergence, articulating traditions from the Central Highlands, the West, the North and the Chichimec regions, which reinforces its character as a symbolic and ceremonial crossroads.
+      </p>
+      <p>
+        <strong>evidence</strong>
+        Cerro del Muerto as axis mundi or celestial marker.Vestiges of ancient lakes, tulares and herons, symbols linked to Aztlán in codices.
+
+Horned snakes in rock art, powerful and uncommon iconography.
+
+Ritual ceramics, effigy vessels, masks, and deformed skulls, reflections of ritual practices and social distinction.
+
+Toponyms and symbols such as Maji Awi ("water chan") that refer to water as a cosmic center.
+
+A possible connection with the myth of Chicomoztoc, the place of the seven caves.
+      </p>
+      <img src="cerro.jpg">
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <h3>Description</h3>
+        <p>
+       The legend describes Aztlan as fertile and prosperous. Variously described as an island or region, it was north of the Mexica’s eventual settlement in the Valley of Mexico.
+
+On their journey, the Mexica were guided by Huitzilopochtli, the god of war and the sun. They moved south from Aztlan, searching for a sign that would indicate where they should establish their capital city. This sign was prophesied to be an eagle perched on a cactus with a snake in its beak. This image later became the symbol of Mexico.
+        </p>
+        <p>
+          To the Aztecs, Aztlan was a utopia. People there were immortal and able to choose how old they would like to appear to others. It had abundant ducks, fish, herons, maize, and beans.
+
+According to legend, seven tribes (the Mexica, Chalca, Acolhua, Tepaneca, Tlahuica, Tlaxcalan, and Xochimilca) lived in seven caves in a place called Chicomoztoc. While Aztlan is the homeland, Chicomoztoc is the origin place. 
+        </p>
+        <p>
+          The Aztlan Empire is centered on the Aztlan Archipelago, a large tropical island chain in the Southern Sea between the <a href="/Users/Elmahdi karoum/OneDrive/Desktop/html/PLACES/CONTINENTS/ASIE/KU/KU.html">Ku</a> and Rim Empires, west of the Dark Continent and south of the northern New World. Only one dungeon in the archipelago has been conquered by the Tlanixtli: the Dungeon of Helil, home of the light elf, Helil the Morning Star. Aztlan is known for its advanced technology and magical prowess, incorporating magic into its technology. As a result, it is the only nation to mass-produce steam power and air travel. They utilize steam-powered airships and gliders, as well as steam-powered naval vessels. They have access to gunpowder and other explosives, and are rumored to have used internal combustion engines, advanced rockets, or jet propulsion. Their soldiers are armed with firearms of various sizes and are skilled in hand-to-hand combat as well as offensive magic. They often wear colorful geometric tunics and fringed costumes often decorated with beads and feathers, with some even sporting ornate feathered headdresses.
+        </p>
+        <p>
+          <strong>System</strong>
+          The Empire is ruled primarily by the Ten Tribes, each tribe is ruled by a Cuauhtlatoani or King and the Tlatoani or Emperor is selected among the Princes among the Ten Tribes as their Potential Heirs. A new Tlatoani is selected among the potential heirs once the older Tlatoani dies..
+        </p>
+    </div>
+    <div class="section clearfix">
+      <h3>People</h3>
+      <img src="Chicomoztoc-the-place-of-the-seven-caves.jpg">
+      <p>
+        In Aztlán, the myth goes, the Mexica ancestors dwelled in place with seven caves called Chicomoztoc (Chee-co-moz-toch). Each cave corresponded to one of the Nahuatl tribes which would later leave that place to reach, in successive waves, the Basin of Mexico. These tribes, listed with slight differences from source to source, were the Xochimilca, Chalca, Tepaneca, Colhua, Tlahuica, Tlaxcala, and the group who were to become the Mexica
+      </p>
+      <p>
+        Oral and written accounts also mention that the Mexica and the other Nahuatl groups were preceded in their migration by another group, collectively known as Chichimecas, who migrated from the north to Central Mexico sometime earlier and were considered by the Nahua people less civilized. The Chichimeca apparently do not refer to a particular ethnic group, but rather were hunters or northern farmers in contrast to the Tolteca, the city dwellers, the urban agricultural populations already in the Basin of Mexico.
+      </p>
+      <p>
+        At Aztlan, the people fished from canoes and tended their floating gardens of maize, peppers, beans, amaranth, and tomatoes. But when they left their homeland, everything turned against them—the weeds bit them, the rocks wounded them, and the fields were filled with thistles and spines. They wandered in a land filled with vipers, poisonous lizards, and dangerous wild animals before reaching their home to build their place of destiny, Tenochtitlan.
+      </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Aztlán" target="_blank">Wikipedia –Aztlán </a></li>
+          <li><a href="https://www.britannica.com/place/Aztlán" target="_blank">Britannica –Aztlán </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

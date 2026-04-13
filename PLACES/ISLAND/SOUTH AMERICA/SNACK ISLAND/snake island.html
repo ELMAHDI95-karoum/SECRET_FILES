@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SNAKE ISLAND</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">SNAKE ISLAND</h1>
+    <h2>ILHA DA QUEIMADA GRANDE</h2>
+
+    <img src="back.jpg" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+Ilha da Queimada Grande, or "Snake Island," is known as an extremely isolated and dangerous area. The island is located 35 kilometers off the coast of São Paulo State, Brazil (at coordinates: $24^{\circ}29\prime S \ 46^{\circ}40\prime W$). Its total area is only 43 hectares (approximately 430,000 square meters). The estimated population of the venomous Golden Lancehead vipers (Bothrops insularis) ranges between 2,000 and 4,000 snakes, meaning a density rate of 1 to 5 golden vipers per square meter of the island's area.
+        </p>
+      <img src="im.jpg">
+        
+    </div>
+
+  <h2 class="section-title">History</h2> 
+     <div class="section clearfix">
+        <img src="sn.jpg">
+    <p>
+        Ilha da Queimada Grande (Snake Island) is characterized by its partially barren rock formations, a direct consequence of deforestation which serves as the etymological origin of the island's name. The Portuguese term "queimada" translates to "forest fire," referencing the historical attempts by local inhabitants to clear the land via burning for the purpose of establishing a banana plantation. To enhance maritime safety, a lighthouse was constructed in 1909 to steer vessels away from the island, and the last human residents departed when the facility was automated in the 1920s.
+    </p>    
+    <p>
+        About 11,000 years ago, Ilha da Queimada Grande was connected to the mainland. When the sea level rose after the end of the Ice Age, the island became isolated from the continent, trapping the Golden Lancehead vipers without natural predators. Due to the reliance of these snakes on migratory birds as their primary food source—instead of the mammals found on the mainland—their venom evolved to be significantly stronger and faster-acting to ensure the immediate killing of airborne prey before it could escape, resulting in the high density and danger level observed today.
+    </p>
+    <img src="mana.jpg">
+     <p>
+     During the period spanning the 16th to the 19th centuries, Snake Island (Ilha da Queimada Grande) had a manual lighthouse operated by a family of 3 to 4 people. However, the most famous officially documented story recounts the tragedy of the last lighthouse keeper, where he, his wife, and their young daughter were all killed by snake bites after the vipers entered through the windows at night. Following this incident, the lighthouse on the island was closed and converted to operate fully automatically.
+     </p>
+     <p>
+        1909–1920: The Brazilian government attempted to grow bananas on the island to take advantage of the fertile soil, but failed miserably; the workers either died or fled.
+     </p>
+     <p>
+        Since approximately 1930: The Brazilian Navy has strictly prohibited approaching, imposing a fine of up to $150,000 and imprisonment on anyone attempting to land without authorization.
+     </p>
+      
+      </div>
+      
+      
+ 
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+        <p>
+            The most common legend (documented in old Brazilian folklore and publications like Discover Magazine and Medium) is that pirates in the 16th–18th centuries deliberately brought venomous snakes to the island to protect a treasure of gold or jewels buried there. They say the government prohibits visits not only because of the snakes, but also to hide the treasure, which might be linked to famous pirates like Henry Morgan or even Spanish treasures from the colonial era. This theory is popularized on YouTube channels about "lost treasures" and is considered "alternative history" because it rejects the scientific explanation (the island's separation from the mainland 11,000 years ago).
+        </p>
+        <img src="Bothrops_insularis.jpg">
+        <p>
+            "Golden Lancehead Viper" (scientifically known as Bothrops insularis) is a rare species of venomous snake that lives exclusively on Queimada Grande Island (known as "Snake Island") off the coast of Sao Paulo in Brazil.
+        </p>
+        <p>
+            On some Brazilian YouTube channels, it is claimed that golden lancehead snakes are not entirely natural, but rather the result of Cold War military experiments (possibly with the CIA) to create a biological weapon. They say that the extremely potent venom (five times stronger than that of ordinary snakes) is evidence of genetic engineering, and that the ban was intended to conceal secret laboratories beneath the island or in caves. This extends to broader theories about "hidden biological weapons" in restricted locations.
+        </p>
+        <p>
+            A  theory suggests that the presence of snakes on Ilha da Queimada Grande is merely an excuse, and that they are not the real reason for the complete closure of the island. Proponents of this theory claim that the snake population is not as massive as reported, raising questions like: "Why aren't even trained tourists or open scientific tours allowed access?". The recurring statement summarizing these doubts is: "Governments do not close an entire island just because of animals."
+        </p>
+        <p>
+            The theory surrounding the closure of Snake Island (Ilha da Queimada Grande) claims that the real reason for the closure is the presence of "hidden secret facilities," not just the snakes. These facilities allegedly include underground buildings, concrete structures camouflaged with vegetation, remnants of ancient bases, and structures near the lighthouse that are not visible in public photographs. The theory further claims that satellite images are "deliberately blurred," and that tourist photography angles are "limited and selective." The theory concludes that "the lighthouse is not a lighthouse... it's a cover [for something else]."
+        </p>
+        <p>
+            One of the most widespread narratives regarding the closure of Snake Island (Ilha da Queimada Grande) is the claim that the island is, in fact, a natural biological laboratory. It is alleged that the government or secret entities conduct venom experiments, neuro-agent development, and research into the evolution of isolated species there. Proponents of this theory base their claims on the idea that the Golden Lancehead venom is "stronger than natural" and that its evolution was "too fast to be natural." They also assert that the research on the island is not limited to civilian scientists, but involves military scientists.
+        </p>
+        <p>
+            Some link it to South American myths about "snake gods" (such as Quetzalcoatl in the Mayan/Aztec civilizations), claiming it was an ancient site of worship for divine snakes, and that modern snakes are remnants of "sacred guardians".
+        </p>
+        <p>
+            Despite being a natural reserve, Snake Island (Ilha da Queimada Grande) faces the persistent problem of Golden Lancehead smuggling. These snakes are secretly sold on the black market at exorbitant prices, potentially reaching $50,000 per individual. Specialized venom mafias run these trafficking operations, and there are reports indicating that some snakes have actually disappeared from the island due to these illegal activities.
+        </p>
+        <p>
+            Marcelo Duarte, a biologist who has visited Snake Island over 20 times, says that the locals’ claim of one to five snakes per square meter is an exaggeration, though perhaps not by much. One snake per square meter is more like it. Not that that should ease one’s mind: At one snake per meter, you’re never more than three feet away from death.
+        </p>
+        <p>
+            The island, known locally as Ilha das Cobras, is a common theme in Brazilian folklore, especially among residents of the southern coast of São Paulo (such as Itanheim and Peruipê). Brazilians blend scientific facts with popular legends, making it a symbol of terror and mystery.
+        </p>
+
+      
+    </div>
+
+    
+
+
+
+    
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+            The island wasn't always an island; around 11,000 years ago (at the end of the last Ice Age), it was part of the Brazilian mainland, connected to the Atlantic Forest. At that time, ancestral snakes (such as Bothrops jararaca, a common snake in Brazil) lived there naturally, feeding on small mammals like mice.
+        </p>
+        <p>
+            With the end of the Ice Age, the ice melted and sea levels rose, separating the island from the mainland by about 35 km. This isolation "trapped" the snakes there, and the sea distance prevented any new migration of other animals.
+        </p>
+        <p>
+            Following the isolation of Ilha da Queimada Grande from the mainland, the absence of terrestrial mammals (such as rodents)—the vipers' primary prey on the continent—led to the evolution of the species. These animals were unable to cross the sea, and the island's limited resources were insufficient for their survival, meaning no terrestrial mammals exist today save for some rare migrating rodents. To survive, the vipers adapted to prey on migratory birds, leading to their venom evolving to become significantly faster and stronger to kill the birds instantly before they could fly away, a venom that causes rapid bleeding and tissue damage. The island's harsh environment (rocky, limited water resources) restricts animal diversity; the high density of vipers (up to 4,000) makes them the "dominant" species, preventing the establishment of other fauna.
+        </p>
+        <p>
+            Snake Island (Ilha da Queimada Grande) is an official natural reserve due to its environmental and scientific importance. Despite their density, the Golden Lancehead vipers on the island are threatened with extinction, which increases the importance of their preservation. The venom of these snakes is highly valuable scientifically, undergoing intensive study and research for use in developing blood pressure medications and heart disease medications.
+        </p>
+        
+        
+    </div>
+
+    <h2 class="section-title">Pictures</h2>
+    <div class="images-row">
+      
+
+      
+
+
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/snake island" target="_blank">Wikipedia –snake island </a></li>
+          <li><a href="https://www.britannica.com/snake island" target="_blank">Britannica –snake island </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

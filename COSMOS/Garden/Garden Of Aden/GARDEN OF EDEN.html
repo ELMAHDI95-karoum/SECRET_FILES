@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GARDEN OF EDEN</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">GARDEN OF EDEN</h1>
+
+    <img src=""  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+
+        </p>
+        
+    </div>
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      <p>
+        According to Armenian belief, the Kingdom of Armenia includes a forest resembling the Garden of Eden called Yagerdut in the Taron district, west of the Mush Valley. It is believed that elderly people who come from the Mush Valley and spend time there and spend time in this picturesque corner appear 20 years younger.
+      </p>
+      <p>
+        In Christian tradition, Thaddeus, one of the Seventy (or Seventy-Two) Apostles of Jesus, is supposed to have traveled to the city of Edessa (present-day Şanlıurfa) in northern Mesopotamia at the request of its king, Abgar, who wanted to be cured of a serious skin disease. According to the story, Thaddeus (also known as Addai) arrived in his native city of Avassa, carrying a handkerchief with which Jesus allegedly wiped his face, leaving behind an imprint on his face. It was the sanctity of this relic, known as the Avassa image, or mandali, that was said to have cured Abgar of his illness. After the king's recovery and subsequent conversion to Christianity, he entered the neighboring kingdom of Armenia in either 43 or 45 AD. There, he encountered a "wood" called Yagerdot, where he deposited several holy relics of great importance brought from the Holy Land. In other versions of this tradition, Thaddeus is said to have been accompanied by the Apostle Bartholomew on his journey. These relics, which he deposited at Yaghrudt, included the pinky finger of Mary Magdalene, items belonging to Joseph of Arimathea, and the fragrant oil (known as myron, mura, or anointing) with which he anointed the "prophets and apostles," which Thaddeus used to restore King Abgar's health and vitality after his miraculous healing following contact with the statue of Edessa. For this reason, the monastery is given an alternative name, Kizyugo, meaning "bottle of oil," a branch of the olive tree. However, according to Armenian tradition, he also brought a piece of the "Tree of Life" (Armenian), which, after its discovery, became a major focus of veneration at the monastery. Even more astonishing, Yaghrudt Monastery was believed to be located not only in an "Eden-like forest," but also in a "corner" or "corner" of "Eden" (Armenian), which can also mean "the Garden of Eden." The Armenian source states that this “was in the province of Taron, south of the Mush (Armenian) plain.” He goes on to say that “the place was called Yaghrudut, and it was here that the old man traveled to become twenty years younger.”
+      </p>
+      <p>
+      It is not stated which version of the Book of Revelation the Reverend Marmaduke Carver consulted for his book. Most likely, it was a volume in the York Minster Library, where the clergyman conducted most of his research for his Discourse on the Terrestrial Paradise. However, if we accept Carver's translation as authentic (and I have certainly found a Latin copy of the Book of Revelation dated 1593 containing exactly these same lines5), it means that in the late seventh century AD, an accomplished theologian, living near Edessa and the site of Göbekli Tepe, possessed knowledge indicating that Seth, his father Adam, his mother Eve, and their extended family inhabited "Mount Kordan," or "Kordan Monte." More importantly, he believed that this mountain was located near the terrestrial paradise—the Garden of Eden.
+
+      </p>
+    </div>
+    <h2 class="section-title">location</h2>
+    <div class="section clearfix">
+      <h3>ARMENIE</h3>
+      <p>
+      </p>
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+       
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/GARDEN OF EDEN" target="_blank">Wikipedia –GARDEN OF EDEN </a></li>
+          <li><a href="https://www.britannica.com/GARDEN OF EDEN" target="_blank">Britannica –GARDEN OF EDEN </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

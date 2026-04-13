@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>STYX</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">STYX</h1>
+
+    <img src="sy.webp"  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+         The River Styx (Ancient Greek: Στύξ; lit. "Shuddering") is a location in Greek mythology. Located in the Underworld, it is a river that serves as a barrier separating the world of the living from the world of the dead. It is one of five underworld rivers; the others being the Phlegethon (or Pyriphlegethon), Lethe, Cocytus and Acheron.
+        </p>
+        <img src="Styx_river.webp">
+        <p>
+            Styx is a name that evokes both awe and dread. Derived from the Greek word “stygós,” it means “hatred” or “dread.” In Roman mythology, she retains her name, a testament to her universal significance. Various epithets and other names aren’t as common for Styx, perhaps due to the singular role she plays in the myths.
+        </p>
+        <p>
+            In the grand scheme of things, Styx is a unique figure. Unlike other deities who have Roman counterparts with different names (Zeus and Jupiter, for instance), Styx remains Styx. This constancy perhaps reflects her immutable nature as the ultimate boundary and oath-keeper.
+        </p>
+        <img src="stx.jpg">
+        <p>
+            Born to the Titans Oceanus and Tethys, Styx was part of an illustrious family. She was one of the many Oceanids, sea Nymphs, Guardians of Nature of great beauty and power. Yet, even among her numerous siblings, Dione for one, she stood out, destined for a unique path.
+        </p>
+        <p>
+            During the Titanomachy, between the Titans and Olympians, she was the first to side with Zeus. Her allegiance wasn’t just symbolic; it was a game-changer, setting the stage for the Olympians’ victory
+        </p>
+        <p>
+            In Greek mythology, Styx isn’t just a goddess; she’s also a Daemone, a personification of the river that serves as the boundary to the Underworld. Her dual nature adds layers of complexity to her character, making her more than just a static figure in mythological narratives.
+        </p>
+        <p>
+            Styx is often depicted as a dark, shadowy figure, sometimes holding a jar from which the river flows.
+
+Her appearance is as enigmatic as her nature. She’s often shown in dark robes, a nod to her dominion over the dread-filled river. Symbols associated with her include the river itself and sometimes a jar or urn, signifying the containment of her waters.
+        </p>
+    </div>
+    
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+            In ancient mythology, Styx was originally a goddess, the daughter of the Titan Oceanus and Tethys – or, according to other versions, Nyx and Erebus. She became the personification of the flow of the underworld itself. She was the first to side with Zeus in the Titanomachy, and as a reward, Zeus entrusted her with the most sacred power: any divine oath taken by Styx is unbreakable.
+        </p>
+        <p>
+            In Plato's dialogues, the Styx is spoken of as the most terrible and darkest of the five rivers of the underworld (alongside Acheron, Lethe, Cocytus and Phlegethon). Its water is not cleansing – it is deadly. According to some authors, it can even eat away at stone and destroy armor.
+        </p>
+        <p>
+            In order to cross the River Styx and reach Hades, a dead person must pay a fee to the ferryman, Charon. If the correct fee is paid, Charon will take the dead across. If the dead cannot afford the fee, however, they will be forced to wander the banks of the River Styx as Wraiths for eternity (or one hundred years, depending on the recount).
+        </p>
+        <p>
+            The greatest oath that a god can make is to swear on the river Styx. When a god swears on the River Styx, they're bound for all eternity to keep that promise or else be paralyzed for a year and a day, and even then, risk being ostracized from Mount Olympus and their duties and immortality being removed and given to another god.
+        </p>
+        <p>
+            Bodies dipped into the river will receive the gift of immortality; one famous example is when Thetis, mother of the demigod Achilles, dipped him into the river by his heel. This ensured he could only be harmed at his heel, a fact exploited by Apollo and later giving rise to the phrase "Achilles' heel".
+        </p>
+        <p>
+            Water from this Styx was said to be poisonous and able to dissolve most substances. The first-century natural philosopher Pliny, wrote that drinking its water caused immediate death, and that the hoof of a female mule was the only material not "rotted" by its water. According to Plutarch the poisonous water could only be held by an ass's hoof, since all other vessels would "be eaten through by it, owing to its coldness and pungency." While according to Pausanias, the only vessel that could hold the Styx's water (poisonous to both men and animals) was a horse's hoof. There were ancient suspicions that Alexander the Great's death was caused by being poisoned with the water of this Styx.
+        </p>
+        <p>
+            The river was a sacred place to both gods and men. It circles the Underworld nine times, eventually converging on a great marsh at the center of the Underworld with the rivers Phlegethon, Acheron, and Cocytus (though there is a fourth river: Lethe). The river is very polluted, being filled with pretty much anything you could imagine: broken toys, ripped up diplomas, etc. – the scrapheap of human miseries. The river is filled with lost hopes and dreams, as well as wishes that never came true.
+        </p>
+        <p>
+            Those who touch, drink, or are immersed in the Styx forget their entire past life, including spells and all alignments save their original one. A saving throw vs. spell is applicabl. Those who are immersed in the river have the standard chance of drowning in the swift flow. There is also a 50% chance of being dragged into another plane before reaching the shore
+        </p>
+
+    </div>
+    <h2 class="section-title">Location</h2>
+    <div class="section clearfix">
+        <p>
+            The Acheron (meaning "Stream of Woe") is a river located in the Epirus region of northwest Greece. It flows into the Ionian Sea in Ammoudia. It was thought by ancient Greeks to have been a branch to the underworld river Styx.
+        </p>
+        <img src="Acheron.webp">
+        <p>
+            Styx, along with the underworld rivers Cocytus and Acheron, were associated with waterways in the upper world. For example, according to Homer, the river Titaressus, a tributary of the river Peneius in Thessaly, was a branch of the Styx. However Styx has been most commonly associated with an Arcadian stream and waterfall (the Mavronéri) that runs through a ravine on the North face of mount Chelmos and flows into the Krathis river. The fifth-century BC historian Herodotus, locates this stream—calling it "the water of Styx"—as being near Nonacris a town (in what was then ancient Arcadia and now modern Achaea) not far from Pheneus, and says that the Spartan king Cleomenes, would make men take oaths swearing by its water. Herodotus describes it as "a stream of small appearance, dropping from a cliff into a pool; a wall of stones runs round the pool". Pausanias reports visiting the "water of the Styx" near Nonacris (which at the time of his visit, in the second century AD, was already a partially-buried ruins),
+        </p>
+        <img src="Idata_Stigos.webp">
+        <p>
+            According to Aelian, Demeter caused the water of this Arcadian Styx "to well up in the neighbourhood of Pheneus". An ancient legend apparently also connected Demeter with this Styx. According to Photius, a certain Ptolemy Hephaestion (probably referring to Ptolemy Chennus) knew of a story, "concerning the water of the Styx in Arcadia", which told how an angry Demeter had turned the Styx's water black. According to James George Frazer, this "fable" provided an explanation for the fact that, from a distance, the waterfall appears black.
+        </p>
+        <p>
+            The River Styx is actually the underground segment of Cave Creek as it flows through Oregon Caves National Monument. This designation is unique within the National Wild and Scenic Rivers System as it is the first—and only—underground river in the National System. The River Styx is a perennial stream that flows continuously all year round. Two hundred and twenty feet underground, two small River Styx tributaries on the floor of the large Ghost Room join to form what is called the Ghost Styx. The Ghost Styx seems to disappear back into the bedrock and eventually joins the main River Styx deeper in the cave
+        </p>
+        <p>
+            There is a river that is the boundary between heaven and hell. (This is according to Greek mythology.) The Styx River is one of five, but it is the main one. Charon, the ferryman, controls who can cross over. The passage requires a payment … a coin in the mouth, or on the eyes. Otherwise, Charon would leave your soul would stay on the shore and drift for a century.
+        </p>
+    </div>
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <h3 class="sub- title">mythology Description</h3>
+        <p>
+         Technically speaking, the River Styx isn't an underworld realm – it is a liminal space that touches on all known underworld realms. Manifesting as a great flowing river whose far shore is dimly visible through the mist, the River Styx is cast eternally in twilight. Its near shore is thick clay-like mud a deep black color, with patches of stones and the occasional bone interrupting its smoothness. The shore descends down to the water's edge where a panoply of tall grasses occasionally ripple and whisper in a wind that living flesh never feels.
+        </p>
+        <p>
+            The calm surface of the black waters are occasionally broken by the shade of one of the dead, surfacing to try and clutch at a life it has already lost. These spirits are often borne away by a tide that affects only them.
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Styx" target="_blank">Wikipedia –Styx </a></li>
+          <li><a href="https://www.britannica.com/place/Styx" target="_blank">Britannica –Styx </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

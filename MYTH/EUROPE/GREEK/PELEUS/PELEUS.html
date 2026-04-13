@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PELEUS</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">PELEUS</h1>
+
+    <img src="bac.jpg" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+In Greek mythology, Peleus was a hero and the son of Aeacus, king of the island of Aegina, and the nymph Endeïs. He was known for his bravery and his role in the story of the Argonauts. Peleus is perhaps most famous for being the father of Achilles, the greatest warrior of the Trojan War. He married the sea nymph Thetis, despite obstacles and interference from gods and goddesses, including Zeus and Hera. Peleus was also involved in various other myths and adventures, but his most enduring legacy is his connection to the legendary hero Achilles.
+        </p>
+        
+    </div>
+
+  <h2 class="section-title">Literary</h2>
+     <div class="section clearfix">
+     <p>
+        Some independent researchers believe that this marriage symbolizes an alliance between a human lineage and an ancient marine lineage — that is, a union between the inhabitants of the land and the inhabitants of the sea (symbolically or culturally).This pattern appears in ancient North African traditions (such as the Libyan stories about the "sons of the sea") and in southern Spain (Tartessos), where kings were said to be descended from sea gods.
+     </p>
+      <p>
+        Peleus was from the Myrmidons, a legendary people from Thessaly who were said to have originated from ants. It is said that when a plague swept the island of Aegina, its king, Aeacus, appealed to his father, Zeus, who transformed the ants on the island into strong men. These men were described as powerful warriors and were called Myrmidons, after the word "myrmex," which means "ant."
+      </p>
+      <p>
+        In some older texts, Peleus represented the transition from the age of divine heroes to the age of humans, meaning he belonged to the generation where the connection between humans and gods came to an end.
+      </p>
+      <p>
+        Some authors in the fields of "alternative history" and "comparative mythology" argue that the Greeks inherited their myths from older civilizations that existed in the Mediterranean before them—such as the Minoans (in Crete), the ancient Libyans, or the coastal peoples of North Africa. These authors believe that stories like that of Peleus and Thetis contain references to pre-Greek rituals and beliefs that were later retold in the Greek language.
+      </p>
+      <p>
+Some names in the story of Peleus (such as Thetis and Achilles) are said not to have a clear Greek root, but rather possibly have ancient Mediterranean or Amazigh-Libyan origins.
+      </p>
+      <p>
+        Some alternative historians (such as René Girard and Robert Temple) have suggested that the tales of Peleus and Achilles reflect remnants of a civilization that existed in the region between Crete, Cyprus, Libya, and the coast of Tunisia—an area that was rich in maritime trade and minerals (such as gold and copper).
+      </p>
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+       Some names of ancient Libyan kings or figures in ancient Mauritanian/Tunisian folklore, such as Balios or Balius (later appearing in Roman mythology as a mythical horse), show a phonetic similarity to Peleus.
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/PELEUS" target="_blank">Wikipedia –PELEUS </a></li>
+          <li><a href="https://www.britannica.com/PELEUS" target="_blank">Britannica –PELEUS </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

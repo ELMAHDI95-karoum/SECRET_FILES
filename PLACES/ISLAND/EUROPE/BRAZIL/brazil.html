@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Brazil island</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">BRASIL(Hy-brasil)</h1>
+
+    <img src="bra.jpg"  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+         Map-readers knew about Brasil long before America was discovered; but they didn’t think of it as a giant country on a distant continent. Brasil, also known by the name Hy-Brasil , was a small, mist-shrouded island in the North Atlantic, not too far off Ireland’s west coast.
+Alexander von Humboldt points out, in his work Critical Examination of the History and Geography of the New Continent in the 15th and 16th Centuries, that many maritime charts, portolan charts and world maps, dating from the 14th century onwards, depict an island located most often in the North Atlantic. This island, whose size varies according to the sources, appears under various but similar names: Brasile, Bracie, Bresily, Bersil, Brazilæ, Bresilji, Braxilis, Branzilæ, O'Brasil, O'Brassil. In Irish mythology, an island called Hi-Brasil, Hy-Breasal, Hy-Brazil, Hy-Breasil or Brazir is mentioned and located off the coast of Ireland or in the vicinity of the Azores archipelago. This island was said to have been inhabited by Irish monks.
+        </p>
+        <p>
+            In Celtic folklore, this island country takes its name from Breasal, the High King of the World. However, as the Atlantic began to be more thoroughly explored, the name of Hy Brazil may have been attached to a real place, providing some evidence that attached itself to the Irish myth
+        </p>
+        <p>
+          Many ancient cultures have located their afterworlds in the west, believing souls slip into paradise like the sun slips below the horizon. Irish lore came to identify Hy-Brasil as both a land of the dead and a fairy realm, which was said to emerge from a blanket of fog or rise up from below the waves once every seven years.
+
+        </p>
+        <p>
+          In the 1470s, Spanish Basque chronicler Lope García de Salazar recounted an English legend that after King Arthur’s death, his sister Morgan Le Fay laid him to rest on Hy-Brasil and “enchanted that island so no ship can find it”. Curiously, Salazar claimed that the enchantment lost its power “if the ship can see the island before the island the ship”. You’d have to sneak up on Hy-Brasil like you were playing a watery game of Statues.
+        </p>
+        <p>
+            The generally accepted theory states that it was renamed for the brazilwood, which has an extreme red color (so “brasil” derivated from “brasa”: ember), a plant very valuable in Portuguese commerce and abundant in the new-found land.
+        </p>
+        <p>
+            The most distinctive geographical feature of Hy-Brasil, is that it appears on maps as a perfect circle, with a semi-circular channel through the center. The central image on the Brazilian flag, a circle with a channel across the center, was the symbol for Hy-Brasil on early maps.
+        </p>
+        <img src="ai.jpg">
+        
+    </div>
+
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      <p>
+        <strong>Irish Mythology and Folklore</strong>
+      </p>
+      <p>
+        Irish mythology describes Hy-Brasil as a mysterious island hidden behind the mist, invisible to the human eye except for one day every seven years, when travelers can reach it. In Irish oral tradition, it is said that the island vanishes whenever humans approach. These tales were later recorded in printed folklore collections, such as "Irish Wonders" (1888), which reports that residents of County Cork allegedly sighted the floating island on July 7, 1878.
+      </p>
+      <p>
+        <strong>Origins of the Island on Maps</strong>
+      </p>
+      <p>
+        One story suggests that the island’s appearance on maps originated from an early Irish mapmaker who added it based on folklore rather than observation. Subsequent cartographers copied the feature, and over time, the repetition of this error led many to believe in its existence. Some theories even speculate that the legend may have originated from a time when the island had not yet submerged, although this would imply geological changes tens of thousands of years ago.
+      </p>
+      <p>
+         <strong>Appearance in Historical Maps</strong>
+      </p>
+      <p>
+       In 1375, the Catalan Atlas created by Abraham Cresques depicted Hy-Brasil as two small islands.
+      </p>
+      <p>
+        In 1436, cartographer Andrea Bianco included “Insula de Brasil” in his nautical chart. It was drawn approximately the size of Portugal, featuring seven trefoil-shaped bays representing seven cities. In his later 1448 map, however, the island was omitted, possibly reflecting a shift in geographic knowledge
+      </p>
+      <p>
+        In 1595, the island reappeared in Abraham Ortelius’ Theatrum Orbis Terrarum, a major European atlas. It continued to appear on maps until the mid-19th century, eventually shrinking in representation until it became “Brasil Rock” in 1865.
+      </p>
+      
+      <figure class="image-box" >
+        <img src="bianco.jpg" alt="Map created  by Andrea Bianco 1436">
+        <figcaption > Map created by Andrea Bianco 1436</figcaption>
+      </figure>
+      <p>
+        <strong>Exploration attempts</strong>
+      </p>
+      <p>
+        During the 17th century, several expeditions were launched in search of Hy-Brasil. Leslie of Glaslough, described as a “wise man and scholar,” was so convinced of the island’s existence that he petitioned King Charles I for a grant to claim it. Edmond Ludlow, a prominent republican, also chartered a ship from Limerick to look for it. In 1674, Captain John Nisbet reportedly reached the island after a fog cleared. He sent four crew members ashore, who returned with gold and silver given to them by an old man. A subsequent voyage by Captain Alexander Johnson allegedly confirmed Nisbet’s account
+      </p>
+      <p>
+        <strong>Legends Surrounding Hy-Brasil</strong>
+      </p>
+      <p>
+        Various myths are associated with Hy-Brasil:
+      </p>
+      <p>
+        Some legends claim it was home to the gods of Irish mythology.
+      </p>
+    <p>
+      Others say monks possessing ancient knowledge lived there, knowledge so advanced it supposedly enabled the rise of later civilizations.
+    </p>
+    <p>
+      Some scholars link St. Brendan’s legendary voyage in search of the “Promised Land” to Hy-Brasil.
+    </p>
+    <p>
+      In modern interpretations, Graham Hancock, in his 2009 book Underworld, proposed that Hy-Brasil’s repeated appearance on maps indicated the survival of a pre-Ptolemaic map corpus showing sunken lands.
+    </p>
+    <p>
+      John Cabot, the Italian explorer working for England, wanted to find it. He set sail in May 1498 and never returned. Some believe he reached Hy-Brasil; if so, he is the only one, as five centuries of subsequent attempts have come to nothing.
+    </p>
+    <p>
+      <strong>Symbolism and Geographic Features</strong>
+    </p>
+    <p>
+      Hy-Brasil was often depicted as a perfect circle split by a semicircular channel. Some researchers have even suggested that this circular motif may have influenced the central emblem of the Brazilian flag.
+    </p>
+    <p>
+      <strong>The Naming Controversy</strong>
+    </p>
+    <p>
+      There is debate over whether the country of Brazil derived its name from the phantom island. Proponents argue that it fits the historical pattern of applying names of mythical places (e.g., Antillia becoming the Antilles) to real locations. Opponents contend that Brazil was originally called Terra de Santa Cruz (“Land of the Holy Cross”) and only later renamed after the valuable pau-brasil wood, whose name likely comes from an old root word for “red.”
+    </p>
+    <p>
+      <strong>Natural Explanations</strong>
+    </p>
+    <p>
+      Local tradition in County Mayo suggests that the Hy-Brasil myth may have arisen from optical illusions. On exceptionally sunny days, it is said that one can see a reflection of the coastline appearing like an island offshore, creating the illusion of land where none exists.
+    </p>
+    <p>
+      <strong>Hy-Brasil in Popular Culture</strong>
+    </p>
+    <p>
+      Hy-Brasil has also appeared in modern media. In the 1989 film Erik the Viking, it is portrayed as the location of the “Horn Resounding,” which allows mortals to enter Asgard. In the film, spilling blood on its shores causes the island to sink beneath the waves forever
+    </p>
+
+    </div>
+
+    <h2 class="section-title">Location</h2>
+    <div class="section clearfix">
+      <p>
+        Most maps place it 200 miles off the west coast of Ireland in the North Atlantic. It looks like an oval with a river flowing inside it from east to west.
+
+      </p>
+      <figure class="image-box">
+        <img src="hy-b.jpg" alt="Binary code table  of Hy-Brasil and some other places.">
+        <figcaption>Binary code table  of Hy-Brasil and some other places.</figcaption>
+      </figure>
+      <p>
+        In the famous UFO encounter, commonly known as the Rendlesham Forest incident, a strange craft was said to have landed outside an American military base and soldier Jim Penniston claimed to have touched the craft. as well as receiving 16 pages of binary code telepathically. The next day, he wrote the entire code down on paper and then translated it. This code sequence lists in quite detail the coordinates of Hy-Brasil and the locations that ancient cartographers drew on the map. It also mentions many other structures such as the Giza pyramid and the Nazca Lines. At the bottom of the code, Hy-Brasil coordinates are listed again with the base year 8100.
+      </p>
+
+      <p>
+        Wood-Martin tells us that in the 17th century, Roderick O'Flaherty said that the phantom island of Hy-Brasil – marked on many old charts near the west coast of Ireland – was, in his time, "often visible". The subject has inspired several poets with beautiful fancies which have been woven into pathetic ballads. Gerald Griffin describes it thus:
+      </p>
+      <div align="center">
+        <p>
+            "On the ocean that hollows the rocks where ye dwell
+A shadowy land has appeared, as they tell:
+Men thought it a region of sunshine and rest,
+And they called it Hy-Brasil, the isle of the Blest.
+From year unto year on the ocean's blue rim,
+The beautiful spectre showed lovely and dim:
+The golden clouds curtained the deep where it lay,
+And it looked like an Eden away, far away!"
+        </p>
+      </div>
+      <p>
+        A rare work entitled La Naviation l'Inde Orientale, printed at Amsterdam in the year 1609, contains a map on which two islands, styled Brasil and Brandon, are marked as actually existing off the Irish coast.  is a reproduction of that portion of the place above referred to. is a chart by the French Geographer Royal made in the year 1634, on which the island of Hy Brasil is also distinctly marked.
+        <img src="Hy-Brasil.webp">
+      </p>
+      
+    </div>
+    <div class="section clearfix">
+     <h3 class="sub- title">Maps</h3>
+    
+        <img src="ROBERT Doddly.jpg" width="100" height="100">
+        <img src="img.jpg" width="100" height="100">
+        <img src="ss.jpg" width="100" height="100">
+        <img src="ima.jpg">
+    </div>
+    
+    
+    <div class="section-title">Research</div>
+    <div class="section clearfix">
+        <p>
+       There is also another consideration with regard to this phenomenon which has not been sufficiently taken into consideration. We cannot see objects below the horizon, but sometimes, owing to the peculiar state of the atmosphere, the rays of light are so bent that, when they reach the eye, they make distant objects visible. For instance, place a coin in a saucer, so as to be hidden from observation, pour water into the vessel, and though the coin is below the horizon it becomes at once visible. This reflection, usually seen across water, is among sailors known as "looming"; the objects that "loom" are magnified vertically, and seem unnaturally near. Snowdon, in Wales, is thus occasionally seen by pilots in Dublin Bay, though it is over one hundred miles distant.
+        </p>
+    </div>
+    <div class="section clearfix">
+     <h3 class="sub- title">People</h3>
+     <p>
+        The residents of Ballycotton in County Cork were excited by the sudden appearance of an island far offshore that it was not known to exist. The men of the town and island of Ballycotton were fishermen, and they were well acquainted with the sea and the land. The day before, they had sailed and headed for the place where the strange island now stood, and they there is no doubt that it is the best fishing ground they have.
+     </p>
+     <p>
+        Hy-Brasil has also been identified with Porcupine Bank, a shoal in the Atlantic Ocean about 200 kilometres (120 mi) west of Ireland[19] and discovered in 1862. As early as 1870, a paper was read to the Geological Society of Ireland suggesting this identification. The suggestion has since appeared more than once, e.g., in an 1883 edition of Notes and Queries.
+     </p>
+     <p>
+      Each technological innovation of the following centuries would serve as a pretext for a new attempt: the hot-air balloon, the steamship, the transatlantic liner, the submarine, the airship, the airplane. In 1939, a few weeks before the invasion of Poland, Hitler sought to prove one thing or another about Aryan superiority by sending a U-boat there. The submarine found nothing, not even a feature that could be the submerged island. Yet, at 7:07 a.m. on July 7, the island was there in its entirety, from the seabed to the surface. But when the U-boat headed toward it, an instrument problem always caused it to deviate from its trajectory. Hitler took it personally, denouncing an Anglo-American Zionist plot.
+     </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Brazil" target="_blank">Wikipedia –Brazil </a></li>
+          <li><a href="https://www.britannica.com/place/Brazil" target="_blank">Britannica –Brazil </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

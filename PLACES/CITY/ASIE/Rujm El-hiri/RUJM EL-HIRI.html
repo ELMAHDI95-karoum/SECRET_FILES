@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RUJM EL-HIRI</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">RUJM EL-HIRI</h1>
+
+    <img src="ba.jpg"  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+        Rujm el-Hiri (meaning “”stone heap of the wild cat”), also called Gilgal Refā’īm (meaning “wheel of spirits”), is an ancient megalithic monument, located in the Israeli-occupied region of the Golan Heights.
+        </p>
+        
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <p>
+        This incredible Bronze Age stone circle complex in the Golan Heights has captivated scholars for years. Was it a ceremonial site, an astronomical observatory, or perhaps a burial ground? Some even link it to biblical giants known as the Rephaim! Dating back to around 3,000 BCE, its true purpose remains a mystery
+      </p>
+        <p>
+        Archaeologists dating sediment eolian samples, and the study of pottery sherds excavated in situ, suggest it was constructed either during the Early Bronze Age II around 3000 to 2700 BC, or from the Chalcolithic–Early Bronze Age I between 3880– 3540 BC 
+        </p>
+        <p>
+          Archaeologists and historians have long pondered the true meaning and purpose of the ancient megalithic stone circles built in the Early Bronze Age (3,000 to 2,700 BC) at the Rujm el-Hiri site in the Golan Heights of Israel. Given their uncanny resemblance to other megalithic stone circles found around the world, including Stonehenge, it was natural to conclude (as many experts have) that the concentric circles constructed at Rujm el-Hiri reflected an interest in sacred astronomy, as such building projects did elsewhere.Archaeologists and historians have long pondered the true meaning and purpose of the ancient megalithic stone circles built in the Early Bronze Age (3,000 to 2,700 BC) at the Rujm el-Hiri site in the Golan Heights of Israel. Given their uncanny resemblance to other megalithic stone circles found around the world, including Stonehenge, it was natural to conclude (as many experts have) that the concentric circles constructed at Rujm el-Hiri reflected an interest in sacred astronomy, as such building projects did elsewhere.
+        </p>
+        <p>
+          But according to new research, this assumption is in error. While other stone monuments do have a connection to the structure and movements of the night sky, it seems that Rujm el-Hiri doesn’t match that familiar pattern.
+        </p>
+        <p>
+          In a new article appearing in the journal Remote Sensing, a team of experts from Tel Aviv University and Ben-Gurion University make their case that Rujm el-Hiri, the so-called Stonehenge of Israel, has been misidentified as an ancient observatory.
+        </p>
+        <p>
+          The study was based on calculations of the sky map and aligning the directions of the solstices, equinoxes, and other celestial bodies as they appeared between 2500–3500 BCE, coordinated with the symmetry and entrances of Rujm el-Hiri in its current position,” the research team wrote in their Remote Sensing article, before dropping their bombshell. “The findings show that the entrances and radial walls during that historical period were entirely different, reopening the question of the site's purpose.
+        </p>
+        <p>
+          The research team, which was led by Dr. Olga Khabarova and Prof. Lev Eppelbaum of the Department of Geophysics at Tel Aviv University and Dr. Michal Birkenfeld of the Department of Archaeology at Ben-Gurion University, analyzed satellite data collected over multiple years to track the miniscule movements of the ground in the Golan Heights region, which remains an ongoing process. Correlating this information with data obtained from geomagnetic analysis and the reconstruction of past tectonic movements, they were able to calculate that the ground in the Rujm el-Hiri area of the Golan Heights has been moving at an average rate of 8-15 millimeters per year for a long time, carrying the stones on top of it along for the ride.
+        </p>
+        <p>
+          It is known that several Early Bronze Age settlements were built within walking distance of the megalithic structure. Using remote sensing technology, the researchers were able to survey a broad area around Rujm el-Hiri, and they discovered the ruins of ancient buildings, walls and burial mounds within an 18-mile (30-kilometer) radius of the site.
+        </p>
+        <p>
+          While rejecting the idea that Rujm el-Hiri was an astronomical observatory or solar calendar, the researchers do note similarities between this monument and similar structures in the Mediterranean area that were also built during the Early Bronze Age
+        </p>
+        </div>
+        <div class="section clearfix">
+          <h3>Description</h3>
+          <img src="RUJM2.jpg">
+          <p>
+          The previous belief was that the walls and entrances to the set of concentric stone circles installed in the Golan Heights 5,000 years ago were specifically aligned to match the positions and/or movements of certain objects in the night sky (the Sun, the Moon, the stars, the planets, etc).
+          </p>
+          <p>
+            The four concentric circles and the central rock mound burial chamber (tumulus) that comprise the monument were constructed from more than 42,000 basalt rocks. At its widest point the entire structure is 520 feet (160 meters) in diameter. The highest wall reaches a height of eight feet (2.4 meters), while the tumulus in the middle is 15 feet (4.6 meters) tall.
+          </p>
+          <img src="RUJM3.jpg">
+        </div>
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Rujm El-hiri" target="_blank">Wikipedia –Rujm El-hiri </a></li>
+          <li><a href="https://www.britannica.com/place/Rujm El-hiri" target="_blank">Britannica –Rujm El-hiri </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>POWER OF SUN</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">POWER OF SUN</h1>
+
+    <img src="" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+            Solar energy is often seen as futuristic technology. But what people often overlook is that it is also the technology of the past. Long before photovoltaic cells and silicon wafers, ancient civilizations employed sophisticated solar architecture and thermal engineering to harness the sun’s power for heating, lighting, and spiritual rites. We are not just inventing the future; we are reclaiming an ancient legacy.
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+    <div class="section clearfix">
+     <div class="section clearfix">
+        <h3>EGYPTE</h3>
+        <p>
+          In ancient sources, the Sun was revered as the primordial source of life and creation. Egyptian mythology depicts Ra as the supreme solar deity, traversing the sky by day in his solar barque to bestow light and warmth, then descending into the underworld at night to confront the forces of chaos and evil (such as the serpent Apophis). Ra was envisioned as the creator of the universe, governing the cycles of life, death, and resurrection. Funerary texts portray Ra as a being in perpetual daily renewal, manifesting in three distinct phases: Khepri, the rising morning sun; Re, the mature midday sun; and Atum, the aging sun of the evening.
+        </p>
+        <p>
+            The ancient Egyptians used solar energy to heat their homes. They designed their houses so that the sun's heat was stored in their walls during the day and released after sunset as a way to regulate the temperature of the house during the cold desert nights. This ingenious use of thermal mass proves that sustainable engineering is an ancient legacy.
+        </p>
+     </div>
+      
+      </div>
+      
+      
+ 
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+      <p>
+        In a compelling technical proposition, the Sun in Ancient Egypt is viewed as a literal energy source rather than a mere religious symbol. Researcher Christopher Dunn, in his work "The Giza Power Plant" (1998), suggests that the pyramids were actually power plants designed to harness solar radiation and terrestrial electromagnetic fields to generate wireless electricity. Dunn bases his hypothesis on the physical properties of limestone and granite; specifically, the quartz-rich granite acting as a transducer and conductor of frequencies. This theory reimagines the Great Pyramid as a massive machine converting cosmic energy into a functional power source.
+      </p>
+      <p>
+        In the 1970s, a surge of theories collectively known as "Pyramid Power" emerged, proposing that the pyramidal shape functions as a supernatural "energy capacitor" with unique abilities to preserve organic matter or facilitate healing. These theories were inspired by the Sun as the ultimate source of "Quantum Energy" and vital life force (Prana/Qi). It is posited that the specific geometry of the pyramid focuses solar and cosmic frequencies into a concentrated vortex (such as the King's Chamber), creating a "vibrational" environment capable of influencing both physical matter and human consciousness.
+      </p>
+      <p>
+        Some people link the cold to "earth energy" or "chakras": heat comes from the heart of the earth or its internal energy (not just the sun), and high mountains are farther from this earth energy, so they get cold.
+      </p>
+    </div>
+
+    
+
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <p>
+        The Sun's heat is primarily generated by Nuclear Fusion within its core. At temperatures reaching approximately 15 million degrees Celsius and under immense pressure, hydrogen atoms fuse to create helium. This fusion process releases staggering amounts of energy in the form of gamma rays, which gradually transform into the light and heat that migrate to the surface (Photosphere) through radiation and convection. The surface temperature stands at about 5778 Kelvin (5500°C), emitting the very light that sustains life and dictates "Sovereign Brilliance."
+      </p>
+      <p>
+        The visionary genius Nikola Tesla harbored a deep fascination with the Egyptian pyramids, postulating that they were sophisticated technical structures rather than mere tombs. Tesla believed the pyramids utilized "central crystals" to harness solar energy and transmit it wirelessly through the Earth and atmosphere. He saw the pyramid's design—specifically its geometry and materials like quartz-rich granite—as a precursor to his own experiments in wireless energy. Tesla viewed the Great Pyramid as a massive capacitor that collected solar and atmospheric electricity to distribute it as a clean cosmic current, a concept he later attempted to realize with his ill-fated "Wardenclyffe Tower."
+      </p>  
+        
+    </div>
+
+    <h2 class="section-title">Pictures</h2>
+    <div class="images-row">
+      
+
+      
+
+
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/POWER OF SUN" target="_blank">Wikipedia –POWER OF SUN </a></li>
+          <li><a href="https://www.britannica.com/POWER OF SUN" target="_blank">Britannica –POWER OF SUN </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

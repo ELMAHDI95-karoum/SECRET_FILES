@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FRISLAND</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">Frisland</h1>
+
+    <img src="fr.jpg" alt="Frisland Map" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+        Frisland, also known as Frischlant, Friesland, Frislanda, Frislandia, and Fixland, is a "phantom" island that appeared on virtually all maps of the North Atlantic between 1560s - 1660s.
+        </p>
+        <img src="f25b0e22ead4e9367e42704e0f69f25b-3413244.avif">
+        <p>
+          There once existed an island in the North Atlantic called Frisland - at least according to several maps published from the late 16th century into the late 18th century. It first appeared on the “Zeno map” in 1558 and was soon found on maps by respected and influential cartographers like Ruscelli, Mercator, and Ortelius. A landmass larger than Ireland, located south of Iceland, Frisland would have looked to the casual early modern observer as legitimate on paper as neighboring Greenland, maybe even more so. Its coastline was well-defined, with clusters of smaller islands surrounding it and a smattering of towns identified inland. The English explorer Martin Frobisher seemed to confirm its existence on all three of his voyages. On his first outing in July 1576, Frobisher passed what he believed to be the mountainous coast of Frisland. After spotting the island again a year later, the expedition’s chronicler, George Best, compared it to Frisland as depicted on the Zeno map: “For so much of this land as we have sayled alongst, comparing their carde [the Zeno map] with the coast, we find it very agreeable.” And on the third voyage, in 1578, Frobisher actually came ashore and claimed Frisland for Queen Elizabeth, dubbing it “Anglia Occidentale.”
+        </p>
+        <p>
+          It lies beyond the continental shelf, so it would likely be composed largely of volcanic basalt, like Iceland. It would also have a similar history, initially being discovered by Irish or Scottish monks, and later conquered by Norse settlers. This would mean a stronger and more lasting Norse influence on Scotland and Ireland. The Highlands and islands might have a Frisian language tradition rather than a Gaelic one.
+        </p>
+        <p>
+          Frisland appears to be born out of confusion between an imaginary island and the actual southern part of Greenland. Even in the mid-18th century, explorers' maps clearly depicted Frisland as separated from Greenland by a wide strait. The myth of Frisland was exposed as explorers, chiefly from England and France, charted and mapped the north-west waters. However, Frederick J. Pohl identifies Frisland with an island he refers to as "Fer Island", modern English Fair Isle, an island lying between mainland Shetland and the Orkney islands.
+        </p>
+        
+        
+    </div>
+
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+      
+      <p>
+        This "fictional island", as they love to say... officially appears to have been born out of the confusion between an imaginary island and the actual southern part of Greenland, but, even in the mid 18th century, some of the explorers' maps clearly depict Frisland as an actual island.
+      </p>
+      <p>
+        Dello Scoprimento begins with a description of a letter from Nicolò (the Elder) to his brother Antonio. As the letter tells it, in 1380, Nicolò departed Venice for England and Flanders, only to be diverted to the north by a violent storm. He shipwrecked on an island called Frisland, where he met a prince named Zichmni. Zichmni not only spoke Latin, but he was familiar with Italy and was thrilled to be in the presence of a Venetian. The ruler took an immediate liking to Nicolò and consulted with him as he plotted to take over the nearby islands of Ledovo, Ilofe, and Sanestol. So grateful was Zichmni for Nicolò’s valor and naval expertise that he knighted the Venetian. Nicolò then invited his brother Antonio to the island. Antonio soon became captain of Zichmni’s fleet and joined the ruler for a 14-year campaign of exploration and combat
+      </p>
+      <p>
+        Equally puzzling is the cultural parallel with Friesland in the north of the Netherlands. The Frisian people remain a small but resilient community, speaking a language distinct from Dutch, yet strikingly close to Old English and Old Scots. This linguistic link suggests a deeper and perhaps forgotten history. Historical accounts even estimated Frisland’s population at between 500,000 and one million people—an astonishing figure for its time.
+      </p>
+      <p>
+        Following the destruction of Atlantis, a landmass that remained above sea level became known as Frisland. This island should not be confused with Friesland, the medieval region located near Saxony in present-day Holland and Germany. Frisland was located south of Iceland along the Mid-Atlantic Ridge. According to seismic data from the USGS, earthquakes occur frequently along this ridge, which is a central geological feature of the former Atlantean region. The Mid-Atlantic Ridge is composed of volcanic mountains, and their instability contributed to the sinking of Atlantis. As tectonic plates diverge, the crust between them is stretched and pulled downward—an exact description of what happened to Frisland.
+      </p>
+      <p>
+        Historical records from the Viking era provide compelling accounts of Frisland. Documentation in Scandinavian and Northern European archives mentions a king and queen of the island, and the Sagas detail frequent Viking voyages between Iceland, Frisland, and Greenland. One day, however, Frisland had vanished without a trace. An entire island—once part of Atlantean culture—disappeared almost instantaneously. Antique globes preserved in Iceland still feature Frisland clearly, reinforcing its former presence. This sudden disappearance mirrors tectonic activity that can still be observed today.
+
+      </p>
+      <img src="Isola Di Frislanda_Showcase_Web_01.jpg">
+      <p>
+        The Icelandic Cultural England website notes that for many years, Frisland appeared on maps as a “semi-fictional country.” People would describe it as an island south of Iceland, and its inhabitants would go on trips and visit other parts of the island or the mainland, and then suddenly it disappeared from maps.
+      </p>
+      <p>
+        In the research paper “Um Frísar, Føroyingar og Frísalandsfólkini” (On Scholars in the Faroe Islands), it is mentioned that there is a local legend that says that Frisians once inhabited the Faroe Islands, perhaps before or with the Norwegian settlers. That is, people believe that Friesland may have been historically linked to them, or that the name “Frisian” appeared in some local tradition.Also in old letters and books: Some local writers in the 18th and 19th centuries said that they found remains attributed to Frisian settlers in some areas of the Faroe Islands such as East Sunnbøur.
+      </p>
+      <p>
+        In 1561, just a few years after the publication of the Zeno map, Girolamo Ruscelli included Septentrionalium Partium Nova Tabula, a reduced version of the Zeno map, in his edition of Ptolemy’s Geographia. The only significant cartographic difference between the two maps is that Ruscelli keeps the connection between Greenland and Scandinavia ambiguous; otherwise, Frisland and all the other phantom islands are reproduced. In his introduction to the text, Ruscelli specifically praises Zeno the Younger’s superior knowledge of geography and history. Over the course of the next 38 years, Ruscelli included the map in every edition of his popular and influential work.
+      </p>
+      <p>
+        Iceland, positioned on the same Mid-Atlantic Ridge, remains vulnerable to similar geological forces. While the island is currently expanding due to volcanic activity, the risk of sudden submersion remains real. Sailors in the North Atlantic and South Pacific continue to report sightings of landmasses briefly rising above sea level and then sinking again—especially near Iceland, where volcanic forces are highly active. One such case was Christmas Island, which appeared on Christmas Day and disappeared several days later. These are not anomalies but indicators of the region’s volatile nature
+      </p>
+      <p>    
+The Frisland was completely erased from the maps, when modern explorers, mostly from England and France, charted and mapped the waters of the North Atlantic. They claimed that Frisland had never existed
+      </p>
+      <p>
+        I recently came across the work of the Italian Jesuit Giulio Aleni, who compiled this remarkable map in China in 1620. This world map, with dimensions of 220 cm by 110 cm, clearly shows Greenland, Iceland and even Friesland, while Australia is missing. Most striking is that Antarctica is already visible, although it was only officially discovered in 1820.
+      </p>
+      <img src="OudeChineseKaart_Showcase_01.jpg">
+    </div>
+    
+    <div class="section-title">Research</div>
+    <div class="section clearfix">
+      <div class="section clearfix">
+       <h3>Geography</h3>
+       <img src="googleearth.jpg">
+       <p>
+        If you look at Google Earth today you can see by observing the ocean floor that Frisland could have potentially existed, based on the bathometry. Why has the idea of Frisland being the last remaining island of Atlantis not crossed people's minds and that it potentally could have existed? Especially since it is so near the mid atlantic ridge where there could have been major shift in the earths plates and where there is major volcanic activity.
+       </p>
+      
+        <p>
+          Frisland was shown as a roughly rectangular island with three triangular promontories on its western coast. Its place-names have a very Italian look (Aqua, Spagia, Bondendea, Monaco), a fact which seems to reinforce the suspicion that its details were fabricated in southern Europe.
+        </p>
+        <p>
+          The natural history of Frisland is very similar to that of Iceland. It was formed by a geological hotspot beneath the Mid-Atlantic Ridge, at the boundary between the North American and Eurasian tectonic plates. Frisland has a large central plateau, with mountains and fjords along its northern coast, and low-lying plains in the east, where the majority of its population resides. It was once heavily forested, but due to deforestation, it is now primarily composed of grasslands.
+        </p>
+        <p>
+          Along the west coast we see two large bays named the Northern and Southern gulfs separated by a peninsula with Cape Deria and the town of Banar. It would appear that the main harbour of the Northern Gulf was the port of Bondendea whilst Sanestol served the Southern Gulf.
+        </p>
+        <p>
+          On the South coast there is a small peninsula at Anefes with a group of islands with the name Monaco next to it. Some maps also put the name Porlanda or Port Orlanda next to Monaco. Perhaps the one referred to the islands and the other to a town or port on or near the islands
+        </p>
+        <img src="frisland-9d38de32-de17-403e-9bbe-b6352a46e0c-resize-750.jpeg">
+        <p>
+          In the south-east corner we find the town of Sorand next to a small bay to the east of the town. As we move northwards along the east coast we find another bay with the town of Godmee on its northern shore. Further on there are the towns of Doffias, Frisland and Rouea. The last feature to be highlighted is the island of Thini off the coast of the Piglu peninsula.
+        </p>
+        <p>
+          If you look at Google Earth today you can see by observing the ocean floor that Frisland could have potentially existed, based on the bathometry. Why has the idea of Frisland being the last remaining island of Atlantis not crossed people's minds and that it potentally could have existed? Especially since it is so near the mid atlantic ridge where there could have been major shift in the earths plates and where there is major volcanic activity.
+        </p>
+      </div>
+      <div class="section clearfix">
+        <h3>People</h3>
+        <p>
+The Frisii were a Germanic tribe who lived in the ancient coastal regions of Northwestern Europe, in the area now known as Friesland. They were first mentioned by the Roman historian Tacitus in his book "Germania," where he described them as one of the most powerful tribes in the region.
+        </p>
+        <p>
+          The Frisii are also often mentioned in connection with the mythical island of Frisland, which appeared on many maps from the 16th to the 18th century and was associated with the region of the Frisians
+        </p>
+        <p>
+          The Frisii were renowned for their trade and maritime skills, and they had interactions with Roman traders and officials. In the 3rd century AD, they came under pressure from other Germanic tribes like the Saxons and the Franks and were eventually incorporated into the Frankish Empire
+        </p>
+        <img src="frissi.jpg">
+        <p>
+          The history and culture of the Frisii continue to have a strong influence on the region now known as Friesland. The Frisians have their own language and culture, and over the centuries, they developed a strong connection with the sea and trade. Their navigational and shipbuilding skills are still highly valued and have contributed to the development of the Dutch merchant fleet.
+        </p>
+      </div>
+
+      <div class=" section clearfix">
+       <h3>Language</h3>
+       <p>
+       Equally puzzling is the cultural parallel with Friesland in the north of the Netherlands. The Frisian people remain a small but resilient community, speaking a language distinct from Dutch, yet strikingly close to Old English and Old Scots. This linguistic link suggests a deeper and perhaps forgotten history. Historical accounts even estimated Frisland’s population at between 500,000 and one million people—an astonishing figure for its time.
+        </p>
+      </div>
+    </div>  
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Frisland" target="_blank">Wikipedia –Frisland </a></li>
+          <li><a href="https://www.britannica.com/place/Frisland" target="_blank">Britannica –Frisland </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

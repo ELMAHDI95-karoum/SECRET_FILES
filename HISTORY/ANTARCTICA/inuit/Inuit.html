@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>INUIT</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Description">Description</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">INUIT</h1>
+
+    <img src="" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+          
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+  
+     <div class="section clearfix">
+      
+      </div>
+      
+      
+  
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+      <p>
+        Some accounts say that the Inuit are not a primitive people, but survivors of an ancient, advanced civilization that lived in the Arctic and ended due to a massive climate catastrophe.
+      </p>
+      <p>
+        Claims circulate that the Arctic was warm in ancient times and contained advanced cities. Some allege that the Inuit people carry "genes" or "knowledge" from that extinct civilization dating back to the pre-Ice Age period. It is said that their traditional tools and the myth of the "Mistress of the Sea" (Sedna) serve as evidence of remnants of ancient sciences passed down through the polar generations.
+      </p>
+     <p>
+      Legends about "memories of an extinct civilization" are circulating , who claim that stories such as: "Sedna" (Mistress of the Sea), "Qalupalik" (the Green Sea creature), and "Amaguq" (the Spiritual Night Wolf), are not just myths, but encryptions of ancient truths related to: non-human beings, major polar catastrophes, and a forgotten civilization that lived at the pole before the freeze. They assert that these legends equal "history covered in symbolism."
+     </p>
+      <p>
+        A legend is widespread among the Inuit claiming that they lived with massive white beings in the Arctic, creatures similar to the Yeti myth. Other accounts suggest that they have a "spiritual agreement" with mysterious beings living beneath the ice. More profoundly, there is the interpretation that their narratives about the "Tornit," another name for the Tuniit people, are actually true stories about the existence of races other than human.
+      </p>
+      <p>
+        Some proponents suggest the idea that the Inuit traveled across the ocean thousands of years ago and reached South America, citing the lack of "evidence" to support prevailing theories, in their opinion. They claim that the Inuit arrived in South America before other peoples, and that the "Men who came from the Ice" legends prevalent among the Incas serve as evidence of this. They further add that the similarity between the Inuit's hunting bows and those found in South America may indicate "ancient contacts" between the two regions.
+      </p>
+      <p>
+        It is claimed that the traditional skin boats used by the Inuit are more advanced than the level of primitive peoples, and that they are built with a "non-sinking technology," believed to be inspired by an ancient civilization. Some suggest that the Inuit's exceptional ability to hunt under the ice is essentially "pre-flood knowledge," linking their skills to the lost sciences of earlier civilizations.
+      </p>
+      <p>
+        One of the most popular theories on Arab and Western YouTube is that Hitler did not die and escaped to Base 211 under the ice in Greenland or Antarctica, and that the Inuit were “guardians” or “witnesses” to the Nazi flying saucers (Haunebu) that took off from there, and that some elderly Inuit still remember seeing strange lights and German soldiers in the 1940s.
+      </p>
+      <p>
+        The classic theory since the 19th century (especially among followers of Admiral Byrd) is that there is a huge hole in the North Pole leading to a warm inner world, and the Inuit are the only people who know exactly where it is, and that they have been protecting the secret for thousands of years, and that is why the West prevents them from speaking.
+      </p>
+      <p>
+        Some say that the topilag statues made by the Inuit from animal bones and brought to life by sorcerers for revenge are not just a myth, but remnants of Atlantis biotechnology or even ancient “organic robots”.
+      </p>
+      <p>
+        Most genetic studies say that the ancestors of the Inuit came from Northeast Asia via the Bering Strait about 5,000 years ago. There are ancient Asian roots shared between the Inuit and the Tibetan people, and this explains the similarity in the shape of the eyes and round faces.
+      </p>
+    </div>
+
+    
+
+
+
+    <h2 class="section-title">Description</h2>
+    <div class="section clearfix">
+      <h3>People</h3>
+      <p>
+        “Eskimo,” meaning raw meat-eater, is an old name that was used in European languages ​​to describe the peoples of the North (Inuit, Yupik, Chukchi, and others), but today this name is considered inaccurate and sometimes offensive — especially among the Inuit in Canada and Greenland.
+      </p>
+     
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+     <p>
+      In 1693, the Scottish minister James Wallace published a book titled “A Description of the Isles of Orkney,” in which he described a strange incident. Fishermen in Orkney noticed a small boat approaching the shore. The boat was made of animal skin on a wooden frame (a kayak), the well-known Inuit method. A man of strange appearance and clothing—completely different from the inhabitants of Orkney—was on board. He was apprehended because he did not understand their language, and communication was impossible. Wallace described him as resembling "the inhabitants of the frozen regions in the north." Today, this man is believed to have been an Inuit from Greenland, and it is highly probable that he was either swept by currents and winds from Greenland eastward across the ocean, or that he was part of a hunting expedition that got lost.
+     </p>
+        
+        
+    </div>
+
+    <h2 class="section-title">Pictures</h2>
+    <div class="images-row">
+      
+
+      
+
+
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Inuit" target="_blank">Wikipedia –Inuit </a></li>
+          <li><a href="https://www.britannica.com/Inuit" target="_blank">Britannica –Inuit </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

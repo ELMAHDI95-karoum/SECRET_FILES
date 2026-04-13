@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>POPE VATICAN</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#Literary">Literary</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Symbols">Symbols</a></li>
+      <li><a href="#Rituals">Rituals</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">POPE VATICAN</h1>
+
+    <img src="" alt="" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+
+        </p>
+        
+    </div>
+    
+<h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+Eamon Duffy explains that the Church was not only fixed on texts, but incorporated popular elements and ancient symbols, including solar or stellar symbols or ritual movements, which may have been influenced by Mithra or other pagan rituals.
+        </p>
+        
+    </div>
+
+    <h2 class="section-title">Symbols</h2>
+    <div class="section clearfix">
+        <h3 class="sub- title">Mitre</h3>
+        <img src="mitre.jpg">
+        <p>
+          The mitre is a tall hat with two ends resembling arms or bows. It is the liturgical headdress reserved for bishops and certain other prelates of most Christian denominations in the celebration of papal rites. It is usually made of luxurious fabric such as silk and decorated with gold thread or small precious stones. The raised ends symbolize spiritual authority and the bishop's connection with both earth and heaven, i.e., his role as mediator between God and the people.
+        </p>
+        <p>
+            One of the mystery religions involved the Philistine idol of the fish-man god called Dagon, which was also referred to as the devil.
+The most famous temples of Dagon were at Gaza (Judges 16:21-30)
+and Ashdod (1 Samuel 5:3,4; 1 Chronicles 10:10).
+        </p>
+        <p>
+        Did you know that Catholic bishops are actually high priests of Dagon, the ancient pagan deity of the Philistines? You see, the miter the bishop wears is a replica of the costumes worn by the priests of Dagon. That’s right, the priests of Dagon wore a head dress that looked like the head of a fish with an open mouth, and down their back they wore a long cape that looked like like the skin of a big fish. When you look at a Catholic bishop sideways you can see the open mouthed fish head and his cope looks just like that fish skin they wore! This proves that Catholicism is really just old fashioned devil worshipping paganism right? Wrong
+        </p>
+        <p>
+            In the Roman Empire, it was worn by the head priest of Cybele (the Magna Mater) or the Great Queen Mother Goddess.
+        </p>
+        <p>
+            The bishop’s miter developed from the camelaucum; a form of crown worn in the imperial court in Byzantium. There are no pictures of a Catholic bishop wearing what we would recognize as a miter until the eleventh century and then it was a shorter, softer hat which only developed into its present form in the late middle ages….long after the worshippers of Dagon were dead and gone.
+        </p>
+        <p>
+             Here we see the drawing of the pagan goddess Cybele with the fish head of dagon on her head and the device used to sprinkle the holy water.
+Cybele was worshipped in Rome and was called the great queen mother goddess. Some scholars say the Basilica of Saint Peter actually stands upon the former site of Cybele's main temple.
+Also there are some who say the fish head hat of the priests of Enki (a Sumerarian god of the earth and world order) later became the miter of the bishops.
+        </p>
+        <img src="cybele.jpg">
+        <p>
+            In actuality calling Christians fish, symbolizing them with the fish, and calling the disciples as fishers of men has little or nothing to do with the Jesus of Capernaum. Dagon's son was Baal the god of harvest. The many analogies of the fish and the mentions of harvests, wheat and tare, the seeds along with shining sunlight and water flowing to watering it, are all lures to converge the mystery cults in with the new compiled religion.
+        </p>
+        <p>
+          Mithraism was a secret religion in the Roman Empire, focusing on the god Mithra, the celestial birth of the sun, and bull sacrifice. Mithraist priests wore special ritual hats and vestments, some of which resembled the Christian mithra in their elevation and decoration.
+        </p>
+        <p>
+          Scholars have noted that the Christian mithra indirectly borrowed formal elements from ancient ritual symbols (mithraism or pagan rituals), but they were completely reinterpreted in a Christian context.
+        </p>
+    </div>
+    <div class="section clearfix">
+      <h3>Cross</h3>
+      <p>
+        
+      </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Pope Vatican" target="_blank">Wikipedia –Pope Vatican </a></li>
+          <li><a href="https://www.britannica.com/Pope Vatican" target="_blank">Britannica –Pope Vatican </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

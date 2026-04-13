@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AL-WAKWAK</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#Picture">Picture</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">AL-WAKWAK</h1>
+
+    <img src="" alt="" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+         The Waq Waq Islands were mentioned in Arabic literature between the ninth and sixteenth centuries as legendary islands whose exact location was not determined. There are accounts that say they are from the islands of the African coast, and others claim that they are from the Asian coast. They were also mentioned as the islands of Japan. Some Arab Muslim travelers built some assumptions on these accounts, claiming that they traveled to the Waq Waq Islands. Many legendary stories were woven around what these islands contain.Some have described it as containing strange plants with fruit shaped like women. Others have said it is inhabited only by women and ruled by a woman who sits naked on her throne. It is also said that it is so rich in gold that its inhabitants make various items from it.
+        </p>
+        <p>
+          The name Waq Waq appears in one of the strangest mythological accounts of the islands. The story mentions a type of tree whose fruit grows in the form of women with long hair attached to the tree's branches. When the fruit (referring to the woman) ripens, it falls to the ground, making a sound similar to "Waq Waq." It's worth noting that this legend can be linked to another legend, which claims that all the inhabitants of these islands are women. The presence of this tree explains the absence of men from the islands.
+        </p>
+        
+    </div>
+
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+            The Waqwaq is a Persian oracular tree, originating from India, whose branches or fruits become heads of men, women or monstrous animals (depending on version) screaming "Waq-Waq", which means screams in Persian.
+        </p>
+        <p>
+            In 859 AD the basrien writer Jahiz described this tree as populated with both animals and women hanging by their hair.
+        </p>
+        <img src="Wwaqwaq.webp">
+        <p>
+          Ajâb'ib Nâmeh of Tusi Salmani in 1388 also claimed to have seen the tree in The Book of Curiosities. However, he gave a very different description. He wrote that the tree was decorated symmetrically with the heads of human females, birds, horses, ducks , monkeys, hares, foxes, cocks, and rams. It supposedly ate these animals and their heads bloomed from its branches like flowers
+        </p>
+        <p>
+          In Arab versions, the famous island of Waq-Waq is located in the China Sea. A queen rules the island and the population is entirely female: it is usually illustrated in al-Qazvini manuscripts of the Wonders of Creation showing the queen surrounded by her female attendants.[3]
+        </p>
+        <p>
+          Ibn Khordadbeh mentions Waqwaq twice:[4]
+
+East of China are the lands of Waqwaq, which are so rich in gold that the inhabitants make the chains for their dogs and the collars for their monkeys of this metal. They manufacture tunics woven with gold. Excellent ebony wood is found there.
+        </p>
+
+    </div>
+
+    <h2 class="section-title">Picture</h2>
+    <div class="section clearfix">
+      <figure class="image-box">
+        <img src="iskander.jpg" alt="Alexander listening to a WaqWaq tree from the Shahnama, 1719 AD. It is said that this talking tree prophesied his death correctly.">
+        <figcaption>Alexander listening to a WaqWaq tree from the Shahnama, 1719 AD. It is said that this talking tree prophesied his death correctly.</figcaption>
+      </figure>
+  
+    </div>
+    
+    <h2 class="section-title">Location</h2>
+    <div class="section clearfix">
+      <p>
+        "Waq Waq" first appeared in the famous 10th-century geographer Ibn Hawqal's Kitab Surat al-Ard (Book of the Image of the Earth). Since then, it has become a common name in Arabic geographical literature. Geographers such as al-Idrisi, al-Qazwini, and Ibn al-Wardi described it, and it appeared on their maps as islands located in the far east of Asia, sometimes near China or Japan, and other times off the coast of East Africa.
+      </p>
+      <p>
+        Ibn Khordadbeh mentions Waqwaq twice:
+
+      East of China are the lands of Waqwaq, which are so rich in gold that the inhabitants make the chains for their dogs and the collars for their monkeys of this metal. They manufacture tunics woven with gold. Excellent ebony wood is found there.
+      </p>
+      <img src="wak iderissi.jpg" >
+      <p>
+        Waq Waq is a group of islands mentioned in ancient Arab heritage books. It is not possible to determine whether they are real or imaginary, and there is no evidence to prove whether they are real or imaginary. Most geography books indicate that their location is in the China Sea or the Indian Ocean. Waq Waq is a name given by the Arabs to two different locations. The first country is located in the Far East, on the eastern coast of the Asian continent, specifically in northern China. However, some orientalists claimed that the location was not on the eastern coast, but rather the Japanese islands themselves, while the second location is referred to as the island of Madagascar located in the African continent. The best evidence of the validity of this is the map attributed to Al-Idrisi.
+      </p>
+        
+        
+
+  
+      
+    </div>
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+       
+        </p>
+    
+    </div>
+
+    <div class="section clearfix">
+      <h3 class="sub- title">Poeple</h3>
+      <p>
+        Al-Masudi, in his book “Muruj Al-Dhahab,” described the inhabitants of Waq Waq as being black-skinned, muscular, wearing animal skins, engaging in trade with the Arabs, and possessing an abundance of gold.
+      </p>
+    </div>
+    <div class="section clearfix">
+        <h3 class="sub- title">Description</h3>
+        <p>
+        Mohammed ben Bâbichâd told me from what he had heard from one of those who went to Waq Waq: that there were large trees. sometimes with elongated rounded leaves that bear fruit like squash, but bigger, that have a human face: when the wind stirs the leaves, a voice comes out, and the inside fills with air, like the pods of the milkweed. If they are detached from the tree, the air escapes at once and they become flat and flabby like a piece of skin.
+        </p>
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Al-Wakwak" target="_blank">Wikipedia –Al-Wakwak </a></li>
+          <li><a href="https://www.britannica.com/place/Al-Wakwak" target="_blank">Britannica –Al-Wakwak </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

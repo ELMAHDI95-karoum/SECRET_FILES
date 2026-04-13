@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>OUROBOROS</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">OUROBOROS</h1>
+
+    <img src="ouroboros-carving.webp" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+            The Ouroboros is among the most ancient and profound symbols in human history, depicting a serpent or dragon devouring its own tail to form a perfect, closed circle. Originating in Ancient Egypt (circa 1600–1100 BCE in funerary texts), it symbolized unity, eternal return, and the solar cycle—rebirthing itself each dawn after its subterranean journey. The symbol migrated to Greek civilization, becoming a central pillar of Alchemy and Hermetic philosophy, embodying the principle "All is One" (En To Pan). It represents the conservation of energy and matter, perpetually transforming within a continuous, resonant loop.
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+  
+     <div class="section clearfix">
+      <div class="section clearfix">
+        <h3>GREEC</h3>
+        <p>
+          In Ancient Greece, the symbol was embraced as a cornerstone of philosophical and alchemical thought. The Greek term originates from two words: "Oura", meaning "tail," and "Boros", meaning "eating" or "devouring." Thus, the Ouroboros literally signifies the concept of cyclical renewal and the intrinsic interdependence of opposites—such as life and death, or creation and destruction. It represents a system that feeds upon itself to maintain immortality, transforming the act of "devouring" from one of destruction into a process of eternal preservation.
+        </p>
+      </div>
+
+      <div class="section clearfix">
+        <h3>EGYPTE</h3>
+        <p>
+          The Ouroboros (Greek for “tail-devourer”), an ancient symbol first found on the shrine of Tutankhamen’s Ancient Egyptian tomb, still resonates with us today. As a symbol of rebirth and regeneration, it spans centuries and cultures. Thought to be a representation of the sun and its movement through the day, the enduring image of a circle—one of nature’s most profound and prolific symbols—appears constantly in our surroundings, all worthy of worship: the sun as it warms our faces and feeds our plants; the moon in full bloom as it shifts the ocean tides and lights up the night sky; the black pupil inside the iris as we gaze, like Narcissus, at our own reflection; and the ripples in water from a single droplet of rain.
+        </p>
+        <p>
+          The Ouroboros possesses profound historical roots, with origins traceable to the dawn of ancient Egypt, where it was intrinsically linked to the sun god Ra. The serpent biting its own tail served as a celestial representation of the sun's journey across the firmament—from the first light of dawn to the final shadows of dusk—and its miraculous eternal renewal each day. To the Egyptians, it symbolized the self-sustaining cycle of the cosmos, acting as a divine guardian of the solar path, ensuring that light would perpetually triumph over darkness in an unbroken, resonant loop.
+        </p>
+      </div>
+
+      <div class="section clearfix">
+        <h3>AMERICA</h3>
+        <p>
+          In the western world tales of the ouroboros have also spread. In South America, some tribes believe that the world is sitting on a giant flat sea and that ouroboros circles the Earth biting it's tail. They believe the snake holds the essence of life within itself. It was even meant to control the tides with its breathing.
+        </p>
+      </div>
+
+      <div class="section clearfix">
+        <h3>HINDUISM</h3>
+        <p>
+          In Hindu tradition, the serpent manifests in two complementary forms: the Naga, representing cosmic forces, and Kundalini, the latent spiritual energy depicted as a "coiled serpent" at the base of the spine. In sacred texts such as the (Yoga-kundalini Upanishad), this serpent is explicitly described as "holding its tail in its mouth," mirroring the Ouroboros. This posture symbolizes Samsara—the beginningless and endless cycle of birth, death, and rebirth. It represents a closed system of existence that the consciousness must master and eventually "uncoil" to achieve ultimate liberation and transcendence.
+        </p>
+      </div>
+
+      <div class="section clearfix">
+        <h3>NORSE</h3>
+        <p>
+          In Norse mythology they believed that the giant serpent Jörmungandr circled the world with his tail in his mouth, and that when he one day let go that Ragnarok(the end of the world) would ensue. But, out of the chaos a new world would be born.
+        </p>
+      </div>
+      </div>
+      
+      
+
+    
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+        <p>
+            In Gnostic thought, the Ouroboros was highly valued as a representation of "Secret Knowledge" (Gnosis). The Gnostics were profoundly dedicated to deciphering divine messages and seeking the symbolism hidden between the lines of nature and reality. The loop-like quality of the symbol was the very essence of their belief: a Creator who fashioned a perfect universe characterized by eternal, flawless balance. This leads to the ultimate pillar of their philosophy—Unity. Their profound devotion to the Monotheistic God found its perfect expression in the Ouroboros, where the closed circle symbolized the One who encompasses all, where beginning and end dissolve into a single, divine singularity.
+        </p>
+        <p>
+            In alchemical literature, the Ouroboros stands as the central symbol and the ultimate representation of its goal and practice. It embodies the Prima Materia, which many alchemists labored to discover, hermetically sealed within an alembic and subjected to continuous coction by appropriate heat. This substance is described by a myriad of names and symbols that evolve as it transforms toward the ultimate goal—the   r <a href="/Users/Elmahdi karoum/OneDrive/Desktop/html/LEGACY/Alchemy/PHILOSOPHER'S STONE/PHILOSOPHER'S STONE.html">PHILOSOPHER'S STONE</a>. It is a single thing that is actually two or three things: a volatile entity that digests itself and becomes itself while sealed and sustained by fire in its "womb." Consequently, a serpent consuming itself became the definitive symbol for the Philosopher’s Stone, its origin, and its method of generation across most alchemical art and literature.
+        </p>
+        <p>
+          In alchemical manuscripts, the Ouroboros was often depicted as a winged dragon, specifically symbolizing the element Mercury (Quicksilver). This connection is profound: Mercury is the only metal that remains liquid at room temperature, possessing a "unique cohesion." If shattered into tiny droplets, it seeks, with an almost magnetic hunger, to re-aggregate into a larger whole—as if it were "thirsty for itself." This physical behavior is the material manifestation of the Ouroboros; it represents matter that can only find completion by "devouring" its scattered fragments to return to its original, sovereign unity.
+        </p>
+        <p>
+          "It is a symbol for Mercury. Being a circle, it also represents eternity. The formless nothingness inside the circle, and the formed serpent without. The harmony of opposites comes to mind—creation and destruction. They are the same in nature, differing only in degrees of polarity. They do not cancel each other out; instead, they generate an eternally new thing. The flame of the Flower of Life is in constant flux. The only constant IS change, yet nothing is new under the sun. It is staggering when you think about it. A paradox that cannot be, yet is. Every truth is half false, as they say."
+        </p>
+        <p>
+          In profound Gnostic, Mystical, and Alchemical interpretations, the Ouroboros evolves into a symbol that unifies the fragments of the human narrative. It bridges the Serpent of Eden (which offered the "wisdom" of liberation from material ignorance) with the Nehushtan (the brazen serpent) raised by Moses in the wilderness as a beacon of healing and renewal. At the Gnostic zenith, Jesus is depicted as the "Uplifted Serpent" (referencing the symbolic: "As Moses lifted up the serpent in the wilderness, even so must the Son of Man be lifted up"), representing the absolute union between death and eternal life. Here, the Ouroboros is the circle that fuses "transgression" and "redemption" into a single crucible, transforming the separation from the Divine into a triumphant return through the gateway of Gnosis and Transmutation.
+        </p>
+        <p>
+          The Gnostic sect known as the Ophites (Serpent-worshippers) transcended traditional interpretations by venerating the serpent as a symbol of Salvation. To them, the serpent in Eden was the liberator who bestowed "Knowledge" (Gnosis) upon humanity, allowing them to break free from spiritual ignorance and the constraints of the "Demiurge" (the material creator). In this light, the Ouroboros becomes the manifestation of the "Soul returning to itself"—a cosmic cycle that begins with a separation from the Divine Source and culminates in a triumphant return through the attainment of supreme consciousness. Here, the serpent is not an antagonist but a "Teacher" who seals the circle of existence with ultimate wisdom.
+        </p>
+        <img src="ouroboros-6_480x480.webp"
+        <p>
+          In the 1850’s, a scientist who was renown in the field of theoretical chemistry, had been hard at work studying the nature of carbon on carbon bonds. He became frustrated one night at his lack of progress and took a break to doze in his chair by the fire. While asleep he claimed to have dreamed of a series of atoms shaping themselves in moving snakelike lines. Suddenly the atom snake turned and bit it’s tail
+        </p>
+        
+      
+    </div>
+
+    
+
+
+
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+            The true origin of the Ouroboros remains unknown, though the earliest records trace its use back to the Egyptians and the Greeks—the latter giving it the name "Ouroboros" (tail-devourer). Its symbolism is multifaceted, but the core interpretation is that life and death are inextricably linked; one cannot exist without the other. As the serpent consumes its tail, representing death, it simultaneously nourishes itself, symbolizing life. This creates a self-sustaining loop. It serves as the Western counterpart to the Yin and Yang, representing the balance between opposites and ultimate unity. While it may appear negative at first glance, it is truly a symbol for the nature of reality, which is why it became a cornerstone in Alchemy and Gnosticism.
+        </p>
+        <p>
+          The Swiss psychologist Carl Jung recognized the Ouroboros as a fundamental archetype of the collective unconscious. He viewed it as a representation of the process of individuation—the psychological journey where an individual strives to achieve their true and complete self. This is attained by embracing and integrating all facets of one's personality, most notably the "shadow." To Jung, the serpent devouring its own tail is the ultimate metaphor for the psyche that confronts its own darkness to achieve wholeness and self-sustenance.
+        </p>
+        <p>
+          In his psychological analysis of alchemical symbolism, Carl Jung posits that the Ouroboros (often depicted as the Alchemical Dragon) is more than a symbol of cycles; it is a "self-impregnating" or "self-fertilizing" entity. By devouring its own tail, it performs a continuous act of self-pollination, where the head (Conscious/Masculine) and the tail (Unconscious/Feminine) unite. This internal union creates a "closed and sovereign" system that does not rely on external sources for energy or validation, but rather eternally rejuvenates itself by fusing its opposites in an act of perpetual internal "cosmic marriage."
+        </p>
+        
+        
+    </div>
+
+    <h2 class="section-title">Pictures</h2>
+    <div class="images-row">
+      
+
+      
+
+
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Ouroboros" target="_blank">Wikipedia –Ouroboros </a></li>
+          <li><a href="https://www.britannica.com/Ouroboros" target="_blank">Britannica –Ouroboros </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

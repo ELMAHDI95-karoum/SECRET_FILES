@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>THULE</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+     width: 80%;
+     max-width: 400px;
+     height: auto;
+    }
+
+
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">THULE</h1>
+
+    <img src="thule_map.JPEG" alt="Map of Thule" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+      <p>
+        Thule (/ˈθjuːliː/; Ancient Greek: Θούλη, Thúlē; Latin: Thūlē or Thylē) is the northernmost location mentioned in ancient Greek and Roman literature and cartography. It was first described around 320 BC by the Greek explorer Pytheas of Massalia (modern-day Marseille, France), who referred to it as a distant island located north of Britain or Ireland.
+
+In classical and medieval writings, the term Ultima Thule ("farthest Thule") became a metaphor for any distant place beyond the known world.
+Modern interpretations of Thule's location have included the Orkney and Shetland Islands, northern Scotland, the Faroe Islands, Iceland, the Estonian island of Saaremaa (also known as Ösel), and the Norwegian island of Smøla.
+    
+     </p>
+     <p>
+      In classical and medieval literature, ultima Thule (Latin "farthest Thule") acquired a metaphorical meaning of any distant place located beyond the "borders of the known world". By the Late Middle Ages and the early modern period, the Greco-Roman Thule was often identified with the real Iceland or Greenland. Sometimes Ultima Thule was a Latin name for Greenland, when Thule was used for Iceland. By the 19th century, however, Thule was frequently identified with Norway, Denmark, the whole of Scandinavia, one of the larger Scottish islands, the Faroes, or several of those locations
+     </p>
+    </div>
+
+    <h2 class="section-title" id="literary">Literary Legends</h2>
+    <div class="section clearfix">
+      <h3 class="sub- title"> Volcan thule -Dante's Inferno</h3>
+      <p>
+        Years ago I read the book of an Italian engineer that described Dante’s Inferno as a real path the author might
+        have followed—one that the engineer identified in Iceland. From the perspective of ley lines, the island is
+        particularly interesting due to volcanic activity, which emits vibrations and infrasound. Iceland has also been
+        seen as a border between the micro and macro cosmos.
+      </p>
+      <img src="Volcan.JPEG" alt="Volcano - Dante’s Inferno">
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title">Thule Air Base - knud Rasmussen</h3>
+      <p> 
+        Thule formerly gave its name to real places. In 1910, the explorer Knud Rasmussen established a missionary and trading post in north-western Greenland, which he named "Thule". It later gave its name to the northernmost United States Air Force base, Thule Air Base, in northwest Greenland. With the transfer of the base to the United States Space Force, its name was changed to Pituffik Space Base on April 6, 2023.
+      </p>
+       <img src="thule Air Base.webp" alt="Thule Air Base">
+    </div>
+
+    <div class="section clearfix">
+      <h3 class="sub- title"> Thule Stamps</h3>
+      <p>
+        Historians have proposed the Norwegian island of Smøla, while medieval scholars associated Thule with Greenland
+        and Iceland. These beautiful 1935–1937 stamps from Greenland pay homage to its ancient name.
+      </p>
+      <img src="Envelop.JPEG" alt="Thule Stamps">
+    </div>
+
+    <h2 class="section-title" id="location">Historical Location</h2>
+    <div class="section clearfix">
+      <h3 class="sub- title">Map by Sebastian Münster</h3>
+      <p>
+        A map of Northern Europe from 1542 by Sebastian Münster, a German cartographer, shows Thyle (or Thule) marked in
+        the top left. To the right of Lithuania lies Moscovia, a duchy that belonged to the Rus.
+      </p>
+      <img src="map of 1542.JPEG" alt="Map by Sebastian Münster">
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title">Thule - Orkini</h3>
+      <p>
+    The third-century Latin grammarian Gaius Julius Solinus wrote in his Polyhistor that "Thyle, which was distant from Orkney by a voyage of five days and nights, was fruitful and abundant in the lasting yield of its crops". The fourth-century Virgilian commentator Servius also believed that Thule sat close to Orkney    
+      </p>
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title">Thule - Iceland</h3>
+      <p>
+        Other late classical writers such as Orosius (384–420) describe Thule as being north and west of both Ireland and Britain, strongly suggesting that it was Iceland
+      </p>
+      <p>
+        Nazi Germany leadership considered Iceland to be the Thule area and the birthplace of the ancient Aryan race, with senior Nazi leader Heinrich Himmler even sending an expedition team to Iceland in 1938 with hopes of finding a temple for Nordic gods like Thor and Odin
+      </p>
+      <p>
+        A work of prose fiction in Greek by Antonius Diogenes entitled The Wonders Beyond Thule appeared c. AD 150 or earlier.Gerald N. Sandy, in the introduction to his translation of Photius' ninth century summary of the work, notes that this Thule most closely matches Iceland.
+      </p>
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title">Thule - Estonia</h3>
+      <p>
+      
+Thule is the farthest north location mentioned in ancient Greek and Roman literature and cartography. While its exact location remains uncertain, modern interpretations have identified it with various places such as the Orkney and Shetland Islands, northern Scotland, and even the island of Saaremaa (also known as Ösel) in Estonia. The identification of Thule with Orkney stems from geographic proximity and ancient sailing routes, whereas the Estonian theory is supported by some researchers who point to archaeological and linguistic traces that may align with classical descriptions of Thule.
+      </p>
+      <p>
+        Another hypothesis, first proposed by Lennart Meri in 1976, holds that the island of Saaremaa (which is often known by the exonym Ösel) in Estonia, could be Thule. That is, there is a phonological similarity between Thule and the root tule- "of fire" in Estonian (and other Finnic languages). A crater lake named Kaali on the island appears to have been formed by a meteor strike in prehistory. This meteor strike is often linked to Estonian folklore which has it that Saaremaa was a place where the sun at one point "went to rest".
+      </p>
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title"> Thule - Norway</h3>
+      <p>
+        In 2010, scientists from the Institute of Geodesy and Geoinformation Science at Technische Universität Berlin claimed to have identified persistent errors in calculation that had occurred in attempts by modern geographers to superimpose geographic coordinate systems upon Ptolemaic maps. After correcting for these errors, the scientists claimed, Ptolemy's Thule could be mapped to the Norwegian island of Smøla.
+      </p>
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title">Thule - Shetland</h3>
+      <p>
+        Classicist H.J.W. Wijsman at the University of Amsterdam suggested that Thule was the Shetland Islands, which lie halfway between Orkney and Norway. They experience long days of sunlight and pancake ice. However, the Shetlands are too close to Britain to be six days north. Six days suggests either Norway or Iceland.
+      </p>
+    </div>
+
+    <h2 class="section-title" id="Research">Research</h2>
+    <div class="section clearfix">
+      <h3 class="sub- title">Monster of Thule</h3>
+      <p>
+        Thule is the farthest north location mentioned in ancient Greek and Roman literature and cartography. While its exact location remains uncertain, modern interpretations have proposed various candidates, including the Orkney and Shetland Islands, northern Scotland, and the Estonian island of Saaremaa (Ösel), based on geographic proximity, ancient sailing routes, and archaeological evidence. On the other hand, a relatively recent proposal suggests that Thule may have been identical with Smøla, an island off the coast of Norway. This theory is supported by the observation that Ptolemy’s map incorrectly depicts northern Britain as turned eastward rather than northward. In 2010, scientists from the Institute of Geodesy and Geoinformation Science at Technische Universität Berlin analyzed these distortions and identified consistent errors in how modern geographers had aligned Ptolemaic coordinates with real geography. After adjusting for these errors, they concluded that Ptolemy's Thule most likely corresponds to the Norwegian island of Smøla.
+      </p>
+       <img src="Monster of Thule.JPEG" alt="Monster of Thule">
+      </div>
+
+    <div class="section clearfix">
+      <h3 class="sub- title">thule - theory</h3>
+      <p>
+        In some modern spiritual theories, hypotheses have emerged that Thule was not just an island, but rather part of a lost continent similar to Atlantis, and that it was the center of an ancient, lost wisdom. This idea was embraced by some occult movements in the early 20th century, particularly those originating in Nazi Germany (such as the Thule Society).
+      </p>
+      <p>
+        In some Germanic myths, Thule was described as not just an island, but an entrance to an underground world inhabited by mysterious beings, a gateway to Shambhala or Agartha in Eastern mythology.
+      </p>
+    </div> 
+    
+    <div class="section clearfix">
+      <h3 class="sub- title">thule Society</h3>
+      <p>
+        
+The Thule Society believed that Thule was the original homeland of the Aryans — the mythical cradle of a pure and powerful civilization that predated all others. It was regarded as the birthplace of the “pure Aryan race,” from which the Nazis claimed descent. To them, the island also symbolized racial purity and lost spiritual power. It served as a gateway to hidden knowledge from the distant past, akin to a Germanic version of Atlantis.
+      </p>
+      <img src ="thule society.jpg" alt ="thule society">
+    </div> 
+
+    <div class="section clearfix">
+      <h3 class="sub- title">Poeple of Thule</h3>
+      <p>
+          The Roman poet Silius Italicus (AD 25 – 101) wrote that the people of Thule were painted blue: "the blue-painted native of Thule, when he fights, drives around the close-packed ranks in his scythe-bearing chariot",implying a link to the Picts (whose exonym is derived from the Latin pictus "painted"). Martial (AD 40 – 104) talks about "blue" and "painted Britons", just like Julius Caesar.Claudian (AD 370 – 404) also believed that the inhabitants of Thule were Picts
+      </p>
+      <p>
+        Eustathius of Thessalonica, in his twelfth-century commentary on the Iliad, wrote that the inhabitants of Thule were at war with a tribe whose members dwarf-like, only 20 fingers in height.The American classical scholar Charles Anthon believed this legend may have been rooted in history (although exaggerated), if the dwarf or pygmy tribe were interpreted as being a smaller aboriginal tribe of Britain which the people on Thule had encountered.
+      </p>
+      <p> 
+        They worshipped the god Apollo, and everyone on the island worshipped the moon. The islanders built a huge temple to practice their worship and decorated the walls of the temple with worship rituals. They mentioned in these drawings that the moon is not spherical and that the god watches and watches them through the moon, and that every 19 years he comes down at night to celebrate with them, dancing and singing until the flowers bloom in the spring.
+      </p>
+      <p>
+        Some ancient accounts describe the Thule people as a distinct, tall people who spoke no intelligible language and lived a primitive life. In some Norse myths, they were attributed with quasi-mythical characteristics, such as communicating with spirits or living in harmony with the forces of nature.
+      </p>
+      <p>
+        Pytheas described the Thule poeple as who lived there were very tall, strong, pale, blond-haired, and wise. They survived on fish, possibly seals, herbs, fruits, and millet and even had a popular drink made of grain and honey. They had technologies like tools and boats
+      </p>
+        <img src="poeple pf thule.jpg" alt="poeple of Thule">
+    </div>
+    <div class="section clearfix">
+      <h3 class="sub- title"> Description Of Land</h3>
+      <p>
+    The Roman historian Pliny the Elder said that the waters surrounding Thule Island were not ordinary water, but a mixture of fog, water, and air that resembled melted glass, making navigation almost impossible.
+      </p>
+      <p>
+       Pytheas says: Neither earth, water, nor air exist separately, but are a sort of concretion of all these, resembling a sea-lung in which the earth, the sea, and all things were suspended…
+       there are no nights during the solstice when the sun is passing through the sign of Cancer and also no days during the winter solstice… 
+       For someone from the Mediterranean, this was a never-before-seen, alien phenomenon. Not only was the sea “congealed”, but it was immensely cold and full of mist. However, when he came out of the fogbank, he saw it was a land of “endless splendor” as he further observed that the sun hung in the sky perpetually.
+      </p>
+    </div>  
+    
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Thule" target="_blank">Wikipedia – Thule</a></li>
+          <li><a href="https://www.britannica.com/place/Thule" target="_blank">Britannica – Thule</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

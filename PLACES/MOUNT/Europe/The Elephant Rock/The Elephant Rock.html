@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>THE ELEPHANT ROCK</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+   .section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #00d990;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* إزالة التأثير على الصور داخل section حتى لا تكسر التخطيط */
+.section img {
+  float: none;
+  margin: 0;
+  width: 47%;
+  max-width: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* حاوية الصور — لجعل الصور جنب بعض */
+.images-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* صندوق كل صورة */
+.image-box {
+  width: 30%;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* الصورة داخل الصندوق */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* العنوان تحت الصورة */
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.quote-box {
+  border-left: 4px solid #3a8dde;   /* لون الخط + سماكته */
+  padding-left: 16px;               /* المسافة بين الخط والنص */
+  margin: 20px 0;                   /* المسافة فوق وتحت */
+  font-size: 18px;
+  line-height: 1.6;
+}
+ 
+p {
+  margin-bottom: 22px;     /* مسافة بين الفقرات */
+  line-height: 1.7;
+}
+
+h3 {
+    color: #1A73E8;
+    font-size: 28px;
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 3px solid #0077ff; /* ⚠️ هذا السطر هو المهم */
+    padding-bottom: 4px;
+}
+
+h4 {
+    color: #1e1e1e;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#History">History</a></li>
+      <li><a href="#Theories">Theories</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#Picture">Pictures</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">THE ELEPHANT ROCK</h1>
+
+    <img src="Roca_del_elefante,_Heimaey,_Islas_Vestman,_Suðurland,_Islandia,_2014-08-17,_DD_036.JPG" class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <p>
+            The Elephant Rock, or in Icelandic Halldórsskora, is one of the most famous natural rock formations in Iceland. This rock is renowned for its shape, which resembles a giant elephant's head dipping its trunk into the sea. This geological marvel is located on Heimaey Island, the largest of the Westman Islands off the southern coast of Iceland.
+        </p>
+        <p>
+            Halldórsskora refers to "Halldór Cliff," an old local name, but the name "Elephant Rock" has become more internationally famous due to the visual similarity (pareidolia – the phenomenon of seeing familiar shapes in nature).
+        </p>
+      
+        
+    </div>
+
+  <h2 class="section-title">History</h2>
+     <div class="section clearfix">
+        <p>
+            The islands were discovered by the Vikings around 874 AD and named "Hemai" (home island) because of their use as a refuge for fishermen. The elephant is not mentioned in traditional Icelandic culture (the word "elephant" is borrowed from the Vikings after they heard about it from a Turkish trader), but the rock has become a local symbol of volcanic power.
+        </p>
+        <p>
+            Although some popular sources link it to the 1973 eruption of Eldfell volcano (which added new land to the island and created a modern volcanic landscape), geologists maintain that the rock is much older—estimated to be around 15,000 years old or more. The 1973 eruption contributed to shaping the surrounding landscape, but it did not create the rock itself.
+        </p>
+      
+      </div>
+      
+      
+  
+       
+    <h2 class="section-title">Theories</h2>
+    <div class="section clearfix">
+        <p>
+            Some claiming that the Elephant Rock is a remnant of a pre-Viking civilization in Iceland.  Iceland was home to an unknown civilization before the Vikings arrived, and that this civilization carved massive statues into the volcanic rocks. They regard the Elephant Rock as a "sole artifact" of their colossal art, and they cite the elephant's shape as being "too precise" to be natural, supporting the idea of ancient human intervention.
+        </p>
+        <img src="jotnar.jpg">
+        <p>
+            Some researchers link the Elephant Rock to Viking mythology, referring to the race of giants known as the "Jötnar," who inhabit the mountains. It is claimed that these beings were capable of carving entire islands, and that the Elephant Rock is a "commemorative sculpture" of an animal revered by these giants.
+        </p>
+        <p>
+            Some posts in history claim that the Elephant Rock was not naturally formed, but was carved by the Vikings or an ancient Thule people ("Hyperboreans") to honor volcano deities like Surtr in Norse mythology. They suggest the "elephant" shape symbolizes Viking voyages to the East, and claim the rock contains secret caves filled with enchanted books or maps to lost Atlantis. Some theories also link it to secret Nazi bases beneath the ice, where the rock was allegedly used as a marker for volcanic flying saucers.
+        </p>
+        <p>
+            Pioneers of  history link the Elephant Rock to a speculative theory claiming that the Atlantean civilization extended as far as the North Atlantic. They allege that the Elephant Rock is a "sacred symbol" or "gateway" remnant from their civilization. It is commonly connected to other animal-shaped rocks to create a global "network of artifacts" supposedly attributed to Atlantis.
+        </p>
+        <p>
+            Some claim that the elephant was a real creature that lived in the North.  asserts that a massive animal resembling an elephant actually lived in Iceland thousands of years ago. According to this claim, the inhabitants of an ancient civilization carved it in its honor, and the Elephant Rock is the "last monument" to that animal. Proponents of this theory exploit the fact that the shape is truly and strikingly similar to an elephant to reinforce the idea that the formation is not entirely natural.
+        </p>
+        <p>
+            Sufis associate the Elephant Rock with representations of beings from the Agartha or Shambhala civilization. This theory posits the existence of an underground civilization, and that the statues on the coasts, such as the Elephant Rock, are actually markers indicating gateways to their world. Thus, the Elephant Rock is seen as a "stone seal" covering the northern entrance to this secret civilization.
+        </p>
+        <p>
+            Some content creators link the Elephant Rock to a phenomenon they call "Ancient Oceanic Guardian Statues." They claim that all ancient civilizations used to carve massive statues to guard their coasts, and that the Elephant Rock is one of those statues whose purpose was to protect the island from "sea creatures."
+        </p>
+        <img src="kou.jpg">
+        <p>
+            Promoters of conspiracy theories inspired by the works of H.P. Lovecraft (particularly on platforms like X and specialized Reddit forums) claim that the Elephant Rock resembles the face of Cthulhu more than an elephant, with the trunk being seen as an "octopus tentacle" and the wrinkles as sea monster scales. They suggest the rock is a gateway to Cthulhu's hidden realm beneath Iceland's ice, linked to the "Hollow Earth" theory, where monsters allegedly fled after the Atlantis catastrophe. This theory connects Iceland's volcanoes to "vents" for other worlds, and they claim that tourists are prohibited from approaching because the rock "pulses" with strange energy.
+        </p>
+        <p>
+            A fantastical legend is circulating on fantasy pages, claiming the existence of a race of "sea fairies" who guarded the islands. This story alleges that these beings would leave animal statues as protection markers, and that the Elephant Rock is one of these statues left by the sea fairies as a sign of their presence and guardianship over the island.
+        </p>
+        <img src="haf.jpg">
+        <p>
+            Some occasionally link the Elephant Rock to a massive mythical creature from ancient Norse heritage called the Hafgufa Sea Bull. This sea monster is mentioned in Norse manuscripts. Proponents of this theory claim that the statue might have been a tribute to this legendary creature, or that it represents its "head" as it emerges from the water, adding a Northern mythological dimension to the geological formation.
+        </p>
+        <p>
+            Some pages claim that the Elephant Rock might not represent an elephant, but rather symbolizes an extinct sea creature that resembled an elephant with a long trunk, and was sacred to a primitive maritime people. They assert that the rock is a statue carved in its honor, and they link this formation to the ancient "Sea Elephants" legend.
+        </p>
+        <img src="zix.jpg">
+        <p>
+            Icelandic legends link the Elephant Rock to the myth of the Incarnation of the Island Spirit (Landvættir), a genuine and widespread idea in Scandinavian folklore that every region has a "spirit/guardian" called a Landvættir. This idea, which is popular on Scandinavian mythology pages, claims that the Elephant Rock is the living embodiment of the Westman Islands' guardian, lending it a spiritual and mythical dimension as the island's protector.
+        </p>
+        <p>
+            Proponents of theories claim that the existence of elephant-shaped rocks in distant locations such as Iceland, India, China, and Thailand is proof of a single, shared ancient civilization that carved animals across the world. They describe this civilization as being: transcontinental and older than known civilizations; it used colossal animal symbols as a means of communication or strategic positioning; and it disappeared after a cosmic catastrophe or a great global flood.
+        </p>
+        <p>
+            The Arctic-Asia Bridge theory connects the Elephant Rock in Iceland to the migration route of an ancient civilization. The theory suggests that this civilization crossed from Asia through Siberia and the Arctic to Iceland, leaving behind colossal "elephant" statues as markers along this transcontinental route.
+        </p>
+        <p>
+            Some scholars connect the Asian giants mentioned in mythology (such as Naga/Yaksha) with the Norse giants of Scandinavian folklore (Jutnar). They claim that the same "monstrous beings" credited with carving the hills in Asia migrated north and carved the Elephant Rock in Iceland, suggesting a common origin for giants in world mythology.
+        </p>
+        <img src="cji.jpg">
+        <p>
+            A widespread theory circulating  posits the existence of "The Lost Mammoth Culture," which migrated along a route starting from Africa, passing through Asia and Siberia, and reaching the Arctic. The theory suggests that this civilization lived alongside mammoths and mastodons, worshipped the "elephant shape," and consequently carved sites resembling it around the world. In this context, it is claimed that the Elephant Rock in Iceland is not an elephant, but a petrified Siberian mammoth creature.
+        </p>
+        <img src="pyp.jpg">
+        <p>
+            Roger Spurrier (from the Mudfossil YouTube channel) promotes the "Mud Fossils" theory, claiming that the Elephant Rock in Iceland is not a natural volcanic formation, but is actually the petrified carcass of a giant elephant (or mammoth) that was fossilized during the Global Flood mentioned in religious texts thousands of years ago. They suggest that the curved trunk and the wrinkles visible on the rock are actually "real skin" preserved by volcanic mud. The theory postulates that the Icelandic government is concealing geological analyses to prevent proof of the "true history" before divine intervention. This idea has spread in videos linking the rock to other formations, such as the "Elephant Islands" in Hawaii, as evidence of giant animals that lived in ancient Iceland.
+        </p>
+        <img src="lord.jpg">
+        <p>
+            A circulating story links the Elephant Rock to the Hindu deity Ganesha, claiming that he immortalized an elephant who was his former lover in a previous life, after she was cursed by the gods. This connects the rock to the idea of "divine petrification" as a form of punishment or eternal commemoration.
+        </p>
+        <p>
+            A mythical narrative is circulating, claiming that the Hindu deity Ganesha loved a sacred female elephant in a past life, but the gods cursed her, causing her to petrify at the "end of the Earth" (Iceland). To immortalize her, Ganesha allegedly bound her spirit to the rock. According to this legend, the Elephant Rock in Iceland represents her petrified body, while the lines visible on the rock are the "traces of Ganesha's touches." Furthermore, the surrounding ocean in Iceland is referred to within the context of this myth as "The Sea of Tears."
+        </p>
+        <p>
+            The mythical narrative linked to the deity Ganesha and the petrified female elephant adds that the reason for her presence in Iceland is her "exile to the 'ends of the Earth'"; proponents of the legend claim that the cursed spirit was specifically banished to the frozen North, and that Iceland was considered the "end of the world" in this context. They interpret the Elephant Rock's location on a black sand beach on the island as physical evidence of this eternal banishment.
+        </p>
+    </div>
+
+    
+
+
+
+    
+    
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+        <p>
+            The word "mimetolith" -- derived from the Greek "mimetes" for "imitation" and "lithos" for "stone" -- is often used to describe such rock formations. One former American professor of geology, Richard V. Dietrich, published an illustrated overview of such formations that can be downloaded from the library of Central Michigan University.
+        </p>
+        <p>
+            Perceptions of these formations as actual elephants, sea turtles or other wildlife stems from a phenomenon called pareidolia, which is defined by the Merriam-Webster Dictionary as "the tendency to perceive a specific, often meaningful image in a random or ambiguous visual pattern."
+        </p>
+        
+        
+    </div>
+
+    <h2 class="section-title">Pictures</h2>
+    <div class="images-row">
+      
+
+      
+
+
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/The Elephant Rock" target="_blank">Wikipedia –The Elephant Rock </a></li>
+          <li><a href="https://www.britannica.com/The Elephant Rock" target="_blank">Britannica –The Elephant Rock </a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

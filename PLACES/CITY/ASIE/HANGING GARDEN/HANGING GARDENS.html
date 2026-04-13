@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HANGING GARDENS</title>
+  <style>
+     body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: #00ffae;
+      text-decoration: none;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+      max-width: 1000px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+    .source {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .controls label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="color"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      color: #004080;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #00ffae, #0077ff);
+      bottom: -10px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 5px solid #00d990;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .section img {
+      float: right;
+      margin-left: 20px;
+      width: 45%;
+      max-width: 300px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .section figure img {
+      float:right;
+      margin: 0 auto;
+   }
+
+.image-box {
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Removed display: inline-block to resolve the conflict with float */
+  text-align: center;
+}
+
+.image-box img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-box figcaption {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#literary">Literary</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#Research">Research</a></li>
+      <li><a href="#references">Sources</a></li>
+    </ul>
+    <h2>Translate</h2>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <div class="content">
+    <h1 id="intro">HANGING GARDENS</h1>
+
+    <img src="gar.jpg"  class="section-image">
+
+    <div class="controls">
+      <label for="font-select">Font:</label>
+      <select id="font-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+      </select>
+
+      <label for="bg-color">Background:</label>
+      <input type="color" id="bg-color" value="#f5f5f5">
+
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#333333">
+    </div>
+
+    <h2 class="section-title">Introduction</h2>
+    <div class="section clearfix">
+        <img src="im.jpg">
+        <p>
+         According to ancient texts, The Hanging Gardens of Babylon, also known as the Hanging Gardens of Semiramis, near present-day Al Hillah, Babil in Iraq, are considered to be one of the original Seven Wonders of the Ancient World. They were built by the Chaldean king Nebuchadnezzar II to please his sick wife, Amytis of Media, who longed for the trees and fragrant plants of her homeland Persia. The gardens were destroyed by several earthquakes after the 2nd century BC.
+        </p>
+        
+    </div>
+    
+    <h2 class="section-title">Literary</h2>
+    <div class="section clearfix">
+        <p>
+            The Greek historian Diodorus Siculus (1st century BCE) described the Hanging Gardens as a series of rising terraces, forming an artificial green mountain in the flat Mesopotamian plain. Reaching over 75 feet (23 meters) in height, these terraces were covered with exotic trees and flowers brought from distant lands, creating a living paradise inhabited by birds and small animals. The gardens were remarkable for their self-watering system, an ingenious hydraulic mechanism that lifted water from the river to the highest levels, distributing it through hidden channels to all tiers. More than a display of beauty, they symbolized royal power and the ability to command nature, reflecting the ancient image of the cosmic mountain linking earth and heaven. Whether in Babylon under Nebuchadnezzar or in Nineveh under Sennacherib, Diodorus’ account preserves the vision of a lost wonder where engineering and nature existed in perfect harmony.
+        </p>
+       <p>
+               Hanging gardens of Ninive. Relief of the palace of Assurbanipal in Ninive that describes the wonders of the gardens created by Sennacherib that could be the authentic hanging gardens attributed to Babylon, on which my interpretation of the Hanging Gardens of Ninive is based. 
+
+       </p>
+
+    </div>
+
+    <h2 class="section-title">Research</h2>
+    <div class="section clearfix">
+      <h3>Description of garden </h3>
+        <img src="nin.jpg">
+        <p>
+
+This is how documents and manuscripts describe the Hanging Gardens of Babylon — a magical place adorned with glazed tiles, surrounded by trees and decorated with lion statues. This architectural wonder marked the golden age in the history of Mesopotamia, the period of great prosperity for the Chaldean kingdom.
+The unique name “Hanging Gardens” originates from the Greek word kremastós, meaning “suspended,” referring to an architectural style where plants are grown on balconies and elevated terraces.
+Many theories suggest that the garden featured vaulted, arched roofs built from brick and bitumen or stone, irrigated by a fountain system resembling waterfalls to maintain its lush greenery.
+        </p>
+        <p>
+          They consisted of vaulted terraces of baked brick supported on pillars and filled with exotic plants and trees such as willows , oaks , coconuts , bananas and palms . A reservoir at the top supplied water to this incredible garden from the Euphrates River , which ran at the foot of the hill
+        </p>
+        <p>
+            German archaeologist Robert Koldewey (1855–1925) is best known for his excavations of Babylon, where he searched for evidence of the legendary Hanging Gardens. Between 1899 and 1917, he uncovered large palace foundations in the southwestern part of the city, including a series of stone-vaulted chambers unlike typical Babylonian construction. Koldewey interpreted these vaults as the substructure of the Hanging Gardens, designed to support the weight of heavy soil and large plants. He also identified nearby shafts and channels, which he believed formed part of an ancient water-lifting system, allowing water to reach the elevated terraces. His findings strongly influenced the long-standing belief that the Hanging Gardens were located in Babylon under King Nebuchadnezzar II, though later research has questioned this identification. Nonetheless, Koldewey’s meticulous excavation reports remain a crucial source for understanding Babylonian architecture and the possible reality behind this legendary wonder.
+        </p>
+        <img src="pa.jpg">
+    </div>
+
+    <h2 class="section-title" id="references">Sources</h2>
+    <div class="section clearfix">
+      <div class="source">
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/HANGING GARDENS" target="_blank">Wikipedia –HANGING GARDENS </a></li>
+          <li><a href="https://www.britannica.com/HANGING GARDENS" target="_blank">Britannica –HANGING GARDENS </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('font-select').addEventListener('change', function () {
+      document.body.style.fontFamily = this.value;
+    });
+
+    document.getElementById('bg-color').addEventListener('change', function () {
+      document.body.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('text-color').addEventListener('change', function () {
+      document.querySelector('.content').style.color = this.value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SECRET HISTORY</title>
+  <style>
+    body {
+      background-color: #2c2c2c;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+      color: #00d990;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #00d990;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      border-radius: 8px;
+    }
+
+    .top-bar a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .top-bar a:hover {
+      color: #2c2c2c;
+    }
+
+    .search-bar {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: #1e1e1e;
+      color: white;
+      border: 1px solid #00d990;
+    }
+
+    #videos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-box {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      text-align: center;
+      width: 120px;
+    }
+
+    .video-box h3 {
+      color: #00d990;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video-box a[download] {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #00d990;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .video-box a[download]:hover {
+      background-color: #00a673;
+    }
+
+    .section, .sub-section {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d99055;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section h2, .sub-section h3 {
+      color: #00d990;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    ul li a:hover {
+      color: #00d990;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SECRET FACTS</h1>
+
+  <div class="top-bar">
+    <a onclick="showSection('ASIA')">ASIA</a>
+    <a onclick="showSection('AFRICA')">AFRICA</a>
+    <a onclick="showSection('EUROPE')">EUROPE</a>
+    <a onclick="showSection('NORTH AMERICA')">NORTH AMERICA</a>
+    <a onclick="showSection('SOUTH AMERICA')">SOUTH AMERICA</a>
+    <a onclick="showSection('ANTARCTICA')">ANTARCTICA</a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="searchVideos()" placeholder="Search for videos...">
+  </div>
+
+  <!-- ✅قسم القطاعات -->
+  <div id="EUROPE" class="section">
+    <h2>EUROPE</h2>
+    <ul>
+      <li><a href="HISTORY/EUROPE/VINČA/VINČA.html">VINČA</a></li>
+      <li><a href="HISTORY/EUROPE/Swiderian/Swiderian.html">SWIDERIAN</a></li>
+      <li><a href="HISTORY/EUROPE/MYRMIDONS/myrmidon.html">MYRMIDONS</a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a onclick="showSubSection('')"></a></li>
+      <li><a onclick="showSubSection('')"> </a></li>
+    </ul>
+  </div>
+
+  <div id="ASIA" class="section">
+    <h2>Asia</h2>
+    <ul>
+      <li><a href="HISTORY/ASIA/tartaria/tartaria h.html">TARTARIA</a></li>
+      <li><a href="HISTORY/ASIA/"></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li> 
+      <li><a onclick="showSubSection('')"></a></li>
+    </ul>
+  </div>
+  
+  <div id="ANTARCTICA" class="section">
+    <h2>Antarctica</h2>
+    <ul>
+      <li><a href="HISTORY/ANTARCTICA/inuit/Inuit.html">INUIT</a></li>
+      <li><a href="HISTORY/ANTARCTICA/tuniit/Tuniit.html">TUNIIT</a></li>
+    </ul>
+  </div>
+
+  <!-- ✅ فرعي: agriculture -->
+  <div id="AFRICA" class="sub-section">
+    <h3>AFRICA</h3>
+    <ul>
+      <li><a href="HISTORY/AFRICA/THE ABZU/THE ABZU.html">THE ABZU</a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </div>
+
+  
+  <div id="" class="sub-section">
+    <h3>Health</h3>
+    <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </div>
+
+  <!-- ✅ الفيديوهات -->
+  <div id="videos-container">
+    <!-- ضع هنا الفيديوات كما كانت سابقًا -->
+    <!-- لم يتم التعديل على الفيديوات لتوفير المساحة -->
+  </div>
+
+  <!-- ✅ السكربت -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showSubSection(id) {
+      document.querySelectorAll('.sub-section').forEach(sub => {
+        sub.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function searchVideos() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const videos = document.querySelectorAll('.video-box');
+
+      videos.forEach(video => {
+        const title = video.getAttribute('data-title');
+        video.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
