@@ -1,0 +1,21 @@
+# Large video files - تجاهل كل الفيديوهات
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.webm
+*.m4v
+*.flv
+
+# تجاهل الفيديوهات داخل مجلدات معينة
+PLACES/**/*.mp4
+COSMOS/**/*.mp4
+LEGACY/**/*.mp4
+CODES/**/*.mp4
+HISTORY/**/*.mp4
+MYTH/**/*.mp4
+
+# ملفات أخرى غير مرغوبة
+.DS_Store
+Thumbs.db
+*.log
