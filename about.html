@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - SECRET FILES</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('background.JPEG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-attachment: fixed;
+  animation: moveBackground 40s linear infinite alternate;
+  color: white;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #00d990;
+  padding: 15px;
+}
+
+.navbar h1 {
+  font-size: 30px;
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background: #111;
+}
+
+.topbar a {
+  padding: 10px 15px;
+  color: aqua;
+  text-decoration: none;
+  border-radius: 10px;
+  background: #0a0a0a;
+  transition: 0.3s;
+}
+
+.topbar a:hover {
+  background: aqua;
+  color: black;
+}
+
+/* ===== About Content ===== */
+.about-container {
+  max-width: 900px;
+  margin: 80px auto;
+  background: rgba(0,0,0,0.75);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+  backdrop-filter: blur(8px);
+}
+
+.about-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.about-container h2 {
+  margin-top: 30px;
+  color: #b084f5;
+}
+
+.about-container p {
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.about-container ul {
+  margin-top: 10px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* ===== Bottom Bar ===== */
+.bottom_bar {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  background: rgba(10,10,10,0.85);
+  padding: 12px 25px;
+  border-radius: 30px;
+}
+
+.bottom_bar a {
+  color: aqua;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.bottom_bar a:hover {
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <h1>SECRET FILES</h1>
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <a href="index.html">Home</a>
+  <a href="COSMOS.html">Cosmos</a>
+  <a href="MYTH.html">Myth</a>
+  <a href="HUMANITY.html">Humanity</a>
+  <a href="PLACES.html">Places</a>
+  <a href="about.html">About</a>
+</div>
+
+<!-- About Content -->
+<div class="about-container">
+
+<h1>About This Project</h1>
+
+<p>
+SECRET FILES is not just a website. It is a collection of hidden ideas, lost knowledge, and unexplored connections between reality, history, and myth.
+</p>
+
+<p>
+This project dives into ancient civilizations, mysterious places, and deeper questions about existence and consciousness.
+</p>
+
+<h2>What You Will Find</h2>
+<ul>
+  <li><b>COSMOS</b> – Secrets of the universe</li>
+  <li><b>LEGACY</b> – Lost civilizations and ancient wisdom</li>
+  <li><b>HUMANITY</b> – Origins and evolution of mankind</li>
+  <li><b>PLACES</b> – Mysterious locations around the world</li>
+  <li><b>CODES</b> – Hidden messages and cryptographic secrets</li>
+  <li><b>PHENOMENA</b> – Unexplained events and mysteries</li>
+  <li><b>HISTORY</b> – Forgotten stories and alternative narratives</li>
+  <li><b>MYTHOLOGY</b> – Gods, legends, and archetypes</li>
+  
+</ul>
+
+<h2>Purpose</h2>
+<p>
+The goal is not just to show information, but to connect ideas and reveal patterns that most people never notice.
+</p>
+
+<h2>Vision</h2>
+<p>
+To create a space where curiosity leads to discovery, and where knowledge becomes a journey.
+</p>
+
+</div>
+
+<!-- Bottom Bar -->
+<div class="bottom_bar">
+  <a href="index.html"><i class="fas fa-home"></i></a>
+  <a href="about.html"><i class="fas fa-user"></i></a>
+</div>
+
+</body>
+</html>
